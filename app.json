@@ -1,0 +1,44 @@
+{
+  "name": "Octobox",
+  "description": "Untangle your GitHub Notifications",
+  "repository": "https://github.com/octobox/octobox",
+  "scripts": {
+    "postdeploy": "bundle exec rake db:migrate"
+  },
+  "keywords": [
+    "github",
+    "notifications",
+    "productivity",
+    "rails",
+    "ruby"
+  ],
+  "website": "https://octobox.io/",
+  "license": "AGPL-3.0-only",
+  "env": {
+    "OCTOBOX_ATTRIBUTE_ENCRYPTION_KEY": {
+      "description": "32 byte encryption key for access tokens in octobox",
+      "required": true
+    },
+    "GITHUB_CLIENT_ID": {
+      "description": "The GitHub Application Client ID",
+      "required": true
+    },
+    "GITHUB_CLIENT_SECRET": {
+      "description": "The GitHub Application Client Secret",
+      "required": true
+    },
+    "MINIMUM_REFRESH_INTERVAL": {
+      "description": "Minimum value allowed for a user to set auto-refresh.  Setting to 0 means this is disabled.",
+      "value": "10"
+    },
+    "WEB_CONCURRENCY": {
+      "description": "Specifies the number of `workers` to boot in clustered mode.",
+      "value": "2"
+    }
+  },
+  "addons": [
+    "heroku-postgresql",
+    "heroku-redis",
+    "scheduler"
+  ]
+}

@@ -1,0 +1,18 @@
+default: &default
+  adapter:  <%= DatabaseConfig.adapter %>
+  pool:     <%= DatabaseConfig.connection_pool %>
+  username: <%= DatabaseConfig.username %>
+  password: <%= DatabaseConfig.password %>
+  host:     <%= DatabaseConfig.host %>
+
+development:
+  <<: *default
+  database: <%= DatabaseConfig.database_name('development') %>
+
+test:
+  <<: *default
+  database: <%= DatabaseConfig.database_name('test') %>
+
+production:
+  <<: *default
+  database: <%= DatabaseConfig.database_name('production') %>

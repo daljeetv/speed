@@ -1,0 +1,354 @@
+<div class="container user-settings">
+  <div class="w-100 d-flex justify-content-between">
+    <h1 class="pt-3">Settings</h1>
+    <div>
+      <% if @latest_git_sha %>
+        <p class="settings-sha">
+          Version:
+          <%= link_to @latest_git_sha[0..6], Octobox.config.source_repo + "/commit/#{@latest_git_sha}", target: '_blank', rel: "noopener", title: "Current Git commit SHA" %>
+          <%= link_to Octobox.config.source_repo + "/compare/#{@latest_git_sha}..master", target: '_blank', rel: "noopener", title: "Compare with latest commits on master" do %>
+            <%= octicon 'git-compare', height: 16, class:'text-default' %>
+          <% end %>
+        </p>
+      <% end %>
+    </div>
+  </div>
+  <hr>
+
+  <div class="card mb-3" id='pinned-searches'>
+    <h5 class="card-header">
+      Pinned Searches
+    </h5>
+    <div class="card-body">
+      <p>Pin your favorite searches to the sidebar so you can access them quickly</p>
+
+      <% if current_user.pinned_searches.any? %>
+        <table class='table table-responsive-sm border-bottom'>
+          <thead>
+            <th>
+              Name
+            </th>
+            <th colspan="2">
+              Search Query
+            </th>
+          </thead>
+          <% current_user.pinned_searches.each do |pinned_search| %>
+            <tr>
+              <td>
+                <%= pinned_search.name %>
+              </td>
+              <td>
+                <%= pinned_search.query %>
+              </td>
+              <td>
+                <%= link_to octicon('pencil'), edit_pinned_search_path(pinned_search), title: 'Edit', data: {toggle: 'tooltip'}, class: 'mr-2' %>
+                <%= link_to octicon('trashcan'), pinned_search_path(pinned_search), title: 'Delete', data: {toggle: 'tooltip'}, method: :delete %>
+              </td>
+            </tr>
+          <% end %>
+        </table>
+      <% end %>
+      <p><strong>Pin a search:</strong></p>
+      <%= render 'pinned_searches/form' %>
+    </div>
+  </div>
+
+  <%= form_for current_user do |f| %>
+    <% if Octobox.refresh_interval_enabled? || Octobox.personal_access_tokens_enabled? %>
+      <% if Octobox.refresh_interval_enabled? %>
+        <div class="card mb-3">
+          <h5 class="card-header">
+            Automatic Refresh Interval
+          </h5>
+          <div class="card-body">
+            <div class="form-group">
+              <%= f.number_field :refresh_interval_minutes, max: 1440, min: Octobox.config.minimum_refresh_interval, value: current_user.effective_refresh_interval.nil? ? '' : current_user.effective_refresh_interval / 60_000, class: 'form-control w-25' %>
+
+              <p>
+                <em>
+                  Auto refresh every N minutes when you are viewing notifications. If blank, no auto refreshes will occur.
+                </em>
+              </p>
+              <%= submit_tag 'Save', class: 'btn btn-primary' %>
+              <%= link_to 'Cancel', root_path, class: 'btn btn-light' %>
+            </div>
+          </div>
+        </div>
+      <% end %>
+
+      <% if Octobox.personal_access_tokens_enabled? %>
+        <div class="card mb-3">
+          <h5 class="card-header">
+            Personal Access Token
+          </h5>
+          <div class="card-body">
+            <div class="form-group">
+              <%= f.label :personal_access_token, "Personal Access Token" %>
+              <%= f.text_field :personal_access_token, value: nil, placeholder: current_user.masked_personal_access_token, class: 'form-control' %>
+              <span class="help-block">Setting a personal access token will cause Octobox to authenticate with this token instead of the OAuth token that was generated when you logged in.  There is no need to set this unless you have a specific reason.
+              </span>
+            </div>
+            <div class="form-group">
+              <div class="checkbox">
+                <label>
+                  <input type="checkbox" name="clear_personal_access_token" id="clear_personal_access_token"/>
+                  Clear personal access token
+                </label>
+              </div>
+            </div>
+            <%= submit_tag 'Save', class: 'btn btn-primary' %>
+            <%= link_to 'Cancel', root_path, class: 'btn btn-light' %>
+          </div>
+        </div>
+      <% end %>
+    <% end %>
+
+    <div class='d-flex flex-column flex-md-row'>
+      <div class="card w-100 mr-3 mb-3">
+        <h5 class="card-header">
+          Theme
+        </h5>
+        <div class="card-body">
+          <div class="form-group">
+            <%= f.select :theme, [['Light', 'light'], ['Dark', 'dark']], {}, class: 'form-control' %>
+          </div>
+
+          <%= submit_tag 'Save', class: 'btn btn-primary' %>
+          <%= link_to 'Cancel', root_path, class: 'btn btn-light' %>
+        </div>
+      </div>
+
+      <div class="w-100 mb-3 card">
+        <div class='ribbon info'>
+          <span>Beta</span>
+        </div>
+        <h5 class="card-header">
+          Open notifications
+        </h5>
+        <div class="card-body">
+          <div class="form-group">
+            <%= f.select :display_comments, [['On GitHub', 'false'], ['On Octobox', 'true']], {}, class: 'form-control' %>
+          </div>
+
+          <%= submit_tag 'Save', class: 'btn btn-primary' %>
+          <%= link_to 'Cancel', root_path, class: 'btn btn-light' %>
+        </div>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="card mb-3">
+    <h5 class="card-header">
+      Octobox API Access
+    </h5>
+    <div class="card-body">
+      <p>This is your API Token for Octobox access. Keep it safe and do not commit it to version control.</p>
+
+      <ul class="list-inline">
+        <li class="list-inline-item">
+          <button onclick="document.getElementById('api_token').classList.remove('d-none'); this.parentNode.classList.add('d-none')" class="btn btn-outline-dark">Show API Token</button>
+        </li>
+        <li class="list-inline-item">
+          <%= form_tag current_user, method: :put do %>
+            <%= hidden_field_tag 'user[regenerate_api_token]', '1' %>
+            <%= submit_tag "Regenerate Token", class: 'btn btn-outline-dark' %>
+          <% end %>
+        </li>
+      </ul>
+
+      <div id="api_token" class="card card-body bg-light d-none">
+        <code><%= current_user.api_token || 'None, please click the button to regenerate your token' %></code>
+      </div>
+    </div>
+  </div>
+
+  <div class="card mb-3">
+    <h5 class="card-header">
+      Manage Oauth Access
+    </h5>
+    <div class="card-body">
+      <p>Octobox can only show notifications for Organisations that you've granted it access to via GitHub</p>
+      <p>If you've been added to a new Organisation you may need to enable or request access for Octobox to sync notifications for those repositories.</p>
+      <%= link_to "#{Octobox.config.github_domain}/settings/connections/applications/#{Rails.application.secrets.github_client_id}", class: 'btn btn-outline-dark' do %>
+        <%= octicon 'tools' %>&nbsp;
+        Manage Oauth Access
+      <% end %>
+
+      <% if Octobox.github_app? && current_user.github_app_authorized? %>
+        <%= link_to "#{Octobox.config.github_domain}/settings/connections/applications/#{Rails.application.secrets.github_app_client_id}", class: 'btn btn-outline-dark' do %>
+          <%= octicon 'octoface' %>&nbsp;
+          Manage App Access
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+
+  <% if Octobox.github_app? %>
+    <div class="card mb-3">
+      <h5 class="card-header">
+        GitHub App Installations
+      </h5>
+      <div class="card-body">
+        <% if current_user.app_installations.any? %>
+          <table class='table table-responsive-sm'>
+            <thead>
+              <tr>
+                <th class='border-top-0'>Account</th>
+                <th class='border-top-0'>Repos</th>
+                <% if Octobox.octobox_io? %>
+                  <th class='border-top-0' colspan='2'>Billing</th>
+                <% end %>
+                <th class='border-top-0'>Settings</th>
+              </tr>
+            </thead>
+            <tbody>
+              <% current_user.app_installations.each do |app_installation| %>
+                <% next if app_installation.account_type == 'User' && app_installation.account_login != current_user.github_login %>
+                <tr>
+                  <td class="align-middle">
+                    <%= image_tag app_installation.github_avatar_url+ "?size=50", width: 25, height: 25, class: 'pull-left mr-1' %>
+                    <%= app_installation.account_login %>
+                  </td>
+                  <td class="align-middle">
+                    <%= pluralize app_installation.repositories.github_app_installed.count, 'repo' %>
+                  </td >
+                  <% if Octobox.octobox_io? %>
+                    <td class="align-middle">
+                      <% if app_installation.subscription_purchase %>
+                        <% if app_installation.subscription_purchase.active? %>
+                          <strong>
+                            <%= app_installation.subscription_purchase.subscription_plan.name %>
+                          </strong> -
+                          <% if app_installation.subscription_purchase.billing_cycle == 'monthly' %>
+                            <%= number_to_currency app_installation.subscription_purchase.subscription_plan.monthly_price_in_cents/100 %>
+                          <% else %>
+                            <%= number_to_currency app_installation.subscription_purchase.subscription_plan.yearly_price_in_cents/100 %>
+                          <% end %>
+                          <%= app_installation.subscription_purchase.billing_cycle %>
+
+                          <% if app_installation.subscription_purchase.on_free_trial? %>
+                            <i class='text-muted'>
+                              (Free Trail ends in <%= distance_of_time_in_words_to_now app_installation.subscription_purchase.free_trial_ends_on %>)
+                            </i>
+                          <% end %>
+                        <% else %>
+                          Cancelled Plan
+                        <% end %>
+                      <% else %>
+                        No Plan
+                      <% end %>
+                    </td>
+                    <td>
+                      <% if app_installation.subscription_purchase.try(:active?) %>
+                        <% if app_installation.subscription_purchase.edit_url.present? %>
+                          <%= link_to 'Edit Plan', app_installation.subscription_purchase.edit_url, class: 'btn btn-primary btn-sm', target: '_blank', rel: 'noopener' %>
+                        <% else %>
+                          <%= link_to octicon("gift"), 'https://twitter.com/FluffSociety/status/1042866091985387520', class: 'btn btn-sm', target: '_blank', rel: 'noopener' %>
+                        <% end %>
+                      <% else %>
+                        <%= link_to 'Start a Plan', pricing_path, class: 'btn btn-primary btn-sm' %>
+                      <% end %>
+                    </td>
+                  <% end %>
+                  <td class="align-middle">
+                    <%= link_to 'Manage', app_installation.settings_url, class: 'btn btn-secondary btn-sm', target: '_blank', rel: 'noopener' %>
+                  </td>
+                </tr>
+              <% end %>
+            </tbody>
+          </table>
+          <hr>
+        <% end %>
+        <% unless current_user.github_app_authorized? %>
+          <p>
+            Connect your GitHub account to the Octobox App to enable every installation for your notifications
+          </p>
+          <p><%= link_to 'Login to the GitHub App', '/auth/githubapp', class: 'btn btn-info' %></p>
+        <% end %>
+        <p>
+          The Octobox GitHub App enables extra features and data for repositories that have it installed:
+        </p>
+        <ul>
+          <li>Pull in status, labels, authors and assignees on issues and pull requests</li>
+          <li>Full support for private repositories</li>
+          <li>Sync new and updated notifications automatically</li>
+        </ul>
+        <%= link_to 'Install GitHub App', Octobox.config.app_install_url, class: 'btn btn-primary', target: '_blank', rel: 'noopener' %>
+      </div>
+    </div>
+  <% end %>
+
+  <div class="card mb-3">
+    <h5 class="card-header">
+      Statistics
+    </h5>
+    <div class="card-body">
+      <p>
+        <%= pluralize @total, 'notification' %> synced since you started using Octobox
+        <span title='Signed up on <%= current_user.created_at.to_s(:long) %> UTC'>
+          <%= pluralize(((Time.current - current_user.created_at)/ 1.day).round, 'day') %> ago.
+        </span>
+      </p>
+      <div class="row">
+        <% if @most_active_repos %>
+          <div class="col-md">
+            <table class='table table-sm table-responsive-sm'>
+              <thead>
+                <th class='border-top-0' colspan="2">Most active repositories</th>
+              </thead>
+              <tbody>
+                <% @most_active_repos.each do |repository_full_name, count| %>
+                  <tr>
+                    <td>
+                      <%= link_to repository_full_name, "#{Octobox.config.github_domain}/#{repository_full_name}" %>
+                    </td>
+                    <td>
+                      <%= pluralize count, 'notification' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
+
+        <% if @most_active_repos %>
+          <div class="col-md">
+            <table class='table table-sm table-responsive-sm'>
+              <thead>
+                <th class='border-top-0' colspan="2">Most active owners</th>
+              </thead>
+              <tbody>
+                <% @most_active_orgs.each do |repository_owner_name, count| %>
+                  <tr>
+                    <td>
+                      <%= link_to repository_owner_name, "#{Octobox.config.github_domain}/#{repository_owner_name}" %>
+                    </td>
+                    <td>
+                      <%= pluralize count, 'notification' %>
+                    </td>
+                  </tr>
+                <% end %>
+              </tbody>
+            </table>
+          </div>
+        <% end %>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h5 class="card-header bg-danger text-white">
+      Danger zone
+    </h5>
+    <div class="card-body">
+      <p>Deleting your Octobox account permanently removes all data associate with your user from Octobox's database.</p>
+      <p>Once you have deleted your account, logging in again will create a new account associated with your GitHub user and load existing notifications.</p>
+      <%= link_to current_user, method: :delete, class: 'btn btn-danger', data: { confirm: 'Are you sure you want to do this?' } do %>
+        <%= octicon 'trashcan', class: 'inverse' %>&nbsp;
+        Delete my Octobox account
+      <% end %>
+    </div>
+  </div>
+  <%= render 'layouts/footer' %>
+</div>

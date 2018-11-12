@@ -1,0 +1,133 @@
+html, body {
+  overflow-x: hidden;
+}
+
+body {
+  font-size: 14px;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+}
+
+.turbolinks-progress-bar {
+  height: 2px !important;
+  background-color: theme-color("primary") !important;
+  box-shadow: 0 0 10px rgba(theme-color("primary"), 0.7) !important;
+}
+
+.flex-header {
+  flex: 0 0 auto;
+}
+
+.header-flash-messages {
+  .alert {
+    margin-bottom: 0;
+    border: 0px;
+    border-radius: 0px;
+  }
+}
+
+.flex-content{
+  display: flex;
+  height: calc(100vh - 56px);
+}
+
+.alert{
+  .close{
+    line-height: inherit;
+    font-size: inherit;
+  }
+}
+
+.flex-sidebar {
+  flex: 0 0 250px;
+  width: $sidebar-width;
+  padding: 15px;
+  padding-bottom: 60px;
+  overflow: auto;
+}
+
+.flex-main {
+  flex: 1;
+  min-width: 0;
+  overflow-x: hidden;
+  padding-left: 0;
+}
+
+.flex-thread {
+  flex: 1;
+  min-width: 0;
+  overflow: auto;
+  .text-content{
+    h1, h2{
+      padding-top: $spacer * 3
+    }
+    max-width: 60em;
+    font-size: 16px;
+    ul:last-child{
+      min-height: 31em;
+    }
+  }
+  img{
+    max-width: 100%
+  }
+}
+
+.nothing-here{
+  margin-top: calc((100vh - 56px - 96px)/2);
+}
+
+.readable{
+  max-width: 48rem;
+}
+
+.footer {
+  text-align: center;
+  color: $text-muted;
+  a{
+    color: color-yiq($body-bg);
+  }
+}
+
+@mixin responsive{
+  .flex-main{
+    height: 100%;
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .flex-content {
+    position: relative;
+    left: 0;
+    height: 100%;
+    -webkit-transition: all .25s ease-out;
+         -o-transition: all .25s ease-out;
+            transition: all .25s ease-out;
+    &.active {
+      left: $sidebar-width;
+    }
+  }
+
+  .text-content{
+    padding: 0 15px;
+    
+  }
+
+  .flex-sidebar {
+    position: absolute;
+    // enable momentum scrolling on mobile safari
+    overflow-y: scroll;
+    -webkit-overflow-scrolling: touch;
+    bottom: 0;
+    top: 0;
+    width: $sidebar-width;
+    left: -$sidebar-width;
+  }
+}
+
+@include media-breakpoint-down(lg) {
+  @include responsive;
+  .flex-main.show-thread{
+    display:none;
+  }
+}
