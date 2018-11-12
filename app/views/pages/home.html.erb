@@ -1,7 +1,7 @@
 <div class="container readable">
   
-  <h1 class="text-center mt-5"><%= octobox_round(80) %> <span class='align-middle'>Octobox</span></h1>
-  <h3 class='text-center pt-3'>Untangle your GitHub Notifications</h3>
+  <h1 class="text-center mt-5"><%= octobox_round(80) %> <span class='align-middle'>Speed</span></h1>
+  <h3 class='text-center pt-3'>Add Bounty to Github Issues</h3>
   <h5 class='text-center font-weight-light'>
       <%= number_to_human Notification.count %> notifications managed, and counting &#8230 
   </h5>
@@ -89,18 +89,6 @@
         </div>
       </div>      
     </div>
-    <div class="card shadow-sm mb-3">
-      <div class="card-body">
-        <div class="media">
-          <div class="align-self-center mr-4">
-            <%= octicon 'mark-github', height: 50 %>
-          </div>
-          <div class="media-body">
-            <h5>Open for everyone</h5>
-            Octobox developers use Octobox to develop Octobox. 100% developed and managed in the open on GitHub under a FLOSS license.
-          </div>
-        </div>
-      </div>
     </div>
   </div>
 
@@ -126,22 +114,6 @@
 
     </div>
   <% end %>
-
-  <div class="container readable text-large mb-5">
-
-    <h3 id='run-your-own' class='pt-4'>Run your own Octobox</h3>
-
-    <p>The Octobox team hosts a shared instance of Octobox at <a href="https://octobox.io/">octobox.io</a>, but perhaps you're looking to host your own or get yourself set up to contribute to Octobox? Fantastic! There are a number of install options available to you, check out the <a href="https://github.com/octobox/octobox/blob/master/docs/INSTALLATION.md">installation guide</a>.</p>
-
-    <h3 id='contribute' class='pt-4'>Contribute</h3>
-
-    <p>Octobox is open source and the source code is hosted at <a href="https://github.com/octobox/octobox">GitHub</a>. If you have an idea for a feature or enhancement, open an <a href="https://github.com/octobox/octobox/issues/new">issue</a> or a pull request.</p>
-
-    <p>If you want to contribute you'll find we're a welcoming bunch. If you don't know where to start, take a look at the issues tagged as <a href="https://github.com/octobox/octobox/issues?q=is%3Aopen+is%3Aissue+label%3A%22help+wanted%22">"Help Wanted"</a>.</p>
-
-    <p>You can also help triage issues. This can include reproducing bug reports, or asking for vital information such as version numbers or reproduction instructions. If you would like to start triaging issues, one easy way to get started is to <a href="https://www.codetriage.com/octobox/octobox">subscribe to Octobox on CodeTriage</a>.</p>
-
-    <p>Finally, if you would like to become a maintainer, we will consider adding you if you contribute frequently to the project. Feel free to ask.</p>
 
   </div>
 </div>

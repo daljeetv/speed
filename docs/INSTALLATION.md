@@ -1,10 +1,10 @@
-# Octobox Installation and Configuration Guide
+# Speed Installation and Configuration Guide
 
-The Octobox team hosts a shared instance of Octobox at [octobox.io](https://octobox.io/), but perhaps you're looking to host
-your own or get yourself set up to contribute to Octobox. Fantastic! There are a number of install options available to you.
+The Speed team hosts a shared instance of Octobox at [speed.io](https://speed.io/), but perhaps you're looking to host
+your own or get yourself set up to contribute to Speed. Fantastic! There are a number of install options available to you.
 
 Before you begin, remember that [web notifications must be enabled](README.md#requirements)
-in your GitHub settings for Octobox to work.
+in your GitHub settings for Speed to work.
 
 ### Installation
 
@@ -35,7 +35,7 @@ in your GitHub settings for Octobox to work.
 # Installation
 ## Database Selection
 
-Octobox supports a few database adapters. The full list can be found [here](https://github.com/octobox/octobox/blob/85bfbed9111a36e94aa74d4026633dc6ff844bf6/lib/database_config.rb#L2).
+Speed supports a few database adapters. The full list can be found [here](https://github.com/octobox/octobox/blob/85bfbed9111a36e94aa74d4026633dc6ff844bf6/lib/database_config.rb#L2).
 
 #### How to specify an adapter
 

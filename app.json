@@ -1,6 +1,6 @@
 {
-  "name": "Octobox",
-  "description": "Untangle your GitHub Notifications",
+  "name": "Speed",
+  "description": "Add Bounties to Github Issues",
   "repository": "https://github.com/octobox/octobox",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"

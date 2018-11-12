@@ -1,4 +1,4 @@
-FROM ruby:2.5.3-alpine
+FROM ruby:2.3.7-alpine
 
 ENV APP_ROOT /usr/src/app
 WORKDIR $APP_ROOT
@@ -19,11 +19,12 @@ RUN apk add --update \
     postgresql-dev \
     mysql-dev \
     tzdata \
-    curl-dev \
- && rm -rf /var/cache/apk/* \
- && bundle config --global frozen 1 \
- && bundle install --without test --jobs 2 \
- && gem install foreman
+    curl-dev
+RUN rm -rf /var/cache/apk/* 
+RUN bundle config --global silence_root_warning 1  
+RUN bundle config --global frozen 1 
+RUN bundle install --without test --jobs 2 
+RUN gem install foreman
 
 # ========================================================
 # Application layer
@@ -40,6 +41,8 @@ RUN RAILS_ENV=production bundle exec rake assets:precompile
 RUN RAILS_ENV=development bin/rails api_docs:generate \
  && chgrp -R 0 $APP_ROOT \
  && chmod -R g=u $APP_ROOT
+
+RUN bundle config --global silence_root_warning 1
 
 # Startup
 CMD ["bin/docker-start"]

@@ -18,7 +18,7 @@ The remaining part of this documentation describes the installation on OpenShift
 ### Register GitHub OAuth app
 
 First you need to register Octobox as an [GitHub OAuth app](https://help.github.com/articles/authorizing-oauth-apps/).
-You can do this either for a GitHub organization of for an User.
+You can do this either for a GitHub organization or for an User.
 
 To do so, go to your accounts [Developer Settings](https://github.com/settings/developers)
 
