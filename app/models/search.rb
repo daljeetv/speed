@@ -39,6 +39,7 @@ class Search
     res = lock_conditionally(res)
     res = mute_conditionally(res)
     res = apply_sort(res)
+    res = res.bounty(bounty) unless bounty.nil?
     res
   end
 
@@ -207,6 +208,10 @@ class Search
 
   def starred
     boolean_prefix(:starred)
+  end
+
+  def bounty
+    boolean_prefix(:bounty)
   end
 
   def inbox

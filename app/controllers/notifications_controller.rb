@@ -166,6 +166,28 @@ class NotificationsController < ApplicationController
     end
   end
 
+  # Bounty selected issues
+  #
+  # :category: Notifications Actions
+  #
+  # ==== Parameters
+  #
+  # * +:id+ - An array of IDs of issues you'd like to archive. If ID is 'all', all notifications will be archived
+  #
+  # ==== Example
+  #
+  # <code>POST notifications/bounty_selected.json?id=all</code>
+  #   HEAD 204
+  #
+  def bounty_selected
+    Notification.bounty(selected_notifications, params[:value])
+    if request.xhr?
+      head :ok
+    else
+      redirect_back fallback_location: root_path
+    end
+  end
+
   # Archive selected notifications
   #
   # :category: Notifications Actions

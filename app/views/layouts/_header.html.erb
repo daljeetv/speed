@@ -42,10 +42,6 @@
             <%= octicon 'briefcase', height: 16, class: 'mr-1' %>
             Install the GitHub App
           </a>
-        <% else %>
-          <a href="https://opencollective.com/octobox/" class='opencollective' target='_blank' rel="noopener" aria-label='Support Octobox on OpenCollective'>
-            <%= octicon 'gift', height: 16, data: {toggle: "tooltip", placement: "bottom"}, title: 'Support Octobox on OpenCollective' %>
-          </a>
         <% end %>
       </li>
       <li class="nav-item dropdown">
@@ -61,7 +57,7 @@
           <% end %>
           <%= link_to documentation_path(anchor: 'support'), class: 'dropdown-item', target: "_blank", rel: "noopener" do %>
             <%= octicon 'question', height: 16, class: 'text-muted' %>
-            Octobox Support
+            Speed Support
           <% end %>
           <% if current_user.admin? %>
             <%= link_to admin_path, class: 'dropdown-item' do %>

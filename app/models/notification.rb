@@ -67,6 +67,11 @@ class Notification < ApplicationRecord
     mark_read(notifications)
   end
 
+  def self.bounty(notifications, value)
+    value = value ? ActiveRecord::Type::Integer.new.cast(value): 1
+    notifications.update_all(bounty: 1)
+  end
+
   def self.mark_read(notifications)
     unread = notifications.select(&:unread)
     return if unread.empty?

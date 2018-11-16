@@ -1,9 +1,9 @@
 <div class="container readable">
   
-  <h1 class="text-center mt-5"><%= octobox_round(80) %> <span class='align-middle'>Speed</span></h1>
-  <h3 class='text-center pt-3'>Add Bounty to Github Issues</h3>
+  <h1 class="text-center mt-5"><%= octobox_round(60) %> <span class='align-middle'>Speed</span></h1>
+  <h3 class='text-center pt-3'>Add Bounties to your Github Issues</h3>
   <h5 class='text-center font-weight-light'>
-      <%= number_to_human Notification.count %> notifications managed, and counting &#8230 
+      <%= number_to_human Notification.count %> Issues managed, and counting &#8230 
   </h5>
   <div class='container readable text-center'>
     <%= image_tag 'screenshot.png', class: 'screenshot mt-3', alt: 'Octobox Screenshot' %>
@@ -23,7 +23,20 @@
 
   <div class="container readable my-5">
     <h3 id='features'>Features</h3>
-    <h5 class='mb-5 text-muted font-weight-light'>Octobox helps you manage your GitHub notifications efficiently so you can spend less time managing and more time getting things done:</h4>
+    <h5 class='mb-5 text-muted font-weight-light'>Speed lets your add bounties to GitHub Issues so developers fix your issues first</h4>
+     <div class="card shadow-sm mb-3">
+      <div class="card-body">
+        <div class="media">
+          <div class="align-self-center mr-4">
+            <%= octicon 'inbox', height: 50 %>
+          </div>
+          <div class="media-body">
+            <h5>Incentivize developers</h5>
+            Speed let's you attach bounty to Github issues so you can provide an incentive to get your issues fixed as fast as possible.
+          </div>
+        </div>
+      </div>
+    </div>
      <div class="card shadow-sm mb-3">
       <div class="card-body">
         <div class="media">
@@ -32,7 +45,7 @@
           </div>
           <div class="media-body">
             <h5>Don't lose track</h5>
-            Octobox adds an extra "archived" state to each notification so you can mark it as "done". If anything happens on an archived thread, issue or PR, Octobox will move it back into your inbox.
+            Speed adds an extra "archived" state to each issue so you can mark it as "done". If anything happens on an archived thread, issue or PR, Speed will move it back into your inbox.
           </div>
         </div>
       </div>
@@ -45,7 +58,7 @@
           </div>
           <div class="media-body">
             <h5>Starred notifications</h5>
-            Let's be honest, you probably don't have a 'favourite' issue but Octobox lets you highlight important notifications with a star so you can come back and find them easily.
+            Let's be honest, you probably don't have a 'favourite' issue but Speed lets you highlight important issues with a star so you can come back and find them easily.
           </div>
         </div>
       </div>
@@ -58,7 +71,7 @@
           </div>
           <div class="media-body">
             <h5>Filter all the things</h5>
-            Filter notifications by notification type, action, state and reason and keep notifications from bots alongside your regular label, author and assignees.
+            Filter issues by issue type, action, state and reason and keep issues from bots alongside your regular label, author and assignees.
           </div>
         </div>
       </div>
@@ -71,7 +84,7 @@
           </div>
           <div class="media-body">
             <h5>Search with prefix filters</h5>
-            No more Jedi mind tricks. Combine a wide range of powerful search filters help you get straight to the notification you're looking for and focus on just what you need.
+            No more Jedi mind tricks. Combine a wide range of powerful search filters help you get straight to the issues you're looking for and focus on just what you need.
           </div>
         </div>
       </div>
@@ -84,7 +97,7 @@
           </div>
           <div class="media-body">
             <h5>Built for keyboard warriors</h5>
-            Navigate, triage and manage your notifications like a pro using Gmail-inspired keyboard shortcuts for every function, no mouse required.
+            Navigate, triage and manage your issues like a pro using Gmail-inspired keyboard shortcuts for every function, no mouse required.
           </div>
         </div>
       </div>      
@@ -96,7 +109,7 @@
     <div class="container readable mb-5">
 
       <h3 id='pricing' class='pt-4'>Pricing</h3>
-      <p class='pt-3 text-large'>Octobox is <b>free for open source</b> projects. To add private repository access to your personal or organisation's account:</p>
+      <p class='pt-3 text-large'>Speed is <b>free for open source</b> projects. To add private repository access to your personal or organisation's account:</p>
       <div class='d-flex flex-column flex-lg-row pt-3 justify-content-center'>
         <%= render('pages/opencollective')%>
         <%= render('pages/github')%>

@@ -1,11 +1,11 @@
 {
-    "name": "Octobox",
-    "short_name": "Octobox",
+    "name": "Speed",
+    "short_name": "Speed",
     "start_url": "/",
     "display": "standalone",
     "background_color": "#14171a",
     "theme_color": "#14171a",
-    "description": "Untangle your GitHub Notifications",
+    "description": "Add Bounties to Github",
     "icons": [
         {
             "src": "/icon/icon.72.png",

@@ -40,6 +40,7 @@ $(document).on('change', '.js-select_all', Octobox.checkAll);
 
 $(document).on('click', 'button.select_all', Octobox.toggleSelectAll);
 $(document).on('click', 'button.archive_selected', Octobox.archiveSelected);
+$(document).on('click', 'button.bounty_selected', Octobox.bountySelected);
 $(document).on('click', 'button.unarchive_selected', Octobox.unarchiveSelected);
 $(document).on('click', 'button.archive', Octobox.archiveThread);
 $(document).on('click', 'button.unarchive', Octobox.unarchiveThread);

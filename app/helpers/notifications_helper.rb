@@ -57,7 +57,8 @@ module NotificationsHelper
       unlabelled: params[:unlabelled],
       assigned:   params[:assigned],
       is_private: params[:is_private],
-      status:     params[:status]
+      status:     params[:status],
+      bounty:     params[:bounty]
     }
   end
 
@@ -67,6 +68,10 @@ module NotificationsHelper
 
   def archive_selected?
     filters[:archive].present?
+  end
+
+  def bounty_selected?
+    false
   end
 
   def starred_selected?
@@ -127,6 +132,10 @@ module NotificationsHelper
 
   def archive_selected_button
     function_button("Archive selected", 'checklist', "archive_toggle archive_selected", 'Archive selected items')
+  end
+
+  def bounty_selected_button
+    function_button("Add bounty", 'credit-card', "bounty_selected", 'Bounty selected item')
   end
 
   def unarchive_selected_button

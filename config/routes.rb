@@ -34,6 +34,7 @@ Rails.application.routes.draw do
   resources :notifications, only: [] do
     collection do
       post :archive_selected
+      post :bounty_selected
       post :sync
       get  :sync
       get  :syncing
