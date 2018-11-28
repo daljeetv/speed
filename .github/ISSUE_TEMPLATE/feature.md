@@ -1,6 +1,7 @@
 ---
-name: 🐣 Feature Request
-about: Propose a non-trivial change or new feature for Octobox
+name: "\U0001F423 Feature Request"
+about: Propose a non-trivial change or new feature for Speed
+
 ---
 
 ## 💥 Proposal

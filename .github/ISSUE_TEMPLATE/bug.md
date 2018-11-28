@@ -1,12 +1,13 @@
 ---
-name: 🐛 Bug Report
-about: Create a report to help us improve Octobox
+name: "\U0001F41B Bug Report"
+about: Create a report to help us improve Speed
+
 ---
 
 <!--- Provide a general summary of the issue in the Title above -->
 
 Are you experiencing this issue in octobox.io or your own instance?
- - [ ] octobox.io
+ - [ ] speed.io
  - [ ] My instance
 
 🐞 **Problem**

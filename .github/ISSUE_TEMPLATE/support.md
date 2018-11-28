@@ -1,6 +1,7 @@
 ---
-name: ❓ Questions/Help
+name: "❓ Questions/Help"
 about: As a support question
+
 ---
 
 <!-- Having trouble installing? Be sure to check out the installation docs! https://github.com/octobox/octobox/blob/master/docs/INSTALLATION.md -->
@@ -19,7 +20,7 @@ about: As a support question
 
 ### Versions, Operating System and Hardware
 
-- Which version/commit of Octobox are you using?
-- Which browser are you accessing Octobo with?
+- Which version/commit of Speed are you using?
+- Which browser are you accessing Speed with?
 - Windows? Linux? Mac?
 - How are you deploying Octobox (Docker, Heroku, Openshift, etc)
