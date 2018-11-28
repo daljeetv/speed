@@ -83,7 +83,61 @@ class UsersController < ApplicationController
     end
   end
 
+  def payment; end
+
+  def add_card
+    if current_user.stripe_id.blank?
+      customer = Stripe::Customer.create(
+          customer: current_user.github_id
+      )
+      current_user.stripe_id = customer.id
+      current_user.save
+    else
+      customer = Stripe::Customer.retrieve(current_user.stripe_id)
+    end
+
+    # Add Credit Card to Stripe
+    month, year  = params[:expiry].split(/ \/ /)
+    new_token = Stripe::Token.create(:card => {
+        :number => params[:number],
+        :exp_month => month,
+        :exp_year => year,
+        :cvc => params[:cvv]
+    })
+    customer.sources.create(source: new_token.id)
+
+    flash[:notice] = "Your card is saved."
+    redirect_to_payment_method_path
+  rescue Stripe::CardError => e
+    flash[:alert] = e.message
+  end
+
   private
+
+  def charge(notification, bounty)
+    if !bounty.user.stripe_id.blank?
+      #get the customer from Stripe and charge her.
+      customer = Stripe::Customer.retrieve(bounty.user.stripe_id)
+      charge = Stripe::Charge.create(
+        :customer => customer.id,
+        :amount => bounty.total * 100,
+        :description => notification.subject_title,
+        :currency => 'usd'
+      )
+      # if the charge is successful then approve the bounty!
+      if charge
+        bounty.approved!
+        flash[:notice] = 'Bounty created successfully!'
+      else
+        bounty.declined!
+        flash[:notice] = 'Cannot charge with this payment method!'
+      end
+    end
+  rescue Stripe::CardError => e
+    bounty.declined!
+    flash[:notice] = e.message
+  end
+
 
   def ensure_correct_user
     return unless params[:id]

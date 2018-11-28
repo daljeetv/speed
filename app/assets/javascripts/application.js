@@ -3,6 +3,7 @@
 //= require turbolinks
 //= require local-time
 //= require popper
+//= require card
 //= require bootstrap/util
 //= require bootstrap/collapse
 //= require bootstrap/alert

@@ -3,7 +3,7 @@ name: ❓ Questions/Help
 about: As a support question
 ---
 
-<!-- Having trouble installing? Be sure to check out the installation docs! https://github.com/octobox/octobox/blob/master/docs/INSTALLATION.md -->
+<!-- Having trouble installing? Be sure to check out the installation docs! https://github.com/speed/speed/blob/master/docs/INSTALLATION.md -->
 
 ### Summary of Problem
 
@@ -15,11 +15,11 @@ about: As a support question
 
 ### Steps to Reproduce the Issue
 
-(help octobox maintainers reproduce your issue to make it easier to fix)
+(help speed maintainers reproduce your issue to make it easier to fix)
 
 ### Versions, Operating System and Hardware
 
-- Which version/commit of Octobox are you using?
+- Which version/commit of speed are you using?
 - Which browser are you accessing Octobo with?
 - Windows? Linux? Mac?
-- How are you deploying Octobox (Docker, Heroku, Openshift, etc)
+- How are you deploying speed (Docker, Heroku, Openshift, etc)

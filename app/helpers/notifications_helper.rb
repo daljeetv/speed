@@ -135,7 +135,7 @@ module NotificationsHelper
   end
 
   def bounty_selected_button
-    function_button("Add bounty", 'credit-card', "bounty_selected", 'Bounty selected item')
+    function_button("Add bounty", 'credit-card', "bounty_selected", 'Add Bounty')
   end
 
   def unarchive_selected_button

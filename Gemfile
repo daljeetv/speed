@@ -35,6 +35,8 @@ gem 'yard'
 gem 'simple_form'
 gem 'github-markup', require: 'github/markup'
 gem 'kramdown'
+gem 'stripe'
+gem 'rails-assets-card', source: 'https://rails-assets.org'
 
 # Supported databases
 gem 'mysql2', require: false

@@ -1,7 +1,7 @@
 {
   "name": "Speed",
   "description": "Add Bounties to Github Issues",
-  "repository": "https://github.com/octobox/octobox",
+  "repository": "https://github.com/daljeetv/speed",
   "scripts": {
     "postdeploy": "bundle exec rake db:migrate"
   },
@@ -12,7 +12,7 @@
     "rails",
     "ruby"
   ],
-  "website": "https://octobox.io/",
+  "website": "https://speed.io/",
   "license": "AGPL-3.0-only",
   "env": {
     "OCTOBOX_ATTRIBUTE_ENCRYPTION_KEY": {

@@ -34,7 +34,6 @@ Rails.application.routes.draw do
   resources :notifications, only: [] do
     collection do
       post :archive_selected
-      post :bounty_selected
       post :sync
       get  :sync
       get  :syncing
@@ -51,6 +50,7 @@ Rails.application.routes.draw do
     end
   end
 
+  get  '/bounty_selected', to: 'pages#bounty'
   get '/documentation', to: 'pages#documentation'
   get '/support', to: redirect('/documentation#support')
 
@@ -62,10 +62,15 @@ Rails.application.routes.draw do
     get '/terms', to: 'pages#terms'
   end
 
+  #Stripe
+  get '/payment_method', to: 'users#payment'
+  post '/add_card', to: 'users#add_card'
+
+
   resources :pinned_searches
 
   get '/settings', to: 'users#edit'
-  resources :users, only: [:update, :destroy] do
+  resources :users, only: [:update, :destroy, :add_card, :payment] do
     collection do
       scope format: true, constraints: { format: 'json' } do
         get :profile

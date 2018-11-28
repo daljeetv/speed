@@ -179,14 +179,14 @@ class NotificationsController < ApplicationController
   # <code>POST notifications/bounty_selected.json?id=all</code>
   #   HEAD 204
   #
-  def bounty_selected
-    Notification.bounty(selected_notifications, params[:value])
-    if request.xhr?
-      head :ok
-    else
-      redirect_back fallback_location: root_path
-    end
-  end
+  # def bounty_selected
+  #   Notification.bounty(selected_notifications, params[:value])
+  #   if request.xhr?
+  #     head :ok
+  #   else
+  #     redirect_back fallback_location: root_path
+  #   end
+  # end
 
   # Archive selected notifications
   #

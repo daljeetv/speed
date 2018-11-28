@@ -205,7 +205,7 @@ var Octobox = (function() {
   }
 
   var bounty = function(ids, value){
-      $.post( "/notifications/bounty_selected" + location.search, { "id[]": ids, "value": value } ).done(function() {
+      $.get( "/notifications/bounty_selected" + location.search, { "id[]": ids, "value": value } ).done(function() {
           resetCursorAfterRowsRemoved(ids);
           updateFavicon();
       });
@@ -400,7 +400,7 @@ var Octobox = (function() {
   } ;
 
   var viewThread = function() {
-    history.pushState({thread: $(this).attr('href')}, 'Octobox', $(this).attr('href'))
+    history.pushState({thread: $(this).attr('href')}, 'Speed', $(this).attr('href'))
     $.get($(this).attr('href'), function(data){
       if (data["error"] != null) {
         $(".header-flash-messages").empty();

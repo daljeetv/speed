@@ -134,6 +134,10 @@ module Octobox
       end
     end
 
+    def stripe_connect_url
+      "https://connect.stripe.com/express/oauth/authorize?redirect_uri="+ENV['STRIPE_REDIRECT_URI']+"&client_id="+ENV['STRIPE_CLIENT_ID']
+    end
+
     def app_url
       if marketplace_url.present?
         marketplace_url

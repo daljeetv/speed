@@ -135,6 +135,10 @@ objects:
           env:
           - name: RAILS_ENV
             value: "${RAILS_ENV}"
+          - name: STRIPE_CLIENT_ID
+            value: "${STRIPE_CLIENT_ID}"
+          - name: STRIPE_REDIRECT_URI
+            value: "${STRIPE_REDIRECT_URI}"
           - name: GITHUB_CLIENT_ID
             value: "${GITHUB_CLIENT_ID}"
           - name: GITHUB_CLIENT_SECRET

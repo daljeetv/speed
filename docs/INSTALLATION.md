@@ -129,6 +129,8 @@ Once you've created your application you can then then add the following to your
 ```
 GITHUB_CLIENT_ID=yourclientidhere
 GITHUB_CLIENT_SECRET=yourclientsecrethere
+STRIPE_CLIENT_ID=yourstripeclientid
+STRIPE_REDIRECT_URI=yourstriperedirecturi
 ```
 
 Finally you can boot the rails app:
@@ -175,7 +177,7 @@ services:
       dockerfile: Dockerfile
 ```
 
-Using `docker-compose up` automatically merges the override file in to the base configuration.
+Using `bundle install && docker-compose build && docker-compose up` automatically merges the override file in to the base configuration.
 
 ### Configuring a production environment
 
