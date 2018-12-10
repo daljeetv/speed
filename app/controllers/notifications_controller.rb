@@ -3,6 +3,10 @@ class NotificationsController < ApplicationController
   skip_before_action :authenticate_user!
   before_action :authenticate_web_or_api!
   before_action :find_notification, only: [:star, :mark_read]
+  helper_method :selected_notification
+  def new
+    @notification = current_user.notifications.build
+  end
 
   # Return a listing of notifications, including a summary of unread repos, notification reasons, and notification types
   #
@@ -166,27 +170,28 @@ class NotificationsController < ApplicationController
     end
   end
 
-  # Bounty selected issues
+  # Reward selected issues
   #
   # :category: Notifications Actions
   #
   # ==== Parameters
   #
-  # * +:id+ - An array of IDs of issues you'd like to archive. If ID is 'all', all notifications will be archived
+  # * +:id - The Id of issue you'd like to reward.
+  # * +:amount - The value of the reward
   #
   # ==== Example
   #
-  # <code>POST notifications/bounty_selected.json?id=all</code>
+  # <code>POST notifications/reward_selected?id=123?value=100.00</code>
   #   HEAD 204
   #
-  # def bounty_selected
-  #   Notification.bounty(selected_notifications, params[:value])
-  #   if request.xhr?
-  #     head :ok
-  #   else
-  #     redirect_back fallback_location: root_path
-  #   end
-  # end
+  def reward
+    Notification.reward(selected_notifications, params[:amount], current_user)
+    if request.xhr?
+      head :ok
+    else
+      redirect_back fallback_location: root_path
+    end
+  end
 
   # Archive selected notifications
   #
@@ -209,6 +214,8 @@ class NotificationsController < ApplicationController
       redirect_back fallback_location: root_path
     end
   end
+
+
 
   # Mark selected notifications as read
   #
@@ -262,6 +269,19 @@ class NotificationsController < ApplicationController
   def mark_read
     @notification.update_columns unread: false
     head :ok
+  end
+
+  # Get notification data
+  #
+  # :category: Notifications Actions
+  #
+  # ==== Example
+  #
+  # <code>POST notifications/:id/mark_read.json</code>
+  #   HEAD 204
+  #
+  def data
+    render json: { 'notifications' => selected_notifications }
   end
 
   # Star a notification

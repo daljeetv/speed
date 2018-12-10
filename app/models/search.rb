@@ -210,10 +210,6 @@ class Search
     boolean_prefix(:starred)
   end
 
-  def bounty
-    boolean_prefix(:bounty)
-  end
-
   def inbox
     boolean_prefix(:inbox)
   end

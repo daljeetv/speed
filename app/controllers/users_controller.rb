@@ -127,7 +127,7 @@ class UsersController < ApplicationController
       # if the charge is successful then approve the bounty!
       if charge
         bounty.approved!
-        flash[:notice] = 'Bounty created successfully!'
+        flash[:notice] = 'Reward created successfully!'
       else
         bounty.declined!
         flash[:notice] = 'Cannot charge with this payment method!'

@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user: one
+  notification: one
+  start_date: 2018-11-29 21:11:53
+  end_date: 2018-11-29 21:11:53
+  bounty_amount: 1
+
+two:
+  user: two
+  notification: two
+  start_date: 2018-11-29 21:11:53
+  end_date: 2018-11-29 21:11:53
+  bounty_amount: 1

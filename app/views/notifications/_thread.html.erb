@@ -3,7 +3,6 @@
     <button class="btn btn-sm btn-outline-dark toggle-star <%=@notification.starred ? 'star-active' : 'star-inactive' %>" data-id= <%=@notification.id%> title=<%= @notification.starred ? 'Remove star' : 'Star'%> data-toggle='tooltip'>
       <%= octicon 'star', height: 18%>
     </button>
-    <%= bounty_button unless bounty_selected? %>
     <%= archive_button unless archive_selected? %>
     <%= unarchive_button unless inbox_selected? %>
     <%= mute_button %>

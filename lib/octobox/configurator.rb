@@ -190,6 +190,10 @@ module Octobox
     def include_comments
       @include_comments || env_boolean('INCLUDE_COMMENTS')
     end
+
+    def display_bounty
+      env_boolean('DISPLAY_BOUNTY')
+    end
     attr_writer :include_comments
 
     private

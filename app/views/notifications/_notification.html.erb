@@ -62,7 +62,7 @@
   </td>
   <td class='notification-subject-author'>
     <small>
-      $ <%= notification.bounty %>
+      $ <%= notification.rewards.sum(:amount) %>
     </small>
   </td>
   <% unless params[:repo].present? %>

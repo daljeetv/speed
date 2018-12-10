@@ -30,6 +30,7 @@ class Notification < ApplicationRecord
   belongs_to :subject, foreign_key: :subject_url, primary_key: :url, optional: true
   belongs_to :repository, foreign_key: :repository_full_name, primary_key: :full_name, optional: true
   has_many :labels, through: :subject
+  has_many :rewards
 
   validates :subject_url, presence: true
   validates :archived, inclusion: [true, false]
@@ -67,9 +68,10 @@ class Notification < ApplicationRecord
     mark_read(notifications)
   end
 
-  def self.bounty(notifications, value)
-    value = value ? ActiveRecord::Type::Integer.new.cast(value): 1
-    notifications.update_all(bounty: 1)
+  def self.reward(notification, amount, current_user)
+    value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
+    reward = Reward.create(notification, value, current_user)
+    Rails.logger.info("reward created: #{reward} for value #{value} for notification #{notification}" )
   end
 
   def self.mark_read(notifications)

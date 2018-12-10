@@ -47,10 +47,12 @@ Rails.application.routes.draw do
       get  :show
       post :star
       post :mark_read
+      get  :data
+      post :reward
     end
+    resources :rewards, only: [:create]
   end
 
-  get  '/bounty_selected', to: 'pages#bounty'
   get '/documentation', to: 'pages#documentation'
   get '/support', to: redirect('/documentation#support')
 
