@@ -181,6 +181,14 @@ var Octobox = (function() {
     reward(id, reward_amount);
   }
 
+  var distributeReward = function() {
+    var id = getIdsFromRows(getMarkedOrCurrentRows());
+    var reward_amount = $('#rightbar_reward_amount_id').text();
+    var rewardee = $('#rewardee').val();
+    distribute(id, reward_amount, rewardee);
+  }
+
+
   var unarchiveSelected = function(){
     if (getDisplayedRows().length === 0) return;
     var ids = getIdsFromRows(getMarkedOrCurrentRows());
@@ -205,10 +213,24 @@ var Octobox = (function() {
   }
 
   var reward = function(id, amount){
-    $.post( "/notifications/"+id+"/reward", {"amount": amount}).done(function() {
+    $.post( "/notifications/"+id+"/reward", {"amount": amount}).done(function(resp) {
+      // if(resp !== undefined && resp.message !== undefined){
+      //   console.log('notifying!', resp.message);
+      //   $(".header-flash-messages").empty();
+      //   notify(resp.message, "danger")
+      // }
       resetCursorAfterRowsRemoved([id]);
       updateFavicon()
     });
+  }
+
+  var distribute = function(id, reward_amount, rewardee){
+    var data = {"reward_amount": reward_amount, "rewardee": rewardee};
+    $.post(`notifications/${id}/distribute`, data).done(function() {
+        resetCursorAfterRowsRemoved([id]);
+        updateFavicon();
+    });
+    console.log(`id: ${id} reward_amount: ${reward_amount} rewardee: ${rewardee}`)
   }
 
   var toggleSelectAll = function() {
@@ -304,12 +326,20 @@ var Octobox = (function() {
           var id = getIdsFromRows(getMarkedOrCurrentRows());
           $("#rightbar").fadeIn(300).css("display", "inline");
           $.get("/notifications/"+id+"/data.json", function(notification_data){
-            console.log(notification_data["notifications"][0]);
             $("#rightbar_notification_id").text(notification_data["notifications"][0]['subject_title']);
+            $.get("/notifications/"+id+"/reward_data.json", function(reward_balance) {
+                reward_balance = parseInt(reward_balance['reward_balance']);
+                if(hasReward(reward_balance)) {
+                  $("#rightbar_reward_amount_id").text(reward_balance);
+                  $("#rightbar_distribute_id").css("display", "block");
+                }else {
+                  $("#rightbar_distribute_id").css("display", "none");
+                }
+            });
             $("#rightbar_notification_url").attr("href", notification_data["notifications"][0]['subject_url']);
           });
       }
-      $("button.archive_selected, button.create_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
+      $("button.archive_selected, button.create_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
       if ( !hasMarkedRows(true) ) {
         $(".js-select_all").prop("checked", true).prop("indeterminate", false);
         $("button.select_all").show().css("display", "inline-block");
@@ -320,7 +350,7 @@ var Octobox = (function() {
     } else {
       $("#rightbar").css("display", "none");
       $(".js-select_all").prop("checked", false).prop("indeterminate", false);
-      $("button.archive_selected, button.create_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
+      $("button.archive_selected, button.create_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
     }
     var marked_unread_length = getMarkedRows().filter(".active").length;
     if ( marked_unread_length > 0 ) {
@@ -451,6 +481,10 @@ var Octobox = (function() {
     return getMarkedRows(unmarked).length > 0
   };
 
+  var hasReward = function(reward_balance) {
+      return reward_balance > 0
+  }
+
   var getCurrentRow = function() {
     return getDisplayedRows().has("td.js-current")
   };
@@ -481,7 +515,7 @@ var Octobox = (function() {
     }
 
     window.current_id = getIdsFromRows(current)[0];
-    Turbolinks.visit("/"+location.search);
+    Turbolinks.visit("/"+location.search)
   };
 
   var toggleStar = function() {
@@ -592,6 +626,7 @@ var Octobox = (function() {
     markReadSelected: markReadSelected,
     archiveSelected: archiveSelected,
     createReward: createReward,
+    distributeReward: distributeReward,
     unarchiveSelected: unarchiveSelected,
     toggleSelectAll: toggleSelectAll,
     sync: sync,

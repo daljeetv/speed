@@ -1,17 +1,35 @@
-<div class="Subhead mt-0 mb-0">
-  <h2 class="bounty-section">Add Reward</h2>
-</div>
-<div class="bounty-section">
-  Issue:
-  <a id="rightbar_notification_url">
-    <div id="rightbar_notification_id">
+<div>
+  <div id="rightbar_reward_id">
+    <div class="Subhead mt-0 mb-0">
+      <h2 class="bounty-section">Add Reward</h2>
     </div>
-  </a>
-</div>
-<div class="bounty-section">
-  Price:
-  $ <input id="bounty-amount" type="number" min="0.01" step="0.01" max="100000" value="100.00"/>
-</div>
-<div class="bounty-section" id="last-bounty-section" >
-  <%= create_reward_button %>
+    <div class="bounty-section">
+      Issue:
+      <a id="rightbar_notification_url">
+        <div id="rightbar_notification_id">
+        </div>
+      </a>
+    </div>
+    <div class="bounty-section">
+      Price:
+      $ <input id="bounty-amount" type="number" min="0.01" step="0.01" max="100000" value="100.00"/>
+    </div>
+    <div class="bounty-section" id="last-bounty-section" >
+      <%= create_reward_button %>
+    </div>
+  </div>
+  <div id="rightbar_distribute_id">
+    <div class="Subhead mt-0 mb-0">
+      <h2 class="bounty-section">Distribute Reward</h2>
+    </div>
+    <div class="bounty-section">
+      Your Total Contribution $ <span id="rightbar_reward_amount_id"></span>
+    </div>
+    <div class="bounty-section">
+      User: <input id="rewardee" type="string" value="torvalds"/>
+    </div>
+    <div class="bounty-section" id="last-bounty-section" >
+      <%= distribute_reward_button %>
+    </div>
+  </div>
 </div>

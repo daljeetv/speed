@@ -433,6 +433,7 @@ DEPENDENCIES
   guard-minitest
   jbuilder
   jquery-rails
+  json
   jwt
   kaminari
   kramdown

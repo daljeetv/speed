@@ -48,7 +48,10 @@ Rails.application.routes.draw do
       post :star
       post :mark_read
       get  :data
+      get  :reward_data
       post :reward
+      post :distribute
+
     end
     resources :rewards, only: [:create]
   end
@@ -65,8 +68,8 @@ Rails.application.routes.draw do
   end
 
   #Stripe
-  get '/payment_method', to: 'users#payment'
   post '/add_card', to: 'users#add_card'
+  get '/add_bank', to: 'users#add_bank'
 
 
   resources :pinned_searches

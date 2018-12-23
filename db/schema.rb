@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_11_30_051153) do
+ActiveRecord::Schema.define(version: 2018_12_23_024330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -83,6 +83,17 @@ ActiveRecord::Schema.define(version: 2018_11_30_051153) do
     t.index ["subject_url"], name: "index_notifications_on_subject_url"
     t.index ["user_id", "archived", "updated_at"], name: "index_notifications_on_user_id_and_archived_and_updated_at"
     t.index ["user_id", "github_id"], name: "index_notifications_on_user_id_and_github_id", unique: true
+  end
+
+  create_table "payouts", force: :cascade do |t|
+    t.bigint "notification_id"
+    t.bigint "reward_id"
+    t.integer "reward_github_id"
+    t.integer "rewardee_github_id"
+    t.date "payout_date"
+    t.decimal "payout_amount"
+    t.index ["notification_id"], name: "index_payouts_on_notification_id"
+    t.index ["reward_id"], name: "index_payouts_on_reward_id"
   end
 
   create_table "pinned_searches", force: :cascade do |t|
@@ -179,11 +190,14 @@ ActiveRecord::Schema.define(version: 2018_11_30_051153) do
     t.string "theme", default: "light"
     t.boolean "display_comments", default: false
     t.string "stripe_id"
+    t.string "payout_stripe_id"
     t.index ["api_token"], name: "index_users_on_api_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
   end
 
   add_foreign_key "labels", "subjects", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "payouts", "notifications"
+  add_foreign_key "payouts", "rewards"
   add_foreign_key "rewards", "notifications"
   add_foreign_key "rewards", "users"
 end

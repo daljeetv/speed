@@ -70,8 +70,12 @@ class Notification < ApplicationRecord
 
   def self.reward(notification, amount, current_user)
     value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
-    reward = Reward.create(notification, value, current_user)
-    Rails.logger.info("reward created: #{reward} for value #{value} for notification #{notification}" )
+    Reward.create(notification, value, current_user)
+  end
+
+  def self.distribute(notification, payout_amount, rewarder, rewardee)
+    value = payout_amount ? ActiveRecord::Type::Decimal.new.cast(payout_amount) : 0.00
+    Payout.create(notification, value, rewarder, rewardee)
   end
 
   def self.mark_read(notifications)

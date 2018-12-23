@@ -83,8 +83,6 @@ class UsersController < ApplicationController
     end
   end
 
-  def payment; end
-
   def add_card
     if current_user.stripe_id.blank?
       customer = Stripe::Customer.create(
@@ -107,37 +105,19 @@ class UsersController < ApplicationController
     customer.sources.create(source: new_token.id)
 
     flash[:notice] = "Your card is saved."
-    redirect_to_payment_method_path
   rescue Stripe::CardError => e
     flash[:alert] = e.message
   end
 
-  private
-
-  def charge(notification, bounty)
-    if !bounty.user.stripe_id.blank?
-      #get the customer from Stripe and charge her.
-      customer = Stripe::Customer.retrieve(bounty.user.stripe_id)
-      charge = Stripe::Charge.create(
-        :customer => customer.id,
-        :amount => bounty.total * 100,
-        :description => notification.subject_title,
-        :currency => 'usd'
-      )
-      # if the charge is successful then approve the bounty!
-      if charge
-        bounty.approved!
-        flash[:notice] = 'Reward created successfully!'
-      else
-        bounty.declined!
-        flash[:notice] = 'Cannot charge with this payment method!'
-      end
+  def add_bank
+    if request.query_parameters.has_key?("code")
+      code = request.query_parameters["code"]
+      current_user.payout_stripe_id = code
+      current_user.save
     end
-  rescue Stripe::CardError => e
-    bounty.declined!
-    flash[:notice] = e.message
   end
 
+  private
 
   def ensure_correct_user
     return unless params[:id]

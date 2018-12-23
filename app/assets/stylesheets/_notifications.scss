@@ -111,10 +111,10 @@ $notification-items: (
       overflow: hidden;
     }
 
-    .notification-bounty{
-      max-width: 3rem;
-      overflow: hidden;
+    .notification-reward-amount {
+      width: 5rem
     }
+
     .notification-date{
       min-width: 5.5em;
     }

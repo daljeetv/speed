@@ -185,7 +185,31 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def reward
-    Notification.reward(selected_notifications, params[:amount], current_user)
+    message = Notification.reward(selected_notifications, params[:amount], current_user)
+    Rails.logger.info("Got back message! #{message}")
+    if request.xhr?
+      render json: {status: 'ok', message: message}
+    else
+      redirect_back fallback_location: root_path
+    end
+  end
+
+  # Distribute contributions to selected issues
+  #
+  # :category: Notifications Actions
+  #
+  # ==== Parameters
+  #
+  # * +:id - The Id of issue you'd like to reward.
+  # * +:amount - The value of the reward
+  #
+  # ==== Example
+  #
+  # <code>POST notifications/reward_selected?id=123?value=100.00</code>
+  #   HEAD 204
+  #
+  def distribute
+     Notification.distribute(selected_notifications, params[:reward_amount], current_user, params[:rewardee])
     if request.xhr?
       head :ok
     else
@@ -277,11 +301,24 @@ class NotificationsController < ApplicationController
   #
   # ==== Example
   #
-  # <code>POST notifications/:id/mark_read.json</code>
+  # <code>POST notifications/:id/data.json</code>
   #   HEAD 204
   #
   def data
     render json: { 'notifications' => selected_notifications }
+  end
+
+  # Get notification reward data
+  #
+  # :category: Notifications Actions
+  #
+  # ==== Example
+  #
+  # <code>POST notifications/:id/reward_data.json</code>
+  #   HEAD 204
+  #
+  def reward_data
+    render json: { 'reward_balance' => get_remaining_balance(selected_notifications, current_user) }
   end
 
   # Star a notification
@@ -348,6 +385,18 @@ class NotificationsController < ApplicationController
 
   def user_unread_count
     current_user.notifications.inbox.distinct.group(:unread).count.fetch(true){ 0 }
+  end
+
+  def get_rewards
+    rewards = []
+    selected_notifications.each do |notification|
+      rewards.push(notification.rewards)
+    end
+    rewards
+  end
+
+  def get_remaining_balance(notifications, user)
+    Payout.get_payout_remaining_balance(notifications, user)
   end
 
   def selected_notifications

@@ -130,7 +130,11 @@ module NotificationsHelper
   end
 
   def create_reward_button
-    function_button("Create Reward", 'credit-card', "archive_toggle create_reward", 'Create Reward')
+    function_button("Create Reward", 'credit-card', "create_reward", 'Create Reward')
+  end
+
+  def distribute_reward_button
+    function_button("Distribute Reward", 'law', "distribute_reward", 'Distribute Reward')
   end
 
   def unarchive_selected_button

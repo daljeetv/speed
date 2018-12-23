@@ -29,5 +29,5 @@ public/docs
 .database
 config/sidekiq_custom_schedule.yml
 .yardoc
-.idea
+.idea/
 
