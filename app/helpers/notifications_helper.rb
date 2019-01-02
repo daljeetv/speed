@@ -57,7 +57,8 @@ module NotificationsHelper
       unlabelled: params[:unlabelled],
       assigned:   params[:assigned],
       is_private: params[:is_private],
-      status:     params[:status]
+      status:     params[:status],
+      claim:      params[:claim]
     }
   end
 
@@ -67,6 +68,10 @@ module NotificationsHelper
 
   def archive_selected?
     filters[:archive].present?
+  end
+
+  def claim_selected?
+    filters[:claim].present?
   end
 
   def starred_selected?

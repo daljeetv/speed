@@ -85,17 +85,6 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.index ["user_id", "github_id"], name: "index_notifications_on_user_id_and_github_id", unique: true
   end
 
-  create_table "payouts", force: :cascade do |t|
-    t.bigint "notification_id"
-    t.bigint "reward_id"
-    t.integer "reward_github_id"
-    t.integer "rewardee_github_id"
-    t.date "payout_date"
-    t.decimal "payout_amount"
-    t.index ["notification_id"], name: "index_payouts_on_notification_id"
-    t.index ["reward_id"], name: "index_payouts_on_reward_id"
-  end
-
   create_table "pinned_searches", force: :cascade do |t|
     t.bigint "user_id"
     t.string "query"
@@ -123,6 +112,9 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.datetime "start_date"
     t.datetime "end_date"
     t.decimal "amount"
+    t.string "distributed_to"
+    t.datetime "distribute_date"
+    t.datetime "payout_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["notification_id"], name: "index_rewards_on_notification_id"
@@ -191,13 +183,12 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.boolean "display_comments", default: false
     t.string "stripe_id"
     t.string "payout_stripe_id"
+    t.string "stripe_credit_card_token"
     t.index ["api_token"], name: "index_users_on_api_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
   end
 
   add_foreign_key "labels", "subjects", on_update: :cascade, on_delete: :cascade
-  add_foreign_key "payouts", "notifications"
-  add_foreign_key "payouts", "rewards"
   add_foreign_key "rewards", "notifications"
   add_foreign_key "rewards", "users"
 end

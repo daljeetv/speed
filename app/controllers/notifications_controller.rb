@@ -185,10 +185,15 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def reward
-    message = Notification.reward(selected_notifications, params[:amount], current_user)
-    Rails.logger.info("Got back message! #{message}")
+    result = Notification.reward(selected_notifications, params[:amount], current_user)
+    message = result[:message]
+    Rails.logger.info("Got back result #{result} and error: #{result["error"]}")
     if request.xhr?
-      render json: {status: 'ok', message: message}
+      if result[:error]
+        flash[:error] = message
+      else
+        flash[:success] = message
+      end
     else
       redirect_back fallback_location: root_path
     end
@@ -318,7 +323,7 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def reward_data
-    render json: { 'reward_balance' => get_remaining_balance(selected_notifications, current_user) }
+    render json: { 'rewards' => selected_notifications[0].rewards }
   end
 
   # Star a notification
@@ -395,10 +400,6 @@ class NotificationsController < ApplicationController
     rewards
   end
 
-  def get_remaining_balance(notifications, user)
-    Payout.get_payout_remaining_balance(notifications, user)
-  end
-
   def selected_notifications
     if params[:id] == ['all']
       current_notifications
@@ -441,6 +442,8 @@ class NotificationsController < ApplicationController
       scope.starred
     elsif params[:archive].present?
       scope.archived
+    elsif params[:claim].present?
+      scope.claimed
     else
       scope.inbox
     end

@@ -31,7 +31,9 @@ class Search
     res = res.exclude_status(exclude_status) if exclude_status.present?
     res = res.starred(starred) unless starred.nil?
     res = res.archived(archived) unless archived.nil?
+    res = res.claimed(archived) unless claimed.nil?
     res = res.archived(!inbox) unless inbox.nil?
+    res = res.claimed(!inbox) unless inbox.nil?
     res = res.unread(unread) unless unread.nil?
     res = res.bot_author unless bot_author.nil?
     res = res.unlabelled unless unlabelled.nil?
@@ -57,6 +59,10 @@ class Search
 
   def archive_selected?
     inbox != true && archived == true
+  end
+
+  def claim_selected?
+    inbox != true && claimed == true
   end
 
   private
@@ -216,6 +222,10 @@ class Search
 
   def archived
     boolean_prefix(:archived)
+  end
+
+  def claimed
+    boolean_prefix(:claimed)
   end
 
   def bot_author

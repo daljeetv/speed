@@ -75,6 +75,7 @@ Rails.application.routes.draw do
   resources :pinned_searches
 
   get '/settings', to: 'users#edit'
+  get '/claim-payouts', to: 'users#payout-list'
   resources :users, only: [:update, :destroy, :add_card, :payment] do
     collection do
       scope format: true, constraints: { format: 'json' } do

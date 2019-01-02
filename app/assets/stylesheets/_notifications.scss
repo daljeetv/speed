@@ -128,7 +128,7 @@ $notification-items: (
     }
     &:hover, &:focus{
       .notification-date small{
-        display: none;
+        //display: none;
       }
       .buttons{
         display: inline;

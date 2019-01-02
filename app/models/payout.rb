@@ -9,7 +9,8 @@ class Payout < ApplicationRecord
   def self.create(notification, payout_amount, rewarder, rewardee)
 
     user_id = User.where("github_id = #{rewarder.github_id}").ids[0]
-    total_payouts_paid, total_rewards_amount = get_rewards_and_payouts(notification, user_id)
+    total_payouts_paid = 0.0
+    total_rewards_amount = 0.0
 
     Rails.logger.info("Payout amount #{payout_amount} and total_payouts_paid #{total_payouts_paid}")
     if total_rewards_amount < total_payouts_paid
@@ -46,24 +47,6 @@ class Payout < ApplicationRecord
         return flash_message
       end
     end
-  end
-
-  def self.get_payout_remaining_balance(notification, user)
-      payouts_amount, rewards_amount = get_rewards_and_payouts(notification.ids, user.id)
-      return rewards_amount - payouts_amount
-  end
-
-  def self.get_payout_remaining_balance_for_notification_id(notification_id, user)
-    payouts_amount, rewards_amount = get_rewards_and_payouts(notification_id, user.id)
-    return rewards_amount - payouts_amount
-  end
-
-  def self.get_rewards_and_payouts(notification_ids, user_id)
-    rewards = Reward.where(notification_id: notification_ids, user_id: user_id)
-    payouts = Payout.where(notification_id: notification_ids, reward_id: rewards.ids)
-    total_rewards_amount = rewards.sum(:amount)
-    total_payouts_paid = payouts.sum(:payout_amount)
-    return total_payouts_paid, total_rewards_amount
   end
 
   private

@@ -23,13 +23,10 @@
       <h2 class="bounty-section">Distribute Reward</h2>
     </div>
     <div class="bounty-section">
-      Your Total Contribution $ <span id="rightbar_reward_amount_id"></span>
+      Distribute to User: <br/> <input id="rewardee" type="string" value="torvalds"/> <img width="20" id="distribute-avatar" class="img-rounded navbar-avatar" alt="" src="https://github.com/torvalds.png?size=40">
     </div>
-    <div class="bounty-section">
-      User: <input id="rewardee" type="string" value="torvalds"/>
-    </div>
-    <div class="bounty-section" id="last-bounty-section" >
-      <%= distribute_reward_button %>
+    <div class="bounty-section" id="rewards-distribution-section" >
+      <%#= distribute_reward_button %>
     </div>
   </div>
 </div>

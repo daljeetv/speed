@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 class UsersController < ApplicationController
   before_action :ensure_correct_user
+  before_action :payouts
 
   # Return a user profile. Only shows the current user
   #
@@ -26,6 +27,11 @@ class UsersController < ApplicationController
     @most_active_repos = repo_counts.sort_by(&:last).reverse.first(10)
     @most_active_orgs = current_user.notifications.group(:repository_owner_name).count.sort_by(&:last).reverse.first(10)
     @pinned_search = PinnedSearch.new(query: params[:q])
+  end
+
+  def payouts
+    @payouts = Payout.all
+    return true
   end
 
   # Update a user profile. Only updates the current user
@@ -89,24 +95,31 @@ class UsersController < ApplicationController
           customer: current_user.github_id
       )
       current_user.stripe_id = customer.id
-      current_user.save
     else
       customer = Stripe::Customer.retrieve(current_user.stripe_id)
     end
 
     # Add Credit Card to Stripe
-    month, year  = params[:expiry].split(/ \/ /)
+    month, year  = params[:expiry].split("/")
     new_token = Stripe::Token.create(:card => {
         :number => params[:number],
-        :exp_month => month,
-        :exp_year => year,
+        :exp_month => month.to_i,
+        :exp_year => year.to_i,
         :cvc => params[:cvv]
     })
+    current_user.stripe_credit_card_token = new_token
     customer.sources.create(source: new_token.id)
+    current_user.save
 
     flash[:notice] = "Your card is saved."
+    redirect_to login_path, notice: "Your card is saved."
   rescue Stripe::CardError => e
+    Rails.logger.warn("Error #{e.message}")
     flash[:alert] = e.message
+    redirect_to settings_path, alert: e.message
+  rescue => e
+    flash[:alert] = e.message
+    redirect_to settings_path, alert: e.message
   end
 
   def add_bank
@@ -114,7 +127,9 @@ class UsersController < ApplicationController
       code = request.query_parameters["code"]
       current_user.payout_stripe_id = code
       current_user.save
+      flash[:notice] = "Your stripe account is saved. You can now receive payouts."
     end
+    redirect_to root_path
   end
 
   private

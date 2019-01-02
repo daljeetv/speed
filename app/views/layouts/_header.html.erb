@@ -51,14 +51,6 @@
           </span>
         </a>
         <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
-          <%= link_to "#{Octobox.config.github_domain}", class: 'dropdown-item', target: "_blank", rel: "noopener" do %>
-            <%= octicon 'mark-github', height: 16, class: 'text-muted' %>
-            GitHub Dashboard
-          <% end %>
-          <%= link_to documentation_path(anchor: 'support'), class: 'dropdown-item', target: "_blank", rel: "noopener" do %>
-            <%= octicon 'question', height: 16, class: 'text-muted' %>
-            Speed Support
-          <% end %>
           <% if current_user.admin? %>
             <%= link_to admin_path, class: 'dropdown-item' do %>
               <%= octicon 'gist-secret', height: 16, class: 'text-muted' %>
@@ -80,6 +72,10 @@
                 <%= octicon 'desktop-download', height: 16, class: 'text-muted' %>
                 Download Desktop App
               <% end %>
+          <% end %>
+          <%= link_to "#{Octobox.config.github_domain}", class: 'dropdown-item', target: "_blank", rel: "noopener" do %>
+            <%= octicon 'mark-github', height: 16, class: 'text-muted' %>
+            GitHub Dashboard
           <% end %>
           <%= link_to "settings", class: 'dropdown-item' do %>
             <%= octicon 'settings', height: 16, class: 'text-muted' %>

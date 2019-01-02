@@ -3,13 +3,20 @@ class Reward < ApplicationRecord
   belongs_to :notification
 
   def self.create(notification, amount, current_user)
-    Rails.logger.info('reward creation begun')
     if current_user.stripe_id.blank?
-      Rails.logger.info("Please update your payment method. Currently stripe id: #{current_user.stripe_id}")
-      return redirect_to payment_method_path
+      result = {
+          error: true,
+          message: 'Reward unsuccessful. Please update your payment method in settings.'
+      }
+      return result
     else
       @reward = current_user.rewards.create!(amount: amount, notification: notification[0], start_date: DateTime.now)
       self.charge(notification[0], @reward)
+      result = {
+          error: false,
+          message: "Successfully created reward for \"#{notification[0].subject_title}\" for $#{amount}"
+      }
+      return result
     end
   end
 
@@ -44,6 +51,12 @@ class Reward < ApplicationRecord
     Rails.logger.warn("Stripe Card Error #{e.message}")
     flash_message = e.message
     return flash_message
+  end
+
+  def self.get_total_rewards_amount(notification_ids, user_id)
+    rewards = Reward.where(notification_id: notification_ids, user_id: user_id)
+    total_rewards_amount = rewards.sum(:amount)
+    return total_rewards_amount
   end
 end
 

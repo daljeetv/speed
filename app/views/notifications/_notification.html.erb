@@ -62,7 +62,7 @@
   </td>
   <td class='notification-reward-amount'>
     <small>
-      $ <%= Payout.get_payout_remaining_balance_for_notification_id(notification.id, current_user) %>
+      $ <%= Reward.get_total_rewards_amount(notification.id, current_user) %>
     </small>
   </td>
   <% unless params[:repo].present? %>

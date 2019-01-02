@@ -323,7 +323,7 @@ only screen and (min-device-pixel-ratio: 1.5) {
   font-weight: 600;
   line-height: 20px;
   margin-bottom: 0;
-  margin-top: 0;
+  margin-top: 2px;
   padding: 8px 10px;
 }
 
@@ -339,8 +339,13 @@ only screen and (min-device-pixel-ratio: 1.5) {
   color: #fff;
 }
 
-#last-bounty-section {
-  border-bottom: none;
+#distribute-button {
+  margin-bottom: 10px;
+}
+
+#distribute-avatar {
+  width: 25px;
+  vertical-align: -6px;
 }
 
 #rightbar_distribute_id {

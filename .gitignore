@@ -30,4 +30,5 @@ public/docs
 config/sidekiq_custom_schedule.yml
 .yardoc
 .idea/
+.vagrant
 

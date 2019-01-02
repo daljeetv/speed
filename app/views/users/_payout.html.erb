@@ -1,0 +1,40 @@
+<tr id='notification-<%= payout.id %>' class='notification active'>
+  <td class='notification-checkbox align-middle'>
+    <div class="custom-control custom-checkbox">
+      <%= check_box_tag(
+              "payout_#{payout.id}",
+              payout.id,
+              false,
+              title: 'Payout',
+              class: 'custom-control-input active'
+          )
+      %>
+      <%= label_tag "payout_#{payout.id}", '', class: "custom-control-label" %>
+    </div>
+  </td>
+  <td class='notification-subject'>
+    <%= link_to notification_link(payout.notification), target: (Octobox.config.open_in_same_tab ? nil : '_blank'), rel: "noopener", class: 'subject-link link', data:{toggle:(payout.notification.display_thread? ? 'showthread' : nil)}, title: payout.notification.title do %>
+      <%= payout.notification.subject_title%>
+      <%= octicon('link-external', class:'text-primary') unless payout.notification.display_thread? %>
+    <% end %>
+
+    <% if payout.notification.display_subject? %>
+      <% if payout.notification.subject %>
+        <% payout.notification.subject.labels.each do |label| %>
+          <%= link_to emojify(label.name), root_path(filtered_params(label: label.name)), class: "badge d-sm", style: "background-color: ##{label.color}; color: #{label.text_color}" %>
+        <% end %>
+        <%= notification_status(payout.notification.subject.status) %>
+      <% end %>
+    <% end %>
+  </td>
+  <td class='notification-reward-amount'>
+    <small>
+      $ <%= payout.payout_amount %>
+    </small>
+  </td>
+  <td class='notification-date'>
+    <small class='text-muted'>
+      <%= local_relative_time(payout.payout_date, type: 'time-or-date') %>
+    </small>
+  </td>
+</tr>

@@ -70,7 +70,7 @@ class Notification < ApplicationRecord
 
   def self.reward(notification, amount, current_user)
     value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
-    Reward.create(notification, value, current_user)
+    return Reward.create(notification, value, current_user)
   end
 
   def self.distribute(notification, payout_amount, rewarder, rewardee)

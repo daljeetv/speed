@@ -116,13 +116,14 @@ var Octobox = (function() {
     window.row_index = 1;
     window.current_id = undefined;
 
-    $(document).keydown(function(e) {
-      // disable shortcuts for the seach box
-      if ($("#help-box").length && e.target.id !== "search-box" && !e.ctrlKey && !e.shiftKey && !e.metaKey) {
-        var shortcutFunction = shortcuts[e.which];
-        if (shortcutFunction) { shortcutFunction(e) }
-      }
-    });
+    // FIXME: for now disable shortcuts.
+    // $(document).keydown(function(e) {
+    //   // disable shortcuts for the seach box
+    //   if ($("#help-box").length && e.target.id !== "search-box" && !e.ctrlKey && !e.shiftKey && !e.metaKey) {
+    //     var shortcutFunction = shortcuts[e.which];
+    //     if (shortcutFunction) { shortcutFunction(e) }
+    //   }
+    // });
   };
 
   var checkAll = function() {
@@ -182,7 +183,7 @@ var Octobox = (function() {
   }
 
   var distributeReward = function() {
-    var id = getIdsFromRows(getMarkedOrCurrentRows());
+    console.log('I want to distribute id: ')
     var reward_amount = $('#rightbar_reward_amount_id').text();
     var rewardee = $('#rewardee').val();
     distribute(id, reward_amount, rewardee);
@@ -327,11 +328,19 @@ var Octobox = (function() {
           $("#rightbar").fadeIn(300).css("display", "inline");
           $.get("/notifications/"+id+"/data.json", function(notification_data){
             $("#rightbar_notification_id").text(notification_data["notifications"][0]['subject_title']);
-            $.get("/notifications/"+id+"/reward_data.json", function(reward_balance) {
-                reward_balance = parseInt(reward_balance['reward_balance']);
-                if(hasReward(reward_balance)) {
-                  $("#rightbar_reward_amount_id").text(reward_balance);
-                  $("#rightbar_distribute_id").css("display", "block");
+            $.get("/notifications/"+id+"/reward_data.json", function(rewards) {
+                console.log(rewards.rewards);
+                if(rewards.rewards.length > 0) {
+                    const $ul = $("#rewards-distribution-section");
+                    rewards.rewards.map(reward =>
+                        $ul.append(
+                            "<div><button class=\"distribute_reward btn btn-sm btn-outline-dark\" id=\"distribute-button\" >" +
+                            "Distribute Reward: $ " + reward.amount +
+                            "</button></div>"));
+                    $("#rightbar_distribute_id").css("display", "block");
+                    $('#rewardee').keydown(function(){
+                        $('#distribute-avatar').attr("src","https://github.com/"+$('#rewardee').val()+".png?size=40");
+                    })
                 }else {
                   $("#rightbar_distribute_id").css("display", "none");
                 }
@@ -346,6 +355,7 @@ var Octobox = (function() {
       } else {
         $(".js-select_all").prop("checked", false).prop("indeterminate", true);
         $("button.select_all").hide();
+        $("#rewards-distribution-section").empty();
       }
     } else {
       $("#rightbar").css("display", "none");

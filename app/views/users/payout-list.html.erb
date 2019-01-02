@@ -1,0 +1,26 @@
+<div class='flex-content'>
+  <div class="flex-sidebar">
+    <div id='sidebar' class="list-group list-group-flush flex-column pt-5">
+      <a class='list-group-item list-group-item-action' href='#documentation'>Claim Rewards</a>
+    </div>
+  </div>
+  <div class="flex-main">
+    <div class="card">
+      <div class='card-header d-lg-none sticky-top'>
+        <button id='sidebar_toggle' type="button" class="btn btn-sm btn-outline-dark" data-toggle="offcanvas" aria-label='Toggle sidebar'>
+          <%= octicon 'three-bars', :height => 16 %>
+        </button>
+      </div>
+      <div class='card-body'>
+<!--        <h1 id='documentation' class="text-left">Claim Rewards</h1>-->
+        <table class='table table-hover table-notifications js-table-notifications mb-0 <%= 'filtered' if any_active_filters? %>' data-refresh-interval=<%= current_user.effective_refresh_interval %>>
+          <% if @payouts.to_a.any? %>
+            <%= render partial: 'payout', collection: @payouts %>
+          <% else %>
+            <div>no notifications</div>
+          <% end %>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>
