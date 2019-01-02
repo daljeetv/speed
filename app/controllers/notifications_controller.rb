@@ -199,29 +199,6 @@ class NotificationsController < ApplicationController
     end
   end
 
-  # Distribute contributions to selected issues
-  #
-  # :category: Notifications Actions
-  #
-  # ==== Parameters
-  #
-  # * +:id - The Id of issue you'd like to reward.
-  # * +:amount - The value of the reward
-  #
-  # ==== Example
-  #
-  # <code>POST notifications/reward_selected?id=123?value=100.00</code>
-  #   HEAD 204
-  #
-  def distribute
-     Notification.distribute(selected_notifications, params[:reward_amount], current_user, params[:rewardee])
-    if request.xhr?
-      head :ok
-    else
-      redirect_back fallback_location: root_path
-    end
-  end
-
   # Archive selected notifications
   #
   # :category: Notifications Actions
@@ -319,11 +296,13 @@ class NotificationsController < ApplicationController
   #
   # ==== Example
   #
-  # <code>POST notifications/:id/reward_data.json</code>
+  # <code>POST notifications/:id/get_open_rewards.json</code>
   #   HEAD 204
   #
-  def reward_data
-    render json: { 'rewards' => selected_notifications[0].rewards }
+  def get_open_rewards
+    open_rewards = selected_notifications[0].rewards.where(distribute_date: nil)
+    Rails.logger.info("rewards: #{open_rewards[0]}")
+    render json: { 'rewards' => open_rewards }
   end
 
   # Star a notification

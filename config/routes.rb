@@ -48,12 +48,17 @@ Rails.application.routes.draw do
       post :star
       post :mark_read
       get  :data
-      get  :reward_data
+      get  :get_open_rewards
       post :reward
-      post :distribute
 
     end
     resources :rewards, only: [:create]
+  end
+
+  resources :rewards, only: [] do
+    member do
+      post :distribute
+    end
   end
 
   get '/documentation', to: 'pages#documentation'

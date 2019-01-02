@@ -20,6 +20,16 @@ class Reward < ApplicationRecord
     end
   end
 
+  def self.distribute(selected_rewards, rewardee)
+    Rails.logger.info("Distributing #{selected_rewards} rewardee: #{rewardee}")
+    reward = selected_rewards[0]
+    reward.update(distributed_to: rewardee, distribute_date: DateTime.now);
+    reward.save
+    message = "Successfully distributed reward: \"#{reward.notification.subject_title}\" to Github user: #{reward.distributed_to}"
+    Rails.logger.info(message)
+    return message
+  end
+
   private
 
   def self.charge(notification, reward)
@@ -54,7 +64,7 @@ class Reward < ApplicationRecord
   end
 
   def self.get_total_rewards_amount(notification_ids, user_id)
-    rewards = Reward.where(notification_id: notification_ids, user_id: user_id)
+    rewards = Reward.where(notification_id: notification_ids, user_id: user_id, distributed_to: nil)
     total_rewards_amount = rewards.sum(:amount)
     return total_rewards_amount
   end

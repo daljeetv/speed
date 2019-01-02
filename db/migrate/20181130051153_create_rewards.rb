@@ -7,7 +7,7 @@ class CreateRewards < ActiveRecord::Migration[5.2]
       t.datetime :end_date
       t.decimal :amount, null: 0.0
       t.string :distributed_to
-      t.datetime :distribute_date
+      t.datetime :distributed_date
       t.datetime :payout_date
       t.timestamps
     end

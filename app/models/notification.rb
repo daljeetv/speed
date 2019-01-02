@@ -73,11 +73,6 @@ class Notification < ApplicationRecord
     return Reward.create(notification, value, current_user)
   end
 
-  def self.distribute(notification, payout_amount, rewarder, rewardee)
-    value = payout_amount ? ActiveRecord::Type::Decimal.new.cast(payout_amount) : 0.00
-    Payout.create(notification, value, rewarder, rewardee)
-  end
-
   def self.mark_read(notifications)
     unread = notifications.select(&:unread)
     return if unread.empty?

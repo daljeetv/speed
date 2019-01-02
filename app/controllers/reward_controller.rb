@@ -1,3 +1,0 @@
-class RewardsController < ApplicationController
-
-end

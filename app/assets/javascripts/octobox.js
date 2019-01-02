@@ -183,10 +183,9 @@ var Octobox = (function() {
   }
 
   var distributeReward = function() {
-    console.log('I want to distribute id: ')
-    var reward_amount = $('#rightbar_reward_amount_id').text();
     var rewardee = $('#rewardee').val();
-    distribute(id, reward_amount, rewardee);
+    var id = this.value
+    distribute(id, rewardee);
   }
 
 
@@ -225,13 +224,13 @@ var Octobox = (function() {
     });
   }
 
-  var distribute = function(id, reward_amount, rewardee){
-    var data = {"reward_amount": reward_amount, "rewardee": rewardee};
-    $.post(`notifications/${id}/distribute`, data).done(function() {
-        resetCursorAfterRowsRemoved([id]);
+  var distribute = function(reward_id , rewardee){
+    var data = {"rewardee": rewardee};
+    $.post(`rewards/${reward_id}/distribute`, data).done(function() {
+        resetCursorAfterRowsRemoved([]);
         updateFavicon();
     });
-    console.log(`id: ${id} reward_amount: ${reward_amount} rewardee: ${rewardee}`)
+    console.log(`distributed reward with id: ${reward_id} rewardee: ${rewardee}`);
   }
 
   var toggleSelectAll = function() {
@@ -328,19 +327,20 @@ var Octobox = (function() {
           $("#rightbar").fadeIn(300).css("display", "inline");
           $.get("/notifications/"+id+"/data.json", function(notification_data){
             $("#rightbar_notification_id").text(notification_data["notifications"][0]['subject_title']);
-            $.get("/notifications/"+id+"/reward_data.json", function(rewards) {
+            $.get("/notifications/"+id+"/get_open_rewards.json", function(rewards) {
                 console.log(rewards.rewards);
                 if(rewards.rewards.length > 0) {
+                    //add rewards already placed - ready for distribution
                     const $ul = $("#rewards-distribution-section");
                     rewards.rewards.map(reward =>
                         $ul.append(
-                            "<div><button class=\"distribute_reward btn btn-sm btn-outline-dark\" id=\"distribute-button\" >" +
-                            "Distribute Reward: $ " + reward.amount +
-                            "</button></div>"));
-                    $("#rightbar_distribute_id").css("display", "block");
+                            `<div><button value=${reward.id} class="distribute_reward btn btn-sm btn-outline-dark" id="distribute-button" >Distribute Reward: $ ${reward.amount}</button></div>`));
+                    // Automatically update avatar of rewardee
                     $('#rewardee').keydown(function(){
                         $('#distribute-avatar').attr("src","https://github.com/"+$('#rewardee').val()+".png?size=40");
                     })
+                    //show distribution flow
+                    $("#rightbar_distribute_id").css("display", "block");
                 }else {
                   $("#rightbar_distribute_id").css("display", "none");
                 }
