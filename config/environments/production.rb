@@ -19,6 +19,7 @@ Rails.application.configure do
   config.public_file_server.enabled = ENV['RAILS_SERVE_STATIC_FILES'].present?
 
   # Compress JavaScripts and CSS.
+  # https://medium.com/@leog7one/how-to-fix-execjs-runtimeerror-syntaxerror-unexpected-character-on-heroku-push-deployment-c0b105a64655
   config.assets.js_compressor = Uglifier.new(harmony: true)
   # config.assets.css_compressor = :sass
 
