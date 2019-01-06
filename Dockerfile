@@ -1,4 +1,4 @@
-FROM ruby:2.3.7-alpine
+FROM ruby:2.6.0-alpine
 
 ENV APP_ROOT /usr/src/app
 WORKDIR $APP_ROOT
