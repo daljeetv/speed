@@ -1,3 +1,6 @@
+require 'net/http'
+require 'uri'
+
 # frozen_string_literal: true
 class UsersController < ApplicationController
   before_action :ensure_correct_user
@@ -100,6 +103,7 @@ class UsersController < ApplicationController
     end
 
     # Add Credit Card to Stripe
+    # For testing use: 4000 0000 0000 0077
     month, year  = params[:expiry].split("/")
     new_token = Stripe::Token.create(:card => {
         :number => params[:number],
@@ -124,10 +128,38 @@ class UsersController < ApplicationController
 
   def add_bank
     if request.query_parameters.has_key?("code")
+      # Fetch stripe user information.
+      # Step 4 of https://stripe.com/docs/connect/standard-accounts
+      # https://medium.com/@darealdemdestin/setting-up-stripe-connect-w-rails-e9b9dfde6c1e
+      options = {
+          site: 'https://connect.stripe.com',
+          authorize_url: '/oauth/authorize',
+          token_url: '/oauth/token'
+      }
       code = request.query_parameters["code"]
-      current_user.payout_stripe_id = code
+      client = OAuth2::Client.new(ENV['STRIPE_CONNECT_CLIENT_ID'], ENV['STRIPE_SECRET_KEY'], options)
+      @resp = client.auth_code.get_token(code, :params => {:scope => 'read_write'})
+      @access_token = @resp.token
+      # Stripe returns a response
+      # {
+      #   "token_type": "bearer",
+      #   "stripe_publishable_key": "{PUBLISHABLE_KEY}",
+      #   "scope": "read_write",
+      #   "livemode": false,
+      #   "stripe_user_id": "{ACCOUNT_ID}",
+      #   "refresh_token": "{REFRESH_TOKEN}",
+      #   "access_token": "{ACCESS_TOKEN}"
+      # }
+      current_user.stripe_payout_code = code
+      current_user.stripe_payout_token_type = @resp.params["token_type"]
+      current_user.stripe_payout_stripe_publishable_key = @resp.params["stripe_publishable_key"]
+      current_user.stripe_payout_scope = @resp.params["scope"]
+      current_user.stripe_payout_livemode = @resp.params["livemode"]
+      current_user.stripe_payout_stripe_user_id = @resp.params["stripe_user_id"]
+      current_user.stripe_payout_refresh_token = @resp.params["refresh_token"]
+      current_user.stripe_payout_access_token = @resp.params["access_token"]
       current_user.save
-      flash[:notice] = "Your stripe account is saved. You can now receive payouts."
+      flash[:notice] = "Your account has been successfully created and is ready to process payments!"
     end
     redirect_to root_path
   end

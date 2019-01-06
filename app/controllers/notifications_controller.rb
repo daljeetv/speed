@@ -94,6 +94,7 @@ class NotificationsController < ApplicationController
     check_out_of_bounds(scope)
 
     @unread_count = user_unread_count
+    @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @notifications = scope.page(page).per(per_page)
     @total = @notifications.total_count
 
@@ -122,6 +123,7 @@ class NotificationsController < ApplicationController
 
     @unread_count = user_unread_count
     @notifications = scope.page(page).per(per_page)
+    @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @total = @notifications.total_count
 
     @cur_selected = [per_page, @total].min
@@ -187,7 +189,6 @@ class NotificationsController < ApplicationController
   def reward
     result = Notification.reward(selected_notifications, params[:amount], current_user)
     message = result[:message]
-    Rails.logger.info("Got back result #{result} and error: #{result["error"]}")
     if request.xhr?
       if result[:error]
         flash[:error] = message
@@ -300,8 +301,7 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def get_open_rewards
-    open_rewards = selected_notifications[0].rewards.where(distribute_date: nil)
-    Rails.logger.info("rewards: #{open_rewards[0]}")
+    open_rewards = selected_notifications[0].rewards.where(distributed_date: nil)
     render json: { 'rewards' => open_rewards }
   end
 
@@ -421,8 +421,6 @@ class NotificationsController < ApplicationController
       scope.starred
     elsif params[:archive].present?
       scope.archived
-    elsif params[:claim].present?
-      scope.claimed
     else
       scope.inbox
     end

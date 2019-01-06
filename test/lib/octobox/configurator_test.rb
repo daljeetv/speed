@@ -131,8 +131,8 @@ class ConfiguratorTest < ActiveSupport::TestCase
   end
 
   test 'max_notifications_to_sync configured by ENV var' do
-    stub_env_var('MAX_NOTIFICATIONS_TO_SYNC', 20)
-    assert_equal 20, Octobox.config.max_notifications_to_sync
+    stub_env_var('MAX_NOTIFICATIONS_TO_SYNC', 2000)
+    assert_equal 2000, Octobox.config.max_notifications_to_sync
   end
 
   test 'max_concurrency default value' do

@@ -7,9 +7,13 @@
   <div class="flex-sidebar">
     <%= render "sidebar" %>
   </div>
-  <div class="flex-main">
-    <%= render "list" %>
-  </div>
+  <% if @search.claim_selected? %>
+    <%= render "reward_list" %>
+  <% else %>
+    <div class="flex-main">
+      <%= render "list" %>
+    </div>
+  <% end %>
   <% if display_thread? %>
     <div id='thread' class='flex-thread d-none d-xxxl-block'>
       <div class="nothing-here text-center align-self-center">
@@ -22,12 +26,13 @@
       </div>
     </div>
   <% end %>
-
-  <div id="rightbar" class="flex
-  -sidebar">
-    <%= render "rightbar" %>
+  <div id="rightbar" class="flex-sidebar">
+    <% if @search.claim_selected? %>
+      <%= render "claim_rewards_rightbar" %>
+    <% else %>
+      <%= render "rightbar" %>
+    <% end %>
   </div>
-
 </div>
 
 <%= render 'help-box' %>

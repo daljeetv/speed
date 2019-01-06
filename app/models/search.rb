@@ -31,9 +31,7 @@ class Search
     res = res.exclude_status(exclude_status) if exclude_status.present?
     res = res.starred(starred) unless starred.nil?
     res = res.archived(archived) unless archived.nil?
-    res = res.claimed(archived) unless claimed.nil?
     res = res.archived(!inbox) unless inbox.nil?
-    res = res.claimed(!inbox) unless inbox.nil?
     res = res.unread(unread) unless unread.nil?
     res = res.bot_author unless bot_author.nil?
     res = res.unlabelled unless unlabelled.nil?
@@ -62,7 +60,7 @@ class Search
   end
 
   def claim_selected?
-    inbox != true && claimed == true
+    claimed == true
   end
 
   private
@@ -73,7 +71,8 @@ class Search
     end
 
     @parsed_query[:archived] = ['true'] if params[:archive].present?
-    @parsed_query[:inbox] = ['true'] if params[:archive].blank? && params[:starred].blank? && params[:q].blank?
+    @parsed_query[:inbox] = ['true'] if params[:archive].blank? && params[:claim].blank? && params[:starred].blank? && params[:q].blank?
+    @parsed_query[:claimed] = ['true'] if params[:claim].present?
 
     [:reason, :type, :unread, :state, :is_private].each do |filter|
       next if params[filter].blank?

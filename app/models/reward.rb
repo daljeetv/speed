@@ -23,11 +23,48 @@ class Reward < ApplicationRecord
   def self.distribute(selected_rewards, rewardee)
     Rails.logger.info("Distributing #{selected_rewards} rewardee: #{rewardee}")
     reward = selected_rewards[0]
-    reward.update(distributed_to: rewardee, distribute_date: DateTime.now);
+    reward.update(distributed_to: rewardee, distributed_date: DateTime.now);
+    flash_message = "Successfully distributed reward: \"#{reward.notification.subject_title}\" to Github user: #{reward.distributed_to}"
     reward.save
-    message = "Successfully distributed reward: \"#{reward.notification.subject_title}\" to Github user: #{reward.distributed_to}"
-    Rails.logger.info(message)
-    return message
+    return flash_message
+  end
+
+  def self.accept(selected_rewards)
+    reward = selected_rewards[0]
+    reward.update(payout_date: DateTime.now)
+
+    if reward.user.stripe_payout_stripe_user_id.nil?
+      result = {
+          error: true,
+          message: 'Please update payout method in settings to receive reward.'
+      }
+      return result
+    end
+    Rails.logger.info("Payout functionality is okay for #{reward.user.stripe_payout_stripe_user_id}")
+    transfer = Stripe::Transfer.create(
+        # must be integer in cents
+        :amount => Integer(reward.amount),
+        :currency => "usd",
+        :destination => reward.user.stripe_payout_stripe_user_id,
+        :transfer_group => reward.id
+    )
+    Rails.logger.info("Got transfer #{transfer}")
+    if transfer
+      flash_message = "Successfully distributed reward: \"#{reward.notification.subject_title}\" to Github user: #{reward.distributed_to}"
+      reward.save
+      result = {
+          error: false,
+          message: flash_message
+      }
+      return result
+    else
+      flash_message = "Cannot payout - please update payout method."
+      result = {
+          error: false,
+          message: flash_message
+      }
+      return result
+    end
   end
 
   private
@@ -38,10 +75,10 @@ class Reward < ApplicationRecord
       customer = Stripe::Customer.retrieve(reward.user.stripe_id)
       charge = Stripe::Charge.create(
           :customer => customer.id,
-          :amount => (reward.amount).to_i,
+          :amount => (reward.amount * 100).to_i,
           :description => notification.subject_title,
           :currency => 'usd',
-          :transfer_group => reward.notification.id
+          :transfer_group => reward.id
       )
       # if the charge is successful then approve the reward!
       Rails.logger.info("Got back charge resp #{charge}")

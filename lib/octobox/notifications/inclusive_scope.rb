@@ -7,7 +7,6 @@ module Octobox
         scope :muted,    -> { where("muted_at IS NOT NULL") }
         scope :inbox,    -> { where.not(archived: true) }
         scope :archived, ->(value = true) { where(archived: value) }
-        scope :claimed,  ->(value = true) { where(claimed: value) }
         scope :newest,   -> { order('notifications.updated_at DESC') }
         scope :starred,  ->(value = true) { where(starred: value) }
         scope :type,     ->(subject_type) { where(subject_type: subject_type) }

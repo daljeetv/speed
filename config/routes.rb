@@ -58,6 +58,7 @@ Rails.application.routes.draw do
   resources :rewards, only: [] do
     member do
       post :distribute
+      post :accept
     end
   end
 
@@ -74,14 +75,15 @@ Rails.application.routes.draw do
 
   #Stripe
   post '/add_card', to: 'users#add_card'
-  get '/add_bank', to: 'users#add_bank'
+  get  '/add_bank', to: 'users#add_bank'
 
 
   resources :pinned_searches
 
-  get '/settings', to: 'users#edit'
-  get '/claim-payouts', to: 'users#payout-list'
-  resources :users, only: [:update, :destroy, :add_card, :payment] do
+  get '/settings',      to: 'users#edit'
+
+  get '/claims',      to: 'rewards#index'
+  resources :users, only: [:update, :destroy, :add_card] do
     collection do
       scope format: true, constraints: { format: 'json' } do
         get :profile

@@ -113,7 +113,7 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.datetime "end_date"
     t.decimal "amount"
     t.string "distributed_to"
-    t.datetime "distribute_date"
+    t.datetime "distributed_date"
     t.datetime "payout_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
@@ -182,8 +182,15 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.string "theme", default: "light"
     t.boolean "display_comments", default: false
     t.string "stripe_id"
-    t.string "payout_stripe_id"
     t.string "stripe_credit_card_token"
+    t.string "stripe_payout_code"
+    t.string "stripe_payout_token_type"
+    t.string "stripe_payout_stripe_publishable_key"
+    t.string "stripe_payout_scope"
+    t.string "stripe_payout_livemode"
+    t.string "stripe_payout_stripe_user_id"
+    t.string "stripe_payout_refresh_token"
+    t.string "stripe_payout_access_token"
     t.index ["api_token"], name: "index_users_on_api_token", unique: true
     t.index ["github_id"], name: "index_users_on_github_id", unique: true
   end

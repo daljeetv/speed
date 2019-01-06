@@ -1,0 +1,90 @@
+<tr id='notification-<%= reward.id %>' class='notification active' %>
+  <td class='notification-checkbox align-middle'>
+    <div class="custom-control custom-checkbox">
+      <%= check_box_tag(
+              "notification_#{reward.id}",
+              reward.id,
+              false,
+              title: (reward.notification.archived ? 'Unarchive' : 'Archive'),
+              class: 'custom-control-input ' + (reward.notification.archived ? 'unarchive' : 'archive')
+          )
+      %>
+      <%= label_tag "notification_#{reward.id}", '', class: "custom-control-label" %>
+    </div>
+  </td>
+
+  <td class='notification-icon align-middle <%= notification_icon_color(reward.notification.state) if reward.notification.display_subject? %>'>
+    <% if Octobox.github_app? && reward.notification.subjectable? %>
+      <% if reward.notification.repository.try(:github_app_installed?) && !current_user.github_app_authorized? %>
+        <a tabindex="0" class="" role="button" data-toggle="popover" title="Login to the GitHub App" data-content="<%= render 'login_prompt' %>">
+          <%= octicon notification_icon(reward.notification.subject_type, reward.notification.state), :height => 16 %>
+        </a>
+      <% elsif !reward.notification.repository.try(:github_app_installed?) %>
+        <a tabindex="0" class="" role="button" data-toggle="popover" title="Get more info for this <%= notification_icon_title(reward.notification.subject_type, reward.notification.state) %>" data-content="<%= render 'app_prompt', notification: notification %>">
+          <%= octicon notification_icon(reward.notification.subject_type, reward.notification.state), :height => 16 %>
+        </a>
+      <% elsif Octobox.octobox_io? && reward.notification.upgrade_required? %>
+        <a tabindex="0" class="" role="button" data-toggle="popover" title="Subscribe Now" data-content="<%= render 'private_repos' %>">
+          <%= octicon notification_icon(reward.notification.subject_type, reward.notification.state), :height => 16 %>
+        </a>
+      <% else %>
+        <%= octicon notification_icon(reward.notification.subject_type, reward.notification.state), :height => 16, title: notification_icon_title(reward.notification.subject_type, reward.notification.state), data: {toggle: 'tooltip'} %>
+      <% end %>
+    <% else %>
+      <%= octicon notification_icon(reward.notification.subject_type, reward.notification.state), :height => 16, title: notification_icon_title(reward.notification.subject_type, reward.notification.state), data: {toggle: 'tooltip'} %>
+    <% end %>
+  </td>
+  <td class='notification-subject'>
+    <%= link_to notification_link(reward.notification), target: (Octobox.config.open_in_same_tab ? nil : '_blank'), rel: "noopener", class: 'subject-link link', onclick: "Octobox.markRead(#{reward.notification.id})", data:{toggle:(reward.notification.display_thread? ? 'showthread' : nil)}, title: reward.notification.title do %>
+      <%= reward.notification.subject_title%>
+      <%= octicon('link-external', class:'text-primary') unless reward.notification.display_thread? %>
+    <% end %>
+
+    <% if reward.notification.display_subject? %>
+      <% if reward.notification.subject %>
+        <% reward.notification.subject.labels.each do |label| %>
+          <%= link_to emojify(label.name), root_path(filtered_params(label: label.name)), class: "badge d-sm", style: "background-color: ##{label.color}; color: #{label.text_color}" %>
+        <% end %>
+        <%= notification_status(reward.notification.subject.status) %>
+      <% end %>
+    <% end %>
+  </td>
+  <td class='notification-reward-amount'>
+    <small>
+      $ <%= reward.amount %>
+    </small>
+  </td>
+  <% unless params[:repo].present? %>
+    <td class='notification-repo'>
+      <small>
+        <%= link_to reward.notification.repository_full_name, root_path(filtered_params(repo: reward.notification.repository_full_name)), class: 'text-muted' %>
+      </small>
+    </td>
+  <% end %>
+
+  <td class='notification-date'>
+    <small class='text-muted'>
+      <%= local_relative_time(reward.notification.updated_at, type: 'time-or-date') %>
+    </small>
+
+    <span class='buttons'>
+      <% if reward.notification.archived? %>
+        <%= link_to(archive_selected_notifications_path(id: reward.notification.id, value: false), method: :post, class: 'mr-1', 'data-toggle': "tooltip", 'data-placement': "bottom", 'title': 'Unarchive' ) do %>
+          <%= octicon('inbox', height: 15) %>
+        <% end %>
+      <% else %>
+        <%= link_to(archive_selected_notifications_path(id: reward.notification.id), method: :post, class: 'mr-1', 'data-toggle': "tooltip", 'data-placement': "bottom", 'title': 'Archive' ) do %>
+          <%= octicon('archive', height: 15) %>
+        <% end %>
+      <% end %>
+      <%= link_to(mute_selected_notifications_path(id: reward.notification.id), method: :post,  'data-toggle': "tooltip", 'data-placement': "bottom", 'title': 'Mute' ) do %>
+        <%= octicon('mute', height: 15) %>
+      <% end %>
+      <% if reward.notification.archived? %>
+        <%= link_to(delete_selected_notifications_path(id: reward.notification.id), class: 'ml-1', method: :post, 'data-toggle': "tooltip", 'data-placement': "bottom", 'title': 'Delete' ) do %>
+          <%= octicon('trashcan', height: 15) %>
+        <% end %>
+      <% end %>
+    </span>
+  </td>
+</tr>

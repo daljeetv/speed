@@ -443,6 +443,7 @@ DEPENDENCIES
   minitest
   mocha
   mysql2
+  oauth2
   octicons_helper
   octokit
   oj

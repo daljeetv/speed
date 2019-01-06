@@ -184,10 +184,14 @@ var Octobox = (function() {
 
   var distributeReward = function() {
     var rewardee = $('#rewardee').val();
-    var id = this.value
+    var id = this.value;
     distribute(id, rewardee);
   }
 
+  var acceptReward = function() {
+    var id = getIdsFromRows(getMarkedOrCurrentRows());
+    accept(id);
+  }
 
   var unarchiveSelected = function(){
     if (getDisplayedRows().length === 0) return;
@@ -231,6 +235,14 @@ var Octobox = (function() {
         updateFavicon();
     });
     console.log(`distributed reward with id: ${reward_id} rewardee: ${rewardee}`);
+  }
+
+  var accept = function(reward_id){
+    var data = {};
+    $.post(`rewards/${reward_id}/accept`, data).done(function() {
+        resetCursorAfterRowsRemoved([]);
+        updateFavicon();
+    });
   }
 
   var toggleSelectAll = function() {
@@ -320,35 +332,38 @@ var Octobox = (function() {
     $("#notification-"+id).find(".toggle-star").toggleClass("star-active star-inactive");
   };
 
-  var changeArchive = function() {
-    if ( hasMarkedRows()) {
-      if (onlyMarkedOneRow()) {
-          var id = getIdsFromRows(getMarkedOrCurrentRows());
-          $("#rightbar").fadeIn(300).css("display", "inline");
-          $.get("/notifications/"+id+"/data.json", function(notification_data){
+    function populate_create_reward_rightbar() {
+        var id = getIdsFromRows(getMarkedOrCurrentRows());
+        $("#rightbar").fadeIn(300).css("display", "inline");
+        $.get("/notifications/" + id + "/data.json", function (notification_data) {
             $("#rightbar_notification_id").text(notification_data["notifications"][0]['subject_title']);
-            $.get("/notifications/"+id+"/get_open_rewards.json", function(rewards) {
-                console.log(rewards.rewards);
-                if(rewards.rewards.length > 0) {
+            $.get("/notifications/" + id + "/get_open_rewards.json", function (rewards) {
+                if (rewards.rewards.length > 0) {
                     //add rewards already placed - ready for distribution
                     const $ul = $("#rewards-distribution-section");
                     rewards.rewards.map(reward =>
                         $ul.append(
                             `<div><button value=${reward.id} class="distribute_reward btn btn-sm btn-outline-dark" id="distribute-button" >Distribute Reward: $ ${reward.amount}</button></div>`));
                     // Automatically update avatar of rewardee
-                    $('#rewardee').keydown(function(){
-                        $('#distribute-avatar').attr("src","https://github.com/"+$('#rewardee').val()+".png?size=40");
-                    })
+                    $('#rewardee').keydown(function () {
+                        $('#distribute-avatar').attr("src", "https://github.com/" + $('#rewardee').val() + ".png?size=40");
+                    });
                     //show distribution flow
                     $("#rightbar_distribute_id").css("display", "block");
-                }else {
-                  $("#rightbar_distribute_id").css("display", "none");
+                } else {
+                    $("#rightbar_distribute_id").css("display", "none");
                 }
             });
             $("#rightbar_notification_url").attr("href", notification_data["notifications"][0]['subject_url']);
-          });
+        });
+    }
+
+    var changeArchive = function() {
+    if ( hasMarkedRows()) {
+      if (onlyMarkedOneRow()) {
+          populate_create_reward_rightbar();
       }
-      $("button.archive_selected, button.create_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
+      $("button.archive_selected, button.create_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
       if ( !hasMarkedRows(true) ) {
         $(".js-select_all").prop("checked", true).prop("indeterminate", false);
         $("button.select_all").show().css("display", "inline-block");
@@ -360,7 +375,7 @@ var Octobox = (function() {
     } else {
       $("#rightbar").css("display", "none");
       $(".js-select_all").prop("checked", false).prop("indeterminate", false);
-      $("button.archive_selected, button.create_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
+      $("button.archive_selected, button.create_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
     }
     var marked_unread_length = getMarkedRows().filter(".active").length;
     if ( marked_unread_length > 0 ) {
@@ -636,6 +651,7 @@ var Octobox = (function() {
     markReadSelected: markReadSelected,
     archiveSelected: archiveSelected,
     createReward: createReward,
+    acceptReward: acceptReward,
     distributeReward: distributeReward,
     unarchiveSelected: unarchiveSelected,
     toggleSelectAll: toggleSelectAll,

@@ -28,6 +28,20 @@ class RewardsController < ApplicationController
     end
   end
 
+  def accept
+    result = Reward.accept(selected_rewards)
+    message = result[:message]
+    if request.xhr?
+      if result[:error]
+        flash[:error] = message
+      else
+        flash[:success] = message
+      end
+    else
+      redirect_back fallback_location: root_path
+    end
+  end
+
   private
 
   def selected_rewards

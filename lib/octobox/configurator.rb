@@ -63,12 +63,12 @@ module Octobox
     attr_writer :minimum_refresh_interval
 
     def max_notifications_to_sync
-      @max_notifications_to_sync || env_integer('MAX_NOTIFICATIONS_TO_SYNC', 500)
+      @max_notifications_to_sync || env_integer('MAX_NOTIFICATIONS_TO_SYNC', 5000)
     end
     attr_writer :max_notifications_to_sync
 
     def max_concurrency
-      @max_concurrency || env_integer('MAX_CONCURRENCY', 10)
+      @max_concurrency || env_integer('MAX_CONCURRENCY', 100)
     end
     attr_writer :max_concurrency
 

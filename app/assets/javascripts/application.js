@@ -42,6 +42,7 @@ $(document).on('change', '.js-select_all', Octobox.checkAll);
 $(document).on('click', 'button.select_all', Octobox.toggleSelectAll);
 $(document).on('click', 'button.archive_selected', Octobox.archiveSelected);
 $(document).on('click', 'button.create_reward', Octobox.createReward);
+$(document).on('click', 'button.accept_reward', Octobox.acceptReward);
 $(document).on('click', 'button.distribute_reward', Octobox.distributeReward);
 $(document).on('click', 'button.unarchive_selected', Octobox.unarchiveSelected);
 $(document).on('click', 'button.archive', Octobox.archiveThread);

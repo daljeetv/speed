@@ -74,10 +74,10 @@
 
   <div class="card mb-3" id='payment-information'>
     <h5 class="card-header">
-      Payment Method to Recieve Rewards
+      Payment Method to Receive Rewards
     </h5>
     <div class="card-body">
-      <% if current_user.payout_stripe_id %>
+      <% if current_user.stripe_payout_stripe_user_id %>
         <p>Stripe Account Connected ✅</p>
       <% else %>
       <p><a href="https://connect.stripe.com/express/oauth/authorize?client_id=ca_DzB1oubCGKdmsbjRofjn78DGAU6TVz8E&amp;" class="connect-button"><span>Connect with Stripe</span></a></p>

@@ -63,7 +63,8 @@ module NotificationsHelper
   end
 
   def inbox_selected?
-    !archive_selected? && !starred_selected? && !showing_search_results?
+   Rails.logger.info("Showing archive_selected?: #{archive_selected?}, starred_selected?? #{starred_selected?} showing_search_results?: #{showing_search_results?} claim_selected?? #{claim_selected?}")
+    !archive_selected? && !starred_selected? && !showing_search_results? && !claim_selected?
   end
 
   def archive_selected?
@@ -136,6 +137,10 @@ module NotificationsHelper
 
   def create_reward_button
     function_button("Create Reward", 'credit-card', "create_reward", 'Create Reward')
+  end
+
+  def accept_reward_button
+    function_button("Accept Reward", 'credit-card', "accept_reward", 'Accept Reward')
   end
 
   def distribute_reward_button

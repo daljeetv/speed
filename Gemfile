@@ -38,6 +38,7 @@ gem 'kramdown'
 gem 'stripe'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'json'
+gem 'oauth2'
 
 # Supported databases
 gem 'mysql2', require: false
