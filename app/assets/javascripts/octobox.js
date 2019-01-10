@@ -640,7 +640,6 @@ var Octobox = (function() {
     sync: sync,
     markRowCurrent: markRowCurrent,
     closeThread: closeThread,
-    openThread: openThread,
     archiveThread: archiveThread,
     unarchiveThread: unarchiveThread,
     toggleStarClick: toggleStarClick,
@@ -648,9 +647,8 @@ var Octobox = (function() {
     initialize: initialize,
     removeCurrent: removeCurrent,
     toggleOffCanvas: toggleOffCanvas,
-    markRead: markRead,
     deleteSelected: deleteSelected,
     deleteThread: deleteThread,
-    viewThread: viewThread
+    viewThread: viewThread,
   }
 })();

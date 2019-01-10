@@ -40,8 +40,7 @@
     <% else %>
       <div class="py-5 text-center">
         <%= octicon 'search', height: 32, class: 'blankslate-icon' %>
-        <h3>Nothing to see here.</h3>
-        <p>Try writing code for an issue with a reward.</p>
+        <h3>Add a bounty to an issue.</h3>
         <% unless current_user.notifications.any? %>
           <p><i>Expecting notifications? Make sure <a href="<%= Octobox.config.github_domain %>/settings/notifications">Web Notifications</a> are enabled on your GitHub account.</i></p>
         <% end %>
