@@ -63,6 +63,10 @@ class Search
     claimed == true
   end
 
+  def open_rewards_selected?
+    open_rewards_selected == true
+  end
+
   private
 
   def convert(params)
@@ -71,8 +75,9 @@ class Search
     end
 
     @parsed_query[:archived] = ['true'] if params[:archive].present?
-    @parsed_query[:inbox] = ['true'] if params[:archive].blank? && params[:claim].blank? && params[:starred].blank? && params[:q].blank?
+    @parsed_query[:inbox] = ['true'] if params[:archive].blank? && params[:claim].blank? && params[:open_rewards].blank? && params[:starred].blank? && params[:q].blank?
     @parsed_query[:claimed] = ['true'] if params[:claim].present?
+    @parsed_query[:open_rewards_selected] = ['true'] if params[:open_rewards].present?
 
     [:reason, :type, :unread, :state, :is_private].each do |filter|
       next if params[filter].blank?
@@ -221,6 +226,10 @@ class Search
 
   def archived
     boolean_prefix(:archived)
+  end
+
+  def open_rewards_selected
+    boolean_prefix(:open_rewards_selected)
   end
 
   def claimed

@@ -94,6 +94,7 @@ class NotificationsController < ApplicationController
     check_out_of_bounds(scope)
 
     @unread_count = user_unread_count
+    @open_rewards = Reward.where(payout_date: nil)
     @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @notifications = scope.page(page).per(per_page)
     @total = @notifications.total_count
@@ -123,6 +124,7 @@ class NotificationsController < ApplicationController
 
     @unread_count = user_unread_count
     @notifications = scope.page(page).per(per_page)
+    @open_rewards = Reward.where(payout_date: nil)
     @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @total = @notifications.total_count
 

@@ -41,34 +41,38 @@ module NotificationsHelper
 
   def filters
     {
-      reason:     params[:reason],
-      unread:     params[:unread],
-      repo:       params[:repo],
-      type:       params[:type],
-      archive:    params[:archive],
-      starred:    params[:starred],
-      owner:      params[:owner],
-      per_page:   params[:per_page],
-      q:          params[:q],
-      state:      params[:state],
-      label:      params[:label],
-      author:     params[:author],
-      bot:        params[:bot],
-      unlabelled: params[:unlabelled],
-      assigned:   params[:assigned],
-      is_private: params[:is_private],
-      status:     params[:status],
-      claim:      params[:claim]
+      reason:       params[:reason],
+      unread:       params[:unread],
+      repo:         params[:repo],
+      type:         params[:type],
+      archive:      params[:archive],
+      starred:      params[:starred],
+      owner:        params[:owner],
+      per_page:     params[:per_page],
+      q:            params[:q],
+      state:        params[:state],
+      label:        params[:label],
+      author:       params[:author],
+      bot:          params[:bot],
+      unlabelled:   params[:unlabelled],
+      assigned:     params[:assigned],
+      is_private:   params[:is_private],
+      status:       params[:status],
+      claim:        params[:claim],
+      open_rewards: params[:open_rewards]
     }
   end
 
   def inbox_selected?
-   Rails.logger.info("Showing archive_selected?: #{archive_selected?}, starred_selected?? #{starred_selected?} showing_search_results?: #{showing_search_results?} claim_selected?? #{claim_selected?}")
-    !archive_selected? && !starred_selected? && !showing_search_results? && !claim_selected?
+    !archive_selected? && !starred_selected? && !showing_search_results? && !claim_selected? && !open_rewards_selected?
   end
 
   def archive_selected?
     filters[:archive].present?
+  end
+
+  def open_rewards_selected?
+    filters[:open_rewards].present?
   end
 
   def claim_selected?

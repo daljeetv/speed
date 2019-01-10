@@ -9,6 +9,8 @@
   </div>
   <% if @search.claim_selected? %>
     <%= render "reward_list" %>
+  <% elsif @search.open_rewards_selected? %>
+    <%= render "open_reward_list" %>
   <% else %>
     <div class="flex-main">
       <%= render "list" %>

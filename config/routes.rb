@@ -10,7 +10,7 @@ require 'admin_constraint'
 Rails.application.routes.draw do
   root to: 'notifications#index'
 
-  # this is for SSL Certificate
+  # For SSL Certificate
   get '/.well-known/acme-challenge/:id' => 'pages#letsencrypt'
 
   get '/404', to: 'errors#not_found'

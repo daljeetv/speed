@@ -622,24 +622,6 @@ var Octobox = (function() {
     }
   };
 
-  var shortcuts = {
-    65:  checkSelectAll,   // a
-    68:  markReadSelected, // d
-    74:  cursorDown,       // j
-    75:  cursorUp,         // k
-    83:  toggleStar,       // s
-    88:  markCurrent,      // x
-    89:  toggleArchive,    // y
-    69:  toggleArchive,    // e
-    77:  muteSelected,     // m
-    13:  openCurrentLink,  // Enter
-    79:  openCurrentLink,  // o
-    191: openModal,        // ?
-    190: sync,             // .
-    82:  sync,             // r
-    27:  escPressed,       // esc
-    51:  deleteSelected    // #
-  }
   var unread_count = 0;
   var lastCheckedNotification = null;
 
