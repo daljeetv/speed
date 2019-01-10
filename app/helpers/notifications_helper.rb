@@ -59,12 +59,13 @@ module NotificationsHelper
       is_private:   params[:is_private],
       status:       params[:status],
       claim:        params[:claim],
-      open_rewards: params[:open_rewards]
+      open_rewards: params[:open_rewards],
+      your_rewards: params[:your_rewards]
     }
   end
 
   def inbox_selected?
-    !archive_selected? && !starred_selected? && !showing_search_results? && !claim_selected? && !open_rewards_selected?
+    !archive_selected? && !starred_selected? && !showing_search_results? && !claim_selected? && !open_rewards_selected? && !your_rewards_selected?
   end
 
   def archive_selected?
@@ -73,6 +74,10 @@ module NotificationsHelper
 
   def open_rewards_selected?
     filters[:open_rewards].present?
+  end
+
+  def your_rewards_selected?
+    filters[:your_rewards].present?
   end
 
   def claim_selected?
