@@ -31,4 +31,8 @@ config/sidekiq_custom_schedule.yml
 .yardoc
 .idea/
 .vagrant
-
+marketing/email_scraper/lib/
+marketing/email_scraper/venv/
+*.pem
+*.p12
+*.json
