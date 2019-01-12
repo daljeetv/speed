@@ -10,7 +10,7 @@ Speed helps you incentivize your GitHub Issues so you can get your issues fixed 
 
 - **Open for everyone** - Speed developers use Speed to develop Speed. 100% developed and managed in the open on GitHub under a FLOSS license.
 
-![Screenshot of  Octobox](app/assets/images/screenshot.png)
+![Screenshot of  Octobox](app/assets/images/screenshot_octobox.png)
 
 [![Build Status](https://travis-ci.org/daljeetv/speed.svg?branch=master)](https://travis-ci.org/daljeetv/speed)
 
