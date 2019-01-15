@@ -39,6 +39,7 @@ class Notification < ApplicationRecord
 
   class << self
     def attributes_from_api_response(api_response)
+      Rails.logger.info("Got API Response! #{api_response}")
       attrs = DownloadService::API_ATTRIBUTE_MAP.map do |attr, path|
         value = api_response.to_h.dig(*path)
         value.delete!("\u0000") if value.is_a?(String)
@@ -69,6 +70,8 @@ class Notification < ApplicationRecord
   end
 
   def self.reward(notification, amount, current_user)
+    Rails.logger.info("Got notification #{notification[0].repository_full_name} and issue id #{notification[0].url}")
+    current_user.github_client.add_comment(notification[0].repository_full_name, notification[0].issue_id(notification[0]), "Added Speed Bounty!")
     value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
     return Reward.create(notification, value, current_user)
   end
@@ -125,6 +128,10 @@ class Notification < ApplicationRecord
   def web_url
     Octobox::SubjectUrlParser.new(expanded_subject_url, latest_comment_url: latest_comment_url)
       .to_html_url
+  end
+
+  def issue_id(notification)
+    notification.latest_comment_url.rpartition('/')[-1]
   end
 
   def repo_url

@@ -28,15 +28,15 @@ module ApplicationHelper
   end
 
   def octobox_icon(height=16)
-    image_tag('infinitacle.svg', alt: "Octobox", height: height)
+    image_tag('source_code.svg', alt: "Octobox", height: height)
   end
 
   def octobox_reverse_icon(height=16)
-    image_tag('infinitacle-reverse.svg', alt: "Octobox", height: height)
+    image_tag('source_code.svg', alt: "Octobox", height: height)
   end
 
   def octobox_round(height=80)
-    image_tag('infinitacle-round.svg', alt: "Logo", height: height)
+    image_tag('source_code.svg', alt: "Logo", height: height)
   end
 
   def used_by_orgs

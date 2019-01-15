@@ -292,7 +292,7 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def data
-    render json: { 'notifications' => selected_notifications }
+    render json: { 'notification' => selected_notifications[0], 'notification_web_url' => selected_notifications[0].web_url }
   end
 
   # Get notification reward data

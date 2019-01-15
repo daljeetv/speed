@@ -336,7 +336,8 @@ var Octobox = (function() {
         var id = getIdsFromRows(getMarkedOrCurrentRows());
         $("#rightbar").fadeIn(300).css("display", "inline");
         $.get("/notifications/" + id + "/data.json", function (notification_data) {
-            $("#rightbar_notification_id").text(notification_data["notifications"][0]['subject_title']);
+            console.log(notification_data);
+            $("#rightbar_notification_id").text(notification_data["notification"]['subject_title']);
             $.get("/notifications/" + id + "/get_open_rewards.json", function (rewards) {
                 if (rewards.rewards.length > 0) {
                     //add rewards already placed - ready for distribution
@@ -354,7 +355,7 @@ var Octobox = (function() {
                     $("#rightbar_distribute_id").css("display", "none");
                 }
             });
-            $("#rightbar_notification_url").attr("href", notification_data["notifications"][0]['subject_url']);
+            $("#rightbar_notification_url").attr("href", notification_data["notification_web_url"]);
         });
     }
 
