@@ -79,7 +79,7 @@ var Octobox = (function() {
             document.body.appendChild(link);
           };
 
-        img.src = "/favicon-32x32.png";
+        img.src = "/favicon.png";
       }
     }
   }
