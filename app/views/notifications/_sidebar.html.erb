@@ -62,14 +62,14 @@
         <% end %>
       </li>
     <% end %>
-    <% if any_active_filters? && !search_pinned?(@search.to_query) %>
-      <li  role="presentation" class="nav-item">
-        <%= link_to settings_path(q: @search.to_query, anchor: 'pinned-searches'), class: 'nav-link new_pinned_search' do %>
-          <%= octicon 'pin', height: 16, class: 'sidebar-icon' %>
-          Pin this search
-        <% end %>
-      </li>
-    <% end %>
+    <%# if any_active_filters? && !search_pinned?(@search.to_query) %>
+<!--      <li  role="presentation" class="nav-item">-->
+        <%#= link_to settings_path(q: @search.to_query, anchor: 'pinned-searches'), class: 'nav-link new_pinned_search' do %>
+          <%#= octicon 'pin', height: 16, class: 'sidebar-icon' %>
+<!--          Pin this search-->
+        <%# end %>
+<!--      </li>-->
+    <%# end %>
   </ul>
 <% end %>
 
@@ -86,29 +86,29 @@
     </ul>
   <% end %>
 
-  <% if @unlabelled > 0 || @bot_notifications > 0 || @assigned > 0 %>
-    <ul class="nav nav-pills flex-column nav-filters">
-      <% if @assigned > 0 %>
-        <%= filter_link :assigned, current_user.github_login, @assigned do %>
-          <%= octicon 'person', height: 16, class: 'sidebar-icon' %>
-          Assigned to you
-        <% end %>
-      <% end %>
-      <% if @bot_notifications > 0 %>
-        <%= filter_link :bot, true, @bot_notifications do %>
-          <%= octicon 'hubot', height: 18, class: 'sidebar-icon' %>
-          Bots
-        <% end %>
-      <% end %>
+  <%# if @unlabelled > 0 || @bot_notifications > 0 || @assigned > 0 %>
+<!--    <ul class="nav nav-pills flex-column nav-filters">-->
+      <%# if @assigned > 0 %>
+        <%#= filter_link :assigned, current_user.github_login, @assigned do %>
+          <%#= octicon 'person', height: 16, class: 'sidebar-icon' %>
+<!--          Assigned to you-->
+        <%# end %>
+      <%# end %>
+      <%# if @bot_notifications > 0 %>
+        <%#= filter_link :bot, true, @bot_notifications do %>
+          <%#= octicon 'hubot', height: 18, class: 'sidebar-icon' %>
+<!--          Bots-->
+        <%# end %>
+      <%# end %>
 
-      <% if @unlabelled > 0 %>
-        <%= filter_link :unlabelled, true, @unlabelled do %>
-          <%= octicon 'tag', height: 16, class: 'sidebar-icon' %>
-          Unlabelled
-        <% end %>
-      <% end %>
-    </ul>
-  <% end %>
+      <%# if @unlabelled > 0 %>
+        <%#= filter_link :unlabelled, true, @unlabelled do %>
+          <%#= octicon 'tag', height: 16, class: 'sidebar-icon' %>
+<!--          Unlabelled-->
+        <%# end %>
+      <%# end %>
+<!--    </ul>-->
+  <%# end %>
 <% end %>
 
 <% if @types.any? %>
