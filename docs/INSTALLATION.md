@@ -124,6 +124,15 @@ Complete Command:
  bundle install && bundle exec rake db:drop db:create db:migrate && rails s
 ```
 
+To push to all remotes:
+
+```bash
+ $ git config alias.pushall '!git push origin && git push qa && git push prod'
+ $ git pushall
+```
+
+
+
 Now go and register a new [GitHub OAuth Application](https://github.com/settings/applications/new), your development configuration should look something like this:
 
 <img width="561" alt="screen shot 2016-12-18 at 21 54 35" src="https://cloud.githubusercontent.com/assets/564113/21299762/a7bfaace-c56c-11e6-834c-ff893f79cec3.png">

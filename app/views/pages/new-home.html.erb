@@ -5,9 +5,9 @@
       <div class="site-header-inner">
         <div class="brand header-brand">
           <h1 class="m-0">
-<!--            <a href="#">-->
-              <%#= image_tag 'logo-1.svg', alt: 'Blue logo', width: 32, height: 32 %>
-<!--            </a>-->
+            <a href="#">
+              <%= image_tag 'logo.svg', alt: 'Blue logo' %>
+            </a>
           </h1>
         </div>
       </div>
@@ -413,7 +413,7 @@
           </li>
         </ul>
         <div class="footer-copyright">
-          © 2019 Speed Inc.
+          © 2019 Speed Inc. All Rights Reserved.
         </div>
       </div>
     </div>
@@ -423,8 +423,8 @@
 <script> (function () {
     const doc = document.documentElement
 
-    doc.classList.remove('no-js')
-    doc.classList.add('js')
+    doc.classList.remove('no-js');
+    doc.classList.add('js');
 
     // Reveal animations
     if (document.body.classList.contains('has-animations')) {
