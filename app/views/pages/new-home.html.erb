@@ -24,7 +24,9 @@
             <h1 class="hero-title mt-0 is-revealing">Speed OSS</h1>
             <p class="hero-paragraph is-revealing">Manage your Open Source Github Issues</p>
             <p class="hero-cta mb-0 is-revealing">
-              <a class="button button-primary button-shadow" href="#">Sign In With Github</a>
+              <%= link_to login_path, class: 'button button-primary button-shadow' do %>
+                <span>Sign In With Github</span>
+              <% end %>
             </p>
           </div>
           <div class="hero-illustration">
@@ -353,7 +355,9 @@
         <div class="cta-inner section-inner is-revealing">
           <h3 class="section-title mt-0">Join the community.</h3>
           <div class="cta-cta">
-            <a class="button button-primary button-shadow" href="#">Sign in with Github</a>
+            <%= link_to login_path, class: 'button button-primary button-shadow' do %>
+              <span>Sign In With Github</span>
+            <% end %>
           </div>
         </div>
       </div>
