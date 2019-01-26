@@ -34,6 +34,10 @@
     </script><script type="text/javascript" src="//cdn.iubenda.com/cookie_solution/safemode/iubenda_cs.js" charset="UTF-8" async></script>
     <script type="text/javascript" src="https://cdn.iubenda.com/consent_solution/iubenda_cons.js"></script><script type="text/javascript">_iub.cons.init({  api_key: "5xqFyXj7TP16r0ndSxGYuC1yXsD9YjZJ"});</script>
 
+    <!--    frontend styling-->
+    <link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Arimo:400,700" rel="stylesheet">
+    <script src="https://unpkg.com/scrollreveal@4.0.0/dist/scrollreveal.min.js"></script>
+
     <%= stylesheet_link_tag  current_theme, media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload', defer: true %>
 
@@ -48,7 +52,7 @@
     <meta name="twitter:creator" content="teabass">
   </head>
 
-  <body>
+  <body class="is-boxed has-animations">
     <% if logged_in? %>
       <div class="flex-header">
         <%= render 'layouts/header' %>

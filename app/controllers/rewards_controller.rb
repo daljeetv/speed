@@ -59,7 +59,7 @@ class RewardsController < ApplicationController
   def authenticate_web_or_api!
     return if logged_in?
     respond_to do |format|
-      format.html { render 'pages/home' }
+      format.html { render 'pages/new-home' }
       format.json { authenticate_user! }
     end
   end
