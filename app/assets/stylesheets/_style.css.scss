@@ -1675,8 +1675,12 @@ button, input, select, textarea, label {
     flex-grow: 1
 }
 
-.testimonial a {
+.testimonial span {
     color: #55FBDC
+}
+
+.testimonial a {
+  color: #55FBDC
 }
 
 .testimonial a:hover {
