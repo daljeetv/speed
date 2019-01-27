@@ -272,7 +272,7 @@ figcaption {
 }
 
 img, svg {
-    display: block
+    //display: block
 }
 
 table {
@@ -308,7 +308,12 @@ html {
 
 body {
     color: #333E4A;
-    font-size: 1rem
+    //font-size: 1rem
+}
+
+.body-style {
+  color: #333E4A;
+  font-size: 1rem
 }
 
 body, button, input, select, textarea {
@@ -493,7 +498,6 @@ mark, ins {
 }
 
 small {
-    font-size: 18px;
     line-height: 27px;
     letter-spacing: -0.1px
 }
