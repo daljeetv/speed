@@ -145,7 +145,7 @@ module NotificationsHelper
   end
 
   def create_reward_button
-    function_button("Create Reward", 'credit-card', "create_reward", 'Create Reward')
+    function_button("Add Reward", 'credit-card', "create_reward", 'Create Reward')
   end
 
   def accept_reward_button
