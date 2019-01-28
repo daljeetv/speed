@@ -1,0 +1,688 @@
+,city,company,email,fake,follower_count,follower_id,login,name,state
+0,Portland,Linux Foundation,torvalds@linux-foundation.org,0.0,80184.0,5203.0,torvalds,Linus Torvalds,OR
+1,Pittsburgh,"Google, Inc.",jakewharton@gmail.com,0.0,48120.0,896.0,JakeWharton,Jake Wharton,PA
+2,Shanghai,,yifeng.ruan@gmail.com,0.0,39102.0,616741.0,ruanyf,Ruan YiFeng,
+3,Victoria,Apex,tj@apex.sh,0.0,37402.0,376498.0,Tj,TJ Holowaychuk,BC
+4,Mountain View,Google,addyosmani@gmail.com,0.0,32666.0,6240.0,addyosmani,Addy Osmani,CA
+5,Palo Alto,"Google Chrome, ♥z",paul.irish@gmail.com,0.0,29690.0,1779.0,paulirish,Paul Irish,CA
+6,,,yyx990803@gmail.com,0.0,29200.0,18556.0,yyx990803,Evan You,
+7,London,@facebook ,dan.abramov@me.com,0.0,27415.0,417948.0,gaearon,Dan Abramov,England
+8,,@avajs @xojs @chalk,sindresorhus@gmail.com,0.0,25701.0,3871.0,sindresorhus,Sindre Sorhus,
+9,San Francisco,,tom@mojombo.com,0.0,25112.0,9236.0,mojombo,Tom Preston-Werner,CA
+10,Winchester,@digitalocean @do-community,me@kennethreitz.org,0.0,22652.0,796.0,kennethreitz,Kenneth Reitz,VA
+11,Beijing,Beijing Normal University,daimajia@gmail.com,0.0,21661.0,2468643.0,daimajia,代码家,Beijing
+12,Beijing,www.liaoxuefeng.com,askxuefeng@gmail.com,0.0,20290.0,8320.0,michaelliao,Michael Liao,Beijing
+13,San Francisco,@github ,chris@github.com,0.0,20268.0,1570.0,defunkt,Chris Wanstrath,CA
+14,San Francisco,@observablehq ,mike@ocks.org,0.0,19417.0,13009.0,mbostock,Mike Bostock,CA
+15,,,douglas@crockford.com,0.0,18934.0,1736.0,douglascrockford,Douglas Crockford,
+16,San Francisco,GitHub,markd.otto@gmail.com,0.0,18750.0,81423.0,mdo,Mark Otto,CA
+17,Brooklyn,@Khan ,jeresig@gmail.com,0.0,17133.0,24452.0,jeresig,John Resig,NY
+18,Pasadena,thenewboston,buckyroberts@gmail.com,0.0,16603.0,5697148.0,buckyroberts,Bucky Roberts,CA
+19,Hangzhou,Alibaba,shyvo1987@gmail.com,0.0,16505.0,19076.0,JacksonTian,Jackson Tian,Zhejiang
+20,,,andrej.karpathy@gmail.com,0.0,16262.0,72477.0,karpathy,Andrej,CA
+21,Portland,@Flight-School ,mattt@me.com,0.0,15950.0,2427.0,mattt,Mattt,OR
+22,Brooklyn,Splice,jess.lord@gmail.com,0.0,15895.0,2016667.0,jlord,Jessica Lord,NY
+23,Hangzhou,DiDi,trinea.cn@gmail.com,0.0,15281.0,130302.0,Trinea,Trinea,Zhejiang
+24,San Francisco,,schacon@gmail.com,0.0,14252.0,10005.0,schacon,Scott Chacon,CA
+25,Austin,Getify Solutions,getify@gmail.com,0.0,14212.0,17717.0,getify,Kyle Simpson,TX
+26,San Francisco,,sirajravel@gmail.com,0.0,14102.0,273201.0,llSourcell,Siraj Raval,CA
+27,,bits.coop,substack@gmail.com,0.0,13907.0,1199.0,substack,James Halliday,
+28,Shanghai,"Boohee, Inc.",stormzhang.dev@gmail.com,0.0,13707.0,1019351.0,stormzhang,stormzhang,
+29,Berkeley,@observablehq ,jashkenas@gmail.com,0.0,13400.0,7125.0,jashkenas,Jeremy Ashkenas,CA
+30,Chicago,Basecamp,david@basecamp.com,0.0,13289.0,8179.0,dhh,David Heinemeier Hansson,IL
+31,Little Rock,Laravel,taylor@laravel.com,0.0,13247.0,28974.0,taylorotwell,Taylor Otwell,AR
+32,Houston,@rstudio ,hadley@rstudio.com,0.0,13243.0,27507.0,hadley,Hadley Wickham,TX
+33,Hangzhou,,lifesinger@gmail.com,0.0,13152.0,9883.0,lifesinger,lifesinger,Zhejiang
+34,London,@google working on @android,chris@banes.me,0.0,13077.0,31824.0,chrisbanes,Chris Banes,England
+35,,,yin@yinwang.org,0.0,12947.0,22947.0,yinwang0,Yin Wang,
+36,,ejoy.com,cloudwu@gmail.com,0.0,12657.0,5094.0,cloudwu,云风,
+37,,,clowwindy42@gmail.com,0.0,12479.0,53055.0,clowwindy,clowwindy,
+38,Seattle,,vczh@163.com,0.0,12410.0,119087.0,vczh,Zihan Chen,WA
+39,,,info@mrdoob.com,0.0,12280.0,2532.0,mrdoob,Mr.doob,
+40,,,armin.ronacher@active-4.com,0.0,12099.0,3569.0,mitsuhiko,Armin Ronacher,
+41,Shenzhen,@ThoughtWorksInc,h@phodal.com,0.0,11982.0,5805052.0,phodal,Phodal Huang,Guangdong
+42,Boston,MIT,lea@verou.me,0.0,11861.0,9777.0,LeaVerou,Lea Verou,MA
+43,,LINE Corp.,onev@onevcat.com,0.0,11524.0,104734.0,onevcat,Wei Wang,
+44,Winter Park,Laracasts,jeffrey@laracasts.com,0.0,11484.0,9452.0,JeffreyWay,Jeffrey Way,FL
+45,Berkeley,UC Berkeley,angus.hung@berkeley.edu,0.0,11276.0,13330706.0,angusshire,Angus Hung,CA
+46,Brooklyn,,github@tpope.org,0.0,11240.0,5823.0,tpope,Tim Pope,NY
+47,Orlando,"JohnPapa.net, LLC",john@johnpapa.net,0.0,10718.0,212879.0,johnpapa,John Papa,FL
+48,,wanandroid.com,623565791@qq.com,0.0,10584.0,6796546.0,hongyangAndroid,张鸿洋,
+49,San Francisco,"Tilde, Inc.",wycats@gmail.com,0.0,10393.0,3892.0,wycats,Yehuda Katz,CA
+50,Beijing,Ke.com,laruence@php.net,0.0,10379.0,12359.0,laruence,Xinchen Hui,Beijing
+51,Shanghai,jimengIO,xiemengjun@gmail.com,0.0,10364.0,122176.0,astaxie,astaxie,
+52,New York,,byvoid@byvoid.com,0.0,10344.0,95914.0,BYVoid,Carbo Kuo,NY
+53,Beijing,,ibireme@gmail.com,0.0,10234.0,355927.0,ibireme,Yaoyuan,Beijing
+54,,Redis Labs,antirez@gmail.com,0.0,10124.0,5260.0,antirez,Salvatore Sanfilippo,
+55,,,mmgac001@gmail.com,0.0,10085.0,4890403.0,breakwa11,破娃酱,
+56,San Francisco,"GitHub, Inc.",pj@hyett.com,0.0,9990.0,13256.0,pjhyett,PJ Hyett,CA
+57,,,ste.grider@gmail.com,0.0,9768.0,2325593.0,StephenGrider,Stephen Grider,
+58,Stockholm,Slides,hakim.elhattab@gmail.com,0.0,9613.0,2163.0,hakimel,Hakim El Hattab,Stockholm County
+59,Tianjin,,justjavac@gmail.com,0.0,9549.0,43814.0,justjavac,迷渡,Tianjin
+60,New York,@google ,roman@nurik.net,0.0,9506.0,133037.0,romannurik,Roman Nurik,NY
+61,San Francisco,SensioLabs/Symfony/Blackfire,fabien@symfony.com,0.0,9467.0,4828.0,fabpot,Fabien Potencier,CA
+62,,bumpers,jacobthornton@gmail.com,0.0,9409.0,5101.0,fat,fat,
+63,,qunar.com,cheng19840218@gmail.com,0.0,9338.0,91545.0,RubyLouvre,司徒正美,
+64,Oakland,"npm, Inc.",i@izs.me,0.0,9336.0,995.0,isaacs,isaacs,CA
+65,Shanghai,,happinesz@gmail.com,0.0,9108.0,19317.0,sofish,小鱼,
+66,,@GitHub,hi@muan.co,0.0,8672.0,1639886.0,muan,慕安,
+67,,RailsCasts,ryan@railscasts.com,0.0,8669.0,1063.0,ryanb,Ryan Bates,
+68,Cracow,Plataformatec,jose.valim@plataformatec.com.br,0.0,8572.0,8150.0,josevalim,José Valim,MP
+69,Guangzhou,小码哥 http://www.520it.com,richermj123go@vip.qq.com,0.0,8447.0,4012678.0,CoderMJLee,M了个J,Guangdong
+70,,OpenResty Inc.,agentzh@gmail.com,0.0,8425.0,3789.0,agentzh,Yichun Zhang,
+71,,,ry@tinyclouds.org,0.0,8411.0,13395.0,ry,Ryan Dahl,
+72,Beijing,一周 CP,liaohuqiu@gmail.com,0.0,8230.0,2164751.0,liaohuqiu,Huqiu Liao,Beijing
+73,San Francisco,"@WebTorrent, @Standard",feross@feross.org,0.0,8016.0,10227.0,feross,Feross Aboukhadijeh,CA
+74,,全民直播,fouber.NET@gmail.com,0.0,7946.0,887012.0,fouber,张云龙,
+75,New York,,daniel.shiffman@gmail.com,0.0,7943.0,1880.0,shiffman,Daniel Shiffman,NY
+76,Melbourne,,charlie@charlie.bz,0.0,7815.0,3142.0,charliesome,Charlie Somerville,VIC
+77,Denver,,tekkub@gmail.com,0.0,7758.0,1569.0,tekkub,Tekkub,CO
+78,Hamilton,me,wes@wesbos.com,0.0,7660.0,19691.0,wesbos,Wes Bos,ON
+79,Beijing,Alibaba,luohanchenyilong@163.com,0.0,7624.0,3828331.0,ChenYilong,微博@iOS程序犭袁,Beijing
+80,Póvoa de Varzim,,jose.moreira@findhit.com,0.0,7568.0,1640412.0,cusspvz,José Moreira,Porto
+81,Milwaukee,CodePen,chriscoyier@gmail.com,0.0,7389.0,16462.0,chriscoyier,Chris Coyier,WI
+82,San Francisco,Facebook,nicolasgallagher@gmail.com,0.0,7296.0,6258.0,necolas,Nicolas Gallagher,CA
+83,Mountain View,,nicholas@nczconsulting.com,0.0,7239.0,4764.0,nzakas,Nicholas C. Zakas,CA
+84,Matsue,"Ruby Association,NaCl,Heroku,Etc.",matz@ruby.or.jp,0.0,7207.0,24765.0,matz,"Yukihiro ""Matz"" Matsumoto",Shimane
+85,,@hsiaoming ,me@lepture.com,0.0,7181.0,9888.0,lepture,Hsiaoming Yang,
+86,,SNDA,csf178@gmail.com,0.0,7161.0,123757.0,wintercn,Shaofei Cheng,
+87,Seattle,GitHub,tenderlove@github.com,0.0,7059.0,129.0,tenderlove,Aaron Patterson,WA
+88,East Lansing,UW-Madison,mail@sebastianraschka.com,0.0,6923.0,2707452.0,rasbt,Sebastian Raschka,MI
+89,San Francisco,Google,ilya@igvita.com,0.0,6742.0,2823.0,igrigorik,Ilya Grigorik,CA
+90,Beijing,Yuanfudao,tangqiao@fenbi.com,0.0,6722.0,2455.0,tangqiaoboy,Tang Qiao,Beijing
+91,,CommonsWare,mmurphy@commonsware.com,0.0,6670.0,22626.0,commonsguy,Mark Murphy,
+92,,Google,romainguy@curious-creature.com,0.0,6667.0,100647.0,romainguy,Romain Guy,CA
+93,San Francisco,https://zeit.co,rauchg@gmail.com,0.0,6634.0,6548689.0,rauchg,Guillermo Rauch,CA
+94,Portland,"Google, Inc",kelsey.hightower@gmail.com,0.0,6611.0,5441.0,kelseyhightower,Kelsey Hightower,OR
+95,,,chenshuo@chenshuo.com,0.0,6587.0,28538.0,chenshuo,Shuo Chen,
+96,Washington,@GitHub,ben@balter.com,0.0,6518.0,34383.0,benbalter,Ben Balter,DC
+97,San Francisco,@during,zach@zachholman.com,0.0,6472.0,16110.0,holman,Zach Holman,CA
+98,,,max@maxogden.com,0.0,6462.0,10488.0,maxogden,=^._.^=,OR
+99,,"Liferay, Inc.",hi@zenorocha.com,0.0,6351.0,6483.0,zenorocha,Zeno Rocha,CA
+100,Los Angeles,HashiCorp,mitchell.hashimoto@gmail.com,0.0,6347.0,28552.0,mitchellh,Mitchell Hashimoto,CA
+101,Beijing,DiDi,singwhatiwanna@gmail.com,0.0,6322.0,2235128.0,singwhatiwanna,singwhatiwanna,Beijing
+102,Boston,,u@gogs.io,0.0,6240.0,1577367.0,Unknwon,无闻,MA
+103,Hangzhou,Microsoft,drakeet@drakeet.com,0.0,6236.0,3289068.0,drakeet,Drakeet,Zhejiang
+104,,@Google,mathias@qiwi.be,0.0,6199.0,5305.0,mathiasbynens,Mathias Bynens,
+105,Shanghai,,me@zhangwenli.com,0.0,6141.0,258293.0,Ovilia,羡辙,
+106,Seattle,University of Washington,jakevdp@gmail.com,0.0,6109.0,26686.0,jakevdp,Jake Vanderplas,WA
+107,Hangzhou,,xu.fei@outlook.com,0.0,6030.0,1658486.0,xufei,xufei,Zhejiang
+108,Hangzhou,Alipay,fengmk2@gmail.com,0.0,6001.0,11961.0,fengmk2,fengmk2,Zhejiang
+109,,Unity Technologies Japan,keijiro@gmail.com,0.0,5931.0,81503.0,keijiro,Keijiro Takahashi,
+110,,Ultimate Courses,todd@toddmotto.com,0.0,5930.0,139710.0,toddmotto,Todd Motto,England
+111,Tokyo,"CyberAgent, Inc.",dadadada.chop@gmail.com,0.0,5732.0,1147949.0,wasabeef,Daichi Furiya,Tokyo
+112,Zhengzhou,,rengwuxian@gmail.com,0.0,5706.0,2518797.0,rengwuxian,Kai Zhu,Henan
+113,Brighton,Left Logic / @leftlogic ,remy@remysharp.com,0.0,5506.0,19455.0,remy,Remy Sharp,England
+114,Chattanooga,Laracasts,jeffrey@laracasts.com,0.0,5489.0,2852307.0,laracasts,Laracasts,TN
+115,Alexandria,Metafizzy,david@desandro.com,0.0,5437.0,26243.0,desandro,David DeSandro,VA
+116,,@github,acidburn@github.com,0.0,5414.0,31283401.0,jessfraz,Jess Frazelle,Camp.
+117,,Google,brad@danga.com,0.0,5386.0,99234.0,bradfitz,Brad Fitzpatrick,
+118,Portland,,miguelgrinberg50@gmail.com,0.0,5380.0,1295135.0,miguelgrinberg,Miguel Grinberg,OR
+119,Sao Paulo,http://loiane.training,loianeg@gmail.com,0.0,5361.0,70368.0,loiane,Loiane Groner,SP
+120,San Francisco,Facebook,dan.eden@me.com,0.0,5312.0,3816.0,daneden,Daniel Eden,CA
+121,San Francisco,@wakatime,alan.hamlett@gmail.com,0.0,5242.0,8339.0,alanhamlett,Alan Hamlett,CA
+122,Baltimore,Johns Hopkins University,rdpeng@gmail.com,0.0,5230.0,186938.0,rdpeng,Roger D. Peng,MD
+123,,Offensive Security,info@exploit-db.com,0.0,5228.0,766946.0,offensive-security,Offensive Security,
+124,New York,Facebook AI Research,soumith@gmail.com,0.0,5191.0,235257.0,soumith,Soumith Chintala,NY
+125,London,Transport for London,michalpaszkiewicz@hotmail.com,0.0,5185.0,3688872.0,MichalPaszkiewicz,Michal Paszkiewicz,England
+126,Mountain View,Google,goodfellow@google.com,0.0,5179.0,54134.0,goodfeli,Ian Goodfellow,CA
+127,Portland,@Microsoft ,scott@hanselman.com,0.0,5177.0,28923.0,shanselman,Scott Hanselman,OR
+128,San Francisco,Smyte,pete@smyte.com,0.0,5151.0,350296.0,petehunt,Pete Hunt,CA
+129,London,Charcoal Design,nick@charcoaldesign.co.uk,0.0,5146.0,11213.0,nicklockwood,Nick Lockwood,England
+130,Mountain View,,francois.chollet@gmail.com,0.0,5125.0,805161.0,fchollet,François Chollet,CA
+131,New York,Ursa Labs / @rstudio,wes.mckinney@twosigma.com,0.0,5121.0,30240.0,wesm,Wes McKinney,NY
+132,,GitHub,zcbenz@gmail.com,0.0,5096.0,14765.0,zcbenz,Cheng Zhao,
+133,San Francisco,@google,burcujdogan@gmail.com,0.0,5060.0,2352882.0,rakyll,JBD,CA
+134,,"@objectbox, greenrobot.org",opensource+markus@greenrobot.de,0.0,5028.0,94084.0,greenrobot,Markus Junginger,
+135,Redlick,Magic Leap,tim@creationix.com,0.0,5022.0,3080.0,creationix,Tim Caswell,TX
+136,New York,@Google,steve.francia@gmail.com,0.0,5006.0,8293.0,spf13,Steve Francia,NY
+137,Glen Rock,geohot LLC,geohot@gmail.com,0.0,4952.0,409151.0,geohot,George Hotz,NJ
+138,,,morvanzhou@hotmail.com,0.0,4950.0,13318142.0,MorvanZhou,Morvan,
+139,,"Dropbox, Inc.",guido@python.org,0.0,4918.0,1066977.0,gvanrossum,Guido van Rossum,
+140,,Tencent,miloyip@gmail.com,0.0,4878.0,311074.0,miloyip,Milo Yip,
+141,Siegburg,@thePHPcc ,sebastian@phpunit.de,0.0,4869.0,2223.0,sebastianbergmann,Sebastian Bergmann,NW
+142,,JPMorgan Chase & Co.,jeffz@live.com,0.0,4813.0,60812.0,JeffreyZhao,Jeffrey Zhao,
+143,Portland,GitHub Inc.,kevin@github.com,0.0,4795.0,3741.0,kevinsawicki,Kevin Sawicki,OR
+144,Leeds,CSS Wizardry,csswizardry@gmail.com,0.0,4772.0,56477.0,csswizardry,Harry Roberts,England
+145,Omaha,"RStudio, Inc.",xie@yihui.name,0.0,4761.0,39333.0,yihui,Yihui Xie,NE
+146,Gurnee,Uncle Bob Consulting LLC. ,unclebob@cleancoder.com,0.0,4750.0,22234.0,unclebob,Robert C. Martin,IL
+147,Mountain View,Google,dennybritz@gmail.com,0.0,4748.0,26874.0,dennybritz,Denny Britz,CA
+148,Washington,Mozilla,alex.gaynor@gmail.com,0.0,4713.0,7182.0,alex,Alex Gaynor,DC
+149,Newport Beach,Coding for Entrepreneurs,hello@teamcfe.com,0.0,4710.0,4490324.0,codingforentrepreneurs,Coding For Entrepreneurs,CA
+150,London,readyState Software Ltd,jgilfelt@gmail.com,0.0,4651.0,62194.0,jgilfelt,Jeff Gilfelt,England
+151,San Francisco,@lyft ,sam@soff.es,0.0,4592.0,9308.0,soffes,Sam Soffes,CA
+152,Los Angeles,,git@samy.pl,0.0,4592.0,17400.0,samyk,Samy Kamkar,CA
+153,,UIT,simplecoder.h@gmail.com,0.0,4588.0,2319410.0,hehonghui,Mr.Simple,
+154,San Francisco,Google,ebidel@gmail.com,0.0,4566.0,15262.0,ebidel,Eric Bidelman,CA
+155,Shanghai,扫码关注,dyc87112@qq.com,0.0,4526.0,1476209.0,dyc87112,程序猿DD-翟永超,
+156,,,cyril@mottier.io,0.0,4503.0,8221.0,cyrilmottier,Cyril Mottier,
+157,Salt Lake City,@paypal,kent+github@doddsfamily.us,0.0,4492.0,308073.0,kentcdodds,Kent C. Dodds,UT
+158,Beijing,,786165179@qq.com,0.0,4491.0,3102864.0,julycoding,July,Beijing
+159,San Francisco,,mn@michaelnielsen.org,0.0,4486.0,190468.0,mnielsen,Michael Nielsen,CA
+160,Osaka,,mattn.jp@gmail.com,0.0,4471.0,17759.0,mattn,mattn,Osaka
+161,San Francisco,Parallel Drive,support@paralleldrive.com,0.0,4424.0,4755025.0,ericelliott,Eric Elliott,CA
+162,,,jw@talktothemanager.com,0.0,4397.0,2813904.0,jwasham,John Washam,
+163,Waterloo,"Square, Inc.",jwilson@squareup.com,0.0,4385.0,23627.0,swankjesse,Jesse Wilson,ON
+164,San Francisco,Clearbit,alex@alexmaccaw.com,0.0,4346.0,4328.0,maccman,Alex MacCaw,CA
+165,New York,Columbia University Data Science Institute,t3kcit+githubspam@gmail.com,0.0,4296.0,27897.0,amueller,Andreas Mueller,NY
+166,San Francisco,,chris@colah.ca,0.0,4236.0,19637.0,colah,Christopher Olah,CA
+167,San Francisco,Google,minko@gechev.io,0.0,4234.0,223106.0,mgechev,Minko Gechev,CA
+168,Brooklyn,,steve@steveklabnik.com,0.0,4221.0,17141.0,steveklabnik,Steve Klabnik,NY
+169,Shenzhen,Tencent,alsotang@gmail.com,0.0,4193.0,279717.0,alsotang,alsotang,Guangdong
+170,,,huacnlee@gmail.com,0.0,4166.0,13511.0,huacnlee,Jason Lee,
+171,,IBM Deutschland,fcejas@gmail.com,0.0,4160.0,184219.0,android10,Fernando Cejas,BE
+172,Savannah,,mxcl@me.com,0.0,4157.0,7165.0,mxcl,Max Howell,GA
+173,,Google,noms@google.com,0.0,4157.0,669613.0,notwaldorf,Monica Dinculescu,
+174,Baku,,hello@42na.in,0.0,4147.0,26331.0,NARKOZ,Nihad Abbasov,Baku
+175,New York,,richhickey@gmail.com,0.0,4132.0,17100.0,richhickey,Rich Hickey,NY
+176,Shanghai,Tencent Inc.,kesenhoo@gmail.com,0.0,4129.0,239479.0,kesenhoo,HuKai,
+177,,@openai,carpedm20@gmail.com,0.0,4121.0,1449798.0,carpedm20,Taehoon Kim,
+178,,, jaffathecake@gmail.com,0.0,4117.0,14955.0,jakearchibald,Jake Archibald,
+179,San Francisco,Protocol Labs,mikeal.rogers@gmail.com,0.0,4105.0,8267.0,mikeal,Mikeal Rogers,CA
+180,Hangzhou,Alibaba Inc.,zhaojinjiang@me.com,0.0,4101.0,63783.0,Jinjiang,勾三股四,Zhejiang
+181,Beijing,,haoel@hotmail.com,0.0,4078.0,672859.0,haoel,Hao Chen,Beijing
+182,,University of York,graham@alt-three.com,0.0,4066.0,1400269.0,GrahamCampbell,Graham Campbell,
+183,Brooklyn,Funemployed,me@philsturgeon.uk,0.0,4060.0,7020.0,philsturgeon,Phil Sturgeon,NY
+184,Boston,Traversy Media,traversymedia@gmail.com,0.0,4048.0,3226781.0,bradtraversy,Brad Traversy,MA
+185,Redwood City,@facebook,hi@andrewclark.io,0.0,4037.0,1579646.0,acdlite,Andrew Clark,CA
+186,San Francisco,the Spring team at Pivotal (http://spring.io) ,josh@joshlong.com,0.0,4028.0,14294.0,joshlong,Josh Long,CA
+187,,JavaScript @elastic,github@ponyfoo.com,0.0,4010.0,129526.0,bevacqua,Nicolás Bevacqua,
+188,Beijing,,gxqzk@126.com,0.0,4001.0,2020826.0,nswbmw,nswbmw,Beijing
+189,Copenhagen,@hyperdivision,mathiasbuus@gmail.com,0.0,3978.0,23250.0,mafintosh,Mathias Buus,Capital Region
+190,,"CEO, PSPDFKit GmbH",steipete@gmail.com,0.0,3967.0,7059.0,steipete,Peter Steinberger,Vienna
+191,,,simonvt@gmail.com,0.0,3959.0,25492.0,SimonVT,Simon Vig Therkildsen,
+192,,tajawal,kamranahmed.se@gmail.com,0.0,3916.0,2205410.0,kamranahmedse,Kamran Ahmed,BE
+193,,JS 开发视频死磕侠,happypeter1983@gmail.com,0.0,3895.0,82395.0,happypeter,Peter Wang,
+194,Freiburg,blueimp.net,mail@blueimp.net,0.0,3882.0,10321.0,blueimp,Sebastian Tschan,BW
+195,,,info@elm-lang.org,0.0,3852.0,134464.0,evancz,Evan Czaplicki,
+196,,Stanford University,jcjohns@fb.com,0.0,3831.0,1494563.0,jcjohnson,Justin Johnson,
+197,,Tencent.,anzhengchao@gmail.com,0.0,3827.0,4384400.0,overtrue,安正超,
+198,Chicago,Basecamp,sstephenson@gmail.com,0.0,3824.0,2122.0,sstephenson,Sam Stephenson,IL
+199,San Francisco,Bugsnag,james@loopj.com,0.0,3822.0,11703.0,loopj,James Smith,CA
+200,Manila,,hi@ricostacruz.com,0.0,3799.0,65647.0,rstacruz,Rico Sta. Cruz,National Capital Region
+201,,Google,misko@hevery.com,0.0,3791.0,988.0,mhevery,Miško Hevery,
+202,Shenzhen,,lj925184928@gmail.com,0.0,3786.0,1622941.0,numbbbbb,Jie Liang,Guangdong
+203,San Francisco,,btford@umich.edu,0.0,3784.0,4096.0,btford,Brian Ford,CA
+204,,SIMON Markets LLC,sakhat@gmail.com,0.0,3775.0,4073.0,sahat,Sahat Yalkabov,
+205,Hamilton,@google,developit@google.com,0.0,3771.0,232774.0,developit,Jason Miller,ON
+206,New York,Flatiron Health,jfeinstein10@gmail.com,0.0,3743.0,66845.0,jfeinstein10,Jeremy Feinstein,NY
+207,,,julia@jvns.ca,0.0,3731.0,160059.0,jvns,Julia Evans,
+208,Washington,@facebook,donne.martin@gmail.com,0.0,3728.0,3752431.0,donnemartin,Donne Martin,DC
+209,Portland,"Life Epigenetics, Inc.",rso@randalolson.com,0.0,3696.0,144574.0,rhiever,Randy Olson,OR
+210,Stockholm,Mattias Petter Johansson,1,0.0,3681.0,22538.0,mpj,Mattias Petter Johansson,Stockholm County
+211,Madrid,Freelance Kotlin trainer,antonioleivag@gmail.com,0.0,3657.0,1554763.0,antoniolg,Antonio Leiva,Community of Madrid
+212,,Monadic,alexis@cloudhead.io,0.0,3648.0,22907.0,cloudhead,Alexis Sellier,BE
+213,Beijing,,kevinchou.c@gmail.com,0.0,3613.0,252654.0,kevinzhow,Kevin,Beijing
+214,Helsinki,,contact@staltz.com,0.0,3608.0,702695.0,STALTZ,André Staltz,Southern Finland
+215,New York,,david.nolen@gmail.com,0.0,3591.0,4786.0,swannodette,David Nolen,NY
+216,Seattle,@reach ,rpflorence@gmail.com,0.0,3575.0,2520945.0,ryanflorence,Ryan Florence,WA
+217,Beijing,Didi,dinophp@gmail.com,0.0,3558.0,12826.0,dodola,dodola,Beijing
+218,Las Vegas,,mstraughan86@gmail.com,0.0,3525.0,11587542.0,mstraughan86,Michael Straughan,NV
+219,San Francisco,@Google at @firebase ,prakhar@prakhar.me,0.0,3523.0,166503.0,prakhar1989,Prakhar Srivastav,CA
+220,,Freelancer,contact@sarasoueidan.com,0.0,3518.0,1509801.0,SaraSoueidan,Sara Soueidan,
+221,Mumbai,slidenerd,slidenerd@gmail.com,0.0,3505.0,2371939.0,slidenerd,slidenerd,Maharashtra
+222,,,john.david.dalton@gmail.com,0.0,3488.0,34219.0,jdalton,John-David Dalton,
+223,,,mike@mikeash.com,0.0,3473.0,7124.0,mikeash,Mike Ash,
+224,Kirkwood,Microsoft,sarah.drasner@gmail.com,0.0,3470.0,11576610.0,sdras,Sarah Drasner,CA
+225,Shanghai,Alibaba Group,bruceinpeking@gmail.com,0.0,3465.0,39551.0,lzyzsd,hi大头鬼hi,
+226,Boston,@toasttab ,cowboy@rj3.net,0.0,3459.0,5091.0,cowboy,Ben Alman,MA
+227,Suzhou,易水禾软件,qiwsir@gmail.com,0.0,3434.0,3078756.0,qiwsir,老齐,Jiangsu
+228,,UC Berkeley,ross.girshick@gmail.com,0.0,3429.0,665521.0,rbgirshick,Ross Girshick,
+229,Austin,,progrium@gmail.com,0.0,3425.0,16042.0,progrium,Jeff Lindsay,TX
+230,,,r@golang.org,0.0,3422.0,2264029.0,robpike,Rob Pike,
+231,Hangzhou,Alipay,sorrycc@gmail.com,0.0,3422.0,44905.0,sorrycc,chencheng (云谦),Zhejiang
+232,San Francisco,,moxie@thoughtcrime.org,0.0,3419.0,9354.0,moxie0,Moxie Marlinspike,CA
+233,New York,,nathan@nathanmarz.com,0.0,3402.0,8592.0,nathanmarz,Nathan Marz,NY
+234,Beijing,alibaba,langshu.ssl@alibaba-inc.com,0.0,3400.0,1255871.0,i5ting,狼叔,Beijing
+235,Shanghai,,lexrus@gmail.com,0.0,3389.0,2441.0,lexrus,Lex Tang,
+236,,@zazuko,victor@draft.li,0.0,3382.0,274322.0,vhf,victor felder,
+237,New York,Google,d@domenic.me,0.0,3375.0,9779.0,domenic,Domenic Denicola,NY
+238,,,Shougo.Matsu@gmail.com,0.0,3361.0,22152.0,Shougo,Shougo,
+239,Denver,,erica@ericasadun.com,0.0,3345.0,27663.0,erica,Erica Sadun,CO
+240,San Francisco,,zed.shaw@gmail.com,0.0,3339.0,31839.0,zedshaw,Zed A. Shaw,CA
+241,Hangzhou,@alipay @alibaba @eggjs ,heyiyu.deadhorse@gmail.com,0.0,3329.0,108349.0,dead-horse,Yiyu He,Zhejiang
+242,Seattle,Oculus,shade@chemlab.org,0.0,3328.0,13304.0,cyanogen,Steve Kondik,WA
+243,Linz,Mike Penz,mikepenz@gmail.com,0.0,3322.0,213173.0,mikepenz,Mike Penz,Upper Austria
+244,St Paul,@square ,afollestad@squareup.com,0.0,3321.0,10150.0,afollestad,Aidan Follestad,MN
+245,,xeyeteam,evilcos@gmail.com,0.0,3319.0,121087.0,evilcos,evilcos,
+246,London,Google,skeet@pobox.com,0.0,3306.0,392665.0,jskeet,Jon Skeet,England
+247,,quanzhanke.com,easychen@qq.com,0.0,3304.0,26078.0,easychen,Easy,
+248,Needham,Olin College of Engineering,allen.downey@olin.edu,0.0,3293.0,93579.0,AllenDowney,Allen Downey,MA
+249,Qingyuan,,huangz1990@gmail.com,0.0,3257.0,6038.0,huangz1990,黄健宏,Guangdong
+250,,@jepsen-io ,aphyr+recruiter-emails-will-be-published@aphyr.com,0.0,3245.0,28195.0,aphyr,Kyle Kingsbury,
+251,Minsk,@gojuno ,nostra13@gmail.com,0.0,3242.0,94295.0,nostra13,Sergey Tarasevich,Minsk
+252,Madison,Mozilla,david@davidwalsh.name,0.0,3241.0,27606.0,darkwing,David Walsh,WI
+253,Pittsburgh,Google,tongzhongyichina@gmail.com,0.0,3231.0,3930527.0,geeeeeeeeek,Zhongyi Tong,PA
+254,,,felix@debuggable.com,0.0,3229.0,17715.0,felixge,Felix Geisendörfer,BE
+255,Seattle,Destroy All Software LLC,gary.bernhardt@gmail.com,0.0,3219.0,42026.0,garybernhardt,Gary Bernhardt,WA
+256,,,tobias.koppers@googlemail.com,0.0,3209.0,59649.0,sokra,Tobias Koppers,
+257,Boston,Salesforce.com,ccoenraets@gmail.com,0.0,3197.0,42049.0,ccoenraets,Christophe Coenraets,MA
+258,Seattle,Google,karanmatic@gmail.com,0.0,3190.0,2395169.0,karan,Karan Goel,WA
+259,,@g0v ,audreyt@audreyt.org,0.0,3158.0,9577.0,audreyt,唐鳳,
+260,San Francisco,Google,github@krausefx.com,0.0,3151.0,302608.0,KrauseFx,Felix Krause,CA
+261,Shenzhen,,gsdios@126.com,0.0,3151.0,6576141.0,gsdios,高少东,Guangdong
+262,Beijing,@258ch @ApacheCN ,admin@flygon.net,0.0,3146.0,2480835.0,wizardforcel,飞龙,Beijing
+263,,,me@thejameskyle.com,0.0,3139.0,41293861.0,jamiebuilds,Jamie,
+264,Menlo Park,@facebook ,jiayq84@gmail.com,0.0,3134.0,391207.0,Yangqing,Yangqing Jia,CA
+265,Shanghai,NVIDIA,max.c.lv@gmail.com,0.0,3120.0,153359.0,madeye,Max Lv,
+266,New York,@artsy,ash@ashfurrow.com,0.0,3118.0,129688.0,AshFurrow,Ash Furrow,NY
+267,Zurich,Packagist,j.boggiano@seld.be,0.0,3115.0,28798.0,Seldaek,Jordi Boggiano,ZH
+268,Seattle,@Microsoft @Xamarin,james.montemagno@gmail.com,0.0,3099.0,21267.0,jamesmontemagno,James Montemagno,WA
+269,,Greater Commons,todd.mcleod@fresnocitycollege.edu,0.0,3098.0,4723171.0,GoesToEleven,Todd McLeod,CA
+270,,zoom.us,yee.huang@zoom.us,0.0,3098.0,2560041.0,ustbhuangyi,HuangYi,
+271,Los Angeles,"Ruby on Rails Tutorial, Learn Enough to Be Dangerous",michael@michaelhartl.com,0.0,3096.0,20652.0,mhartl,Michael Hartl,CA
+272,,Meituan,yanhaijing@yeah.net,0.0,3091.0,1295956.0,yanhaijing,颜海镜,
+273,,Toptal (@toptal),bozhidar@batsov.com,0.0,3090.0,44662.0,bbatsov,Bozhidar Batsov,Sofia City
+274,,Recruiters go away,marijnh@gmail.com,0.0,3085.0,2084.0,marijnh,Marijn Haverbeke,BE
+275,Madrid,@plexinc ,manuel.peinado@gmail.com,0.0,3083.0,1776300.0,ManuelPeinado,Manuel Peinado Gallego,Community of Madrid
+276,,@brave ,brendan@mozilla.org,0.0,3082.0,2074.0,BrendanEich,Brendan Eich,
+277,Madrid,Karumi,pedrovicente.gomez@gmail.com,0.0,3066.0,1882800.0,pedrovgs,Pedro Vicente Gómez Sánchez,Community of Madrid
+278,,,junegunn.c@gmail.com,0.0,3063.0,34702.0,junegunn,Junegunn Choi,
+279,Palo Alto,Amazon,mli@amazon.com,0.0,3060.0,2762543.0,mli,Mu Li,CA
+280,,,nikic@php.net,0.0,3043.0,25139.0,nikic,Nikita Popov,BE
+281,Curitiba,Webschool,jnascimento@gmail.com,0.0,3041.0,24814.0,suissa,Jean Carlo Nascimento,PR
+282,Shenzhen,,chloerei@gmail.com,0.0,3032.0,25447.0,chloerei,Rei,Guangdong
+283,,Facebook,kmh.kaiminghe@gmail.com,0.0,3021.0,7979843.0,KaimingHe,Kaiming He,
+284,,,kittenyang@icloud.com,0.0,2995.0,3404625.0,KittenYang,Qitao Yang,
+285,San Francisco,@breakeraudio ,leah.culver@gmail.com,0.0,2988.0,24345.0,leah,Leah Culver,CA
+286,,Formidable,ken_wheeler@me.com,0.0,2980.0,2650924.0,kenwheeler,Ken Wheeler,
+287,,,cssmagic.cn@gmail.com,0.0,2977.0,915254.0,cssmagic,CSS魔法,
+288,Hangzhou,@taobao tmall @alibaba @aliyun,oldratlee@gmail.com,0.0,2973.0,918971.0,oldratlee,李鼎(哲良),Zhejiang
+289,Philadelphia,Slash7 LLC,thomas@slash7.com,0.0,2972.0,1019.0,madrobby,Thomas Fuchs,PA
+290,Louisville,GitHub,technoweenie@gmail.com,0.0,2965.0,1563.0,technoweenie,risk danger olson,CO
+291,San Francisco,,shuichi0526@gmail.com,0.0,2964.0,147518.0,shu223,Shuichi Tsutsumi,CA
+292,Hangzhou,@igalia,joyeec9h3@gmail.com,0.0,2957.0,5790101.0,joyeecheung,Joyee Cheung,Zhejiang
+293,New York,WeWork,kangax@gmail.com,0.0,2951.0,28405.0,kangax,Juriy Zaytsev,NY
+294,,@freeCodeCamp ,michaelqlarson@gmail.com,0.0,2934.0,5937359.0,QuincyLarson,Quincy Larson,
+295,Redmond,Microsoft,andersh@microsoft.com,0.0,2926.0,1935638.0,ahejlsberg,Anders Hejlsberg,WA
+296,,,katrina.owen@gmail.com,0.0,2921.0,25843.0,kytrinyx,Katrina Owen,
+297,Baltimore,Johns Hopkins University Department of Biostatistics,bcaffo@gmail.com,0.0,2920.0,309807.0,bcaffo,Brian Caffo,MD
+298,,"Android GDE. Android Book Author. Consultant, Speaker & Advisor.",donn@donnfelker.com,0.0,2904.0,126508.0,donnfelker,Donn Felker,
+299,Palo Alto,Facebook,chenglou92@gmail.com,0.0,2896.0,1714317.0,chenglou,Cheng Lou,CA
+300,,,yangyangwithgnu@yeah.net,0.0,2895.0,3646576.0,yangyangwithgnu,yangyangwithgnu,
+301,San Francisco,@zeit ,n@n8.io,0.0,2894.0,6400.0,TooTallNate,Nathan Rajlich,CA
+302,,,igor@angularjs.org,0.0,2888.0,979.0,IgorMinar,Igor Minar,
+303,Carlsbad,@ReactTraining ,michael@jackson.us,0.0,2881.0,304422.0,mjackson,Michael Jackson,CA
+304,,Etsy,rasmus@php.net,0.0,2873.0,19620.0,rlerdorf,Rasmus Lerdorf,
+305,,,roger@nwjs.io,0.0,2869.0,13063.0,rogerwang,Roger Wang (WenRui),
+306,Bellevue,GitHub,haacked@gmail.com,0.0,2859.0,16507.0,Haacked,Phil Haack,WA
+307,De Land,LinkedIn,ray@planetoftheweb.com,0.0,2859.0,615866.0,planetoftheweb,Ray Villalobos,FL
+308,Ankara,@DigitalOcean,fatih@arslan.io,0.0,2858.0,1193863.0,fatih,Fatih Arslan,Ankara
+309,Portland,"Planet Argon, LLC",robby@planetargon.com,0.0,2842.0,15119.0,robbyrussell,Robby Russell,OR
+310,New Delhi,@MindOrksOpenSource,amit.shekhar.iitbhu@gmail.com,0.0,2839.0,6310255.0,amitshekhariitbhu,AMIT SHEKHAR,Delhi
+311,,,ibdknox@gmail.com,0.0,2836.0,15341.0,ibdknox,Chris Granger,
+312,,Taobao FED,barret.china@gmail.com,0.0,2831.0,2591364.0,barretlee,小胡子哥,
+313,Guangzhou,Alibaba Inc.,xhzengAIB@gmail.com,0.0,2829.0,968786.0,xhzengAIB,曾宪华,Guangdong
+314,Montpellier,,contact@grafikart.fr,0.0,2819.0,123156.0,Grafikart,Jonathan,Languedoc-Roussillon
+315,,Browserling,peter@catonmat.net,0.0,2812.0,17781.0,pkrumins,Peter Krumins,
+316,Beijing,baidu,sunyuan1713@gmail.com,0.0,2810.0,1736294.0,sunnyxx,Yuan Sun,Beijing
+317,London,@Facebook,justin@jspahrsummers.com,0.0,2810.0,25534.0,jspahrsummers,Justin Spahr-Summers,England
+318,Shanghai,Piaoniu.com,code4crafter@gmail.com,0.0,2807.0,1604453.0,code4craft,Yihua Huang,
+319,Shanghai,@bilibili,i@diygod.me,0.0,2794.0,4880649.0,DIYgod,DIYgod,
+320,,,zhangxinxu@zhangxinxu.com,0.0,2790.0,762878.0,zhangxinxu,zhangxinxu,
+321,San Francisco,,lee@leebyron.com,0.0,2788.0,81358.0,leebyron,Lee Byron,CA
+322,,@CapitalOne,qiang.xue@gmail.com,0.0,2784.0,12189.0,qiangxue,Qiang Xue,VA
+323,,,imlody@163.com,0.0,2777.0,7057581.0,asLody,Lody,
+324,San Francisco,Figma,rasmus@notion.se,0.0,2766.0,12035.0,rsms,Rasmus,CA
+325,Washington,Data School,justmarkham@gmail.com,0.0,2760.0,3291062.0,justmarkham,Kevin Markham,DC
+326,Póvoa de Varzim,,deftonicks_me@hotmail.com,0.0,2758.0,1826435.0,Brunocasanova,Bruno Casanova,Porto
+327,,@Meituan-Dianping,bingoogolapple@gmail.com,0.0,2746.0,5341105.0,bingoogolapple,王浩,
+328,New York,Fast Forward Labs,hmason@quasika.net,0.0,2746.0,189.0,hmason,Hilary Mason,NY
+329,,阿里巴巴,litesuits@qq.com,0.0,2734.0,3499565.0,LiteSuits,马天宇,
+330,,,sm@saulmm.com,0.0,2731.0,1554589.0,saulmm,Saul Molinero,
+331,London,@vislyhq ,emil@visly.app,0.0,2730.0,99644.0,emilsjolander,Emil Sjölander,England
+332,,@github ,contact@mxstbr.com,0.0,2724.0,7885550.0,mxstbr,Max Stoiber,Vienna
+333,Brooklyn,@postlight ,ginatrapani@gmail.com,0.0,2723.0,4341.0,ginatrapani,Gina Trapani,NY
+334,Brooklyn,bocoup,waldron.rick@gmail.com,0.0,2716.0,174794.0,rwaldron,Rick Waldron,NY
+335,San Francisco,@breakeraudio,sferik@gmail.com,0.0,2706.0,8931.0,sferik,Erik Berlin,CA
+336,,@evilmartians ,andrey@sitnik.ru,0.0,2701.0,119291.0,ai,Andrey Sitnik,St. Petersburg City
+337,,Zube,jen.dewalt@gmail.com,0.0,2700.0,1416149.0,jendewalt,Jen Dewalt,
+338,,@paypal,fedor@indutny.com,0.0,2699.0,128588.0,indutny,Fedor Indutny,
+339,Ancona,,gabri.mariotti@gmail.com,0.0,2698.0,1048448.0,gabrielemariotti,Gabriele Mariotti,Marc.
+340,Vancouver,@expo  ,brentvatne@gmail.com,0.0,2690.0,13688.0,brentvatne,Brent Vatne,BC
+341,Los Angeles,@IntuitiveWebSolutions ,pydanny@gmail.com,0.0,2686.0,52638.0,pydanny,Daniel Roy Greenfeld,CA
+342,London,Facebook,lucasr@lucasr.org,0.0,2683.0,213283.0,lucasr,Lucas Rocha,England
+343,Frankfurt,Marco Pivetta Software Development,ocramius@gmail.com,0.0,2682.0,1628.0,Ocramius,Marco Pivetta,HE
+344,Amsterdam,,mislav.marohnic@gmail.com,0.0,2680.0,1934.0,mislav,Mislav Marohnić,North Holland
+345,San Francisco,Facebook,sebastian@calyptus.eu,0.0,2678.0,4597.0,sebmarkbage,Sebastian Markbåge,CA
+346,Shanghai,Alipay,zhaiyifan56@gmail.com,0.0,2674.0,7460028.0,markzhai,markzhai,
+347,,AntFin,wepon@pku.edu.cn,0.0,2664.0,6170222.0,wepe,wepon,
+348,,TylerMcGinnis.com,tylermcginnis33@gmail.com,0.0,2664.0,3209606.0,tylermcginnis,Tyler McGinnis,
+349,,@utilitywarehouse ,me@daylerees.com,0.0,2654.0,28811.0,daylerees,Dayle Rees,Wales
+350,,Protozoa,dominic.tarr@gmail.com,0.0,2650.0,1831.0,dominictarr,Dominic Tarr,
+351,Melbourne,@realestate-com-au ,JakeLinAu@gmail.com,0.0,2648.0,1424267.0,JakeLin,Jake Lin,VIC
+352,Cambridge,Machine Intelligence Research Institute,ekmett@gmail.com,0.0,2647.0,3808.0,ekmett,Edward Kmett,MA
+353,Mountain View,Tubular Labs,travisneilson@gmail.com,0.0,2636.0,718764.0,travisneilson,Travis Neilson,CA
+354,Cary,@Formlabs ,michael.fogleman@gmail.com,0.0,2636.0,132827.0,fogleman,Michael Fogleman,NC
+355,Mountain View,Google,soulmachine@gmail.com,0.0,2631.0,263424.0,soulmachine,Frank Dai,CA
+356,San Francisco,Google,philip@philipwalton.com,0.0,2630.0,33452.0,philipwalton,Philip Walton,CA
+357,Sydney,CSRF for social change,dave@cheney.net,0.0,2625.0,83942.0,davecheney,Dave Cheney,NSW
+358,,,ariya.hidayat@gmail.com,0.0,2620.0,10689.0,ariya,Ariya Hidayat,
+359,Shanghai,,kymjs123@gmail.com,0.0,2613.0,3091170.0,kymjs,张涛,
+360,Davis,,jacob@jacobian.org,0.0,2611.0,6602.0,jacobian,Jacob Kaplan-Moss,CA
+361,Austin,,r@tomayko.com,0.0,2605.0,1564.0,rtomayko,Ryan Tomayko,TX
+362,San Francisco,@TableCo,results@alexcory.com,0.0,2601.0,3148103.0,alex-cory,Alex Cory,CA
+363,,Codeminer 42,fabioakita@gmail.com,0.0,2600.0,2262.0,akitaonrails,Fabio Akita,
+364,,Snapchat,aymeric.damien@gmail.com,0.0,2598.0,6733381.0,aymericdamien,Aymeric Damien,
+365,Shanghai,Free Lance,casatwy@casatwy.com,0.0,2594.0,406396.0,casatwy,Casa Taloyum,
+366,San Francisco,GitHub,octocat@github.com,0.0,2594.0,6321.0,octocat,The Octocat,CA
+367,Shanghai,jd.com,1264889788@qq.com,0.0,2589.0,30568668.0,bailicangdu,cangdu,
+368,Shanghai,,hax@heshijun.net,0.0,2586.0,160317.0,hax,HE Shi-Jun,
+369,New York,Adobe System Inc.,alessandro.crugnola@gmail.com,0.0,2581.0,78293.0,sephiroth74,Alessandro Crugnola,NY
+370,San Francisco,GitHub,josh@joshpeek.com,0.0,2580.0,1565.0,josh,Joshua Peek,CA
+371,Chapel Hill,NMC,hello@joshlockhart.com,0.0,2576.0,6991.0,codeguy,Josh Lockhart,NC
+372,Sydney,@adobe,dmitry@baranovskiy.com,0.0,2568.0,11626.0,DmitryBaranovskiy,Dmitry Baranovskiy,NSW
+373,Beijing,Douban Inc.,ciici123@hotmail.com,0.0,2554.0,619411.0,dongweiming,小明,Beijing
+374,,,gabrycir@gmail.com,0.0,2553.0,245472.0,gabrielecirulli,Gabriele Cirulli,
+375,,@brave ,recruiters-gonna-recruit@mit.edu,0.0,2546.0,1217757.0,diracdeltas,yan,
+376,Pittsburgh,Brad Frost Web,brad@bradfrost.com,0.0,2537.0,128788.0,bradfrost,Brad Frost,PA
+377,San Francisco,Facebook,jmw@johnmyleswhite.com,0.0,2534.0,26637.0,johnmyleswhite,John Myles White,CA
+378,,,mackenzie.child@gmail.com,0.0,2529.0,28859.0,mackenziechild,Mackenzie Child,
+379,Cambridge,Google,rsc@swtch.com,0.0,2529.0,75476.0,rsc,Russ Cox,MA
+380,Nanjing,,phuslu@hotmail.com,0.0,2526.0,41800.0,phuslu,phuslu,Jiangsu
+381,Bend,,robbiehanson@deusty.com,0.0,2518.0,5474.0,robbiehanson,Robbie Hanson,OR
+382,New York,@c8r ,jxnblk@gmail.com,0.0,2516.0,1598136.0,jxnblk,Brent Jackson,NY
+383,Bellevue,Microsoft,davidfowl@gmail.com,0.0,2514.0,5737.0,davidfowl,David Fowler,WA
+384,Los Angeles,@usc-isi-i2 ,nfultz@gmail.com,0.0,2512.0,1968763.0,nfultz,Neal Fultz,CA
+385,Paris,,flavien.laurent@gmail.com,0.0,2509.0,1127410.0,flavienlaurent,Flavien Laurent,IdF
+386,,EGOIST LLC.,0x142857@gmail.com,1.0,2507.0,8238940.0,egoist,EGOIST,
+387,,,deborahk@insteptech.com,0.0,2501.0,5556969.0,DeborahK,Deborah Kurata,
+388,Seagrove Beach,,scott@filamentgroup.com,0.0,2501.0,22948.0,scottjehl,Scott Jehl,FL
+389,Shenzhen,"Tencent, WeChat",hzlzh.dev@gmail.com,0.0,2499.0,271646.0,hzlzh,hzlzh,Guangdong
+390,Seattle,"@google, on @dart-lang ",robert@stuffwithstuff.com,0.0,2492.0,2841.0,munificent,Bob Nystrom,WA
+391,,@fruitcake ,barry@fruitcake.nl,0.0,2476.0,42896.0,Barryvdh,Barry vd. Heuvel,
+392,London,,justin@soulwire.co.uk,0.0,2473.0,22644.0,soulwire,Justin Windle,England
+393,Sioux Falls,Zend Technologies,matthew@weierophinney.net,0.0,2473.0,1586.0,weierophinney,Matthew Weier O'Phinney,SD
+394,New York,@rust-lang ,ashley666ashley@gmail.com,0.0,2472.0,459868.0,ashleygwilliams,ashley williams,NY
+395,Paris,@Backelite ,champigny.florent@gmail.com,0.0,2470.0,3792746.0,florent37,Florent CHAMPIGNY,IdF
+396,Los Angeles,,kyle@kylemcdonald.net,0.0,2465.0,22490.0,kylemcdonald,Kyle McDonald,CA
+397,,,timothy.w.holman@gmail.com,0.0,2460.0,70663.0,tholman,Tim Holman,
+398,Lyon,GitBook,samypesse@gmail.com,0.0,2451.0,448274.0,SamyPesse,Samy Pessé,Rhone-Alpes
+399,Austin,Indeed,rmurphey@gmail.com,0.0,2446.0,5827.0,rmurphey,Rebecca Murphey,TX
+400,Xiamen,厦门-欢乐逛（招前端）,sugarpie.tang@gmail.com,0.0,2445.0,50988.0,aui,糖饼,Fujian
+401,San Francisco,,miyagawa@bulknews.net,0.0,2443.0,34490.0,miyagawa,Tatsuhiko Miyagawa,CA
+402,Beijing,悟空理财,baoyz@live.com,0.0,2436.0,2073159.0,baoyongzhang,Mr.Bao,Beijing
+403,Shenzhen,Tencent,308695699@qq.com,0.0,2433.0,7488456.0,chokcoco,Coco,Guangdong
+404,Paris,Inria,olivier.grisel@ensta.org,0.0,2427.0,27976.0,ogrisel,Olivier Grisel,IdF
+405,,@swaglive ,vinta.chen@gmail.com,0.0,2427.0,2574738.0,vinta,Vinta,
+406,,,wyouflf@gmail.com,0.0,2426.0,1286367.0,wyouflf,wyouflf,
+407,San Francisco,"GitHub, Inc.",aman@tmm1.net,0.0,2425.0,9273.0,tmm1,Aman Gupta,CA
+408,,,typicode@gmail.com,0.0,2423.0,2629032.0,typicode,,
+409,,@agent ,polvero@gmail.com,0.0,2423.0,4578.0,ded,Dustin Diaz,CA
+410,Beijing,,524920679@qq.com,0.0,2420.0,13197125.0,Vermisse,Sunki,Beijing
+411,,,greg@kroah.com,0.0,2418.0,5212.0,gregkh,Greg Kroah-Hartman,
+412,Sydney,Thinkmill,jed.watson@me.com,0.0,2415.0,946026.0,JedWatson,Jed Watson,NSW
+413,London,,roy@binux.me,0.0,2408.0,5019.0,binux,Roy Binux,England
+414,,Lealone,zhh200910@gmail.com,0.0,2407.0,1446708.0,codefollower,codefollower,Guizhou
+415,Ottawa,,cam.davidson.pilon@gmail.com,0.0,2397.0,1136167.0,CamDavidsonPilon,Cameron Davidson-Pilon,ON
+416,Tokyo,Freelance,ronnie@dio.jp,0.0,2395.0,2094.0,amatsuda,Akira Matsuda,Tokyo
+417,,Netflix,brendan.d.gregg@gmail.com,0.0,2395.0,6324.0,brendangregg,Brendan Gregg,CA
+418,Boston,Microsoft,miguel@gnome.org,0.0,2394.0,12321.0,migueldeicaza,Miguel de Icaza,MA
+419,Beijing,@ZhuFaner ,wenhanlv@gmail.com,0.0,2390.0,1839443.0,JohnLui,John Lui,Beijing
+420,Seattle,Facebook,paul@oshannessy.com,0.0,2385.0,10548.0,zpao,Paul O’Shannessy,WA
+421,,@alibaba alipay,yiminghe@gmail.com,0.0,2375.0,95446.0,yiminghe,yiminghe,
+422,New York,,support@marak.com,0.0,2367.0,303.0,Marak,,NY
+423,Warsaw,,krzysztof.zablocki@pixle.pl,0.0,2365.0,51508.0,krzysztofzablocki,Krzysztof Zabłocki,MA
+424,London,,hi@mrmrs.cc,0.0,2359.0,521120.0,mrmrs,murmurs,England
+425,Minneapolis,,danlew42@gmail.com,0.0,2358.0,45557.0,dlew,Daniel Lew,MN
+426,,,qyuhen@gmail.com,0.0,2350.0,1230781.0,qyuhen,Q.yuhen,
+427,Cleveland,TrustedSec,davek@trustedsec.com,0.0,2348.0,1283103.0,trustedsec,trustedsec,OH
+428,,,929178101@qq.com,0.0,2346.0,4521571.0,android-cjj,CJJ,
+429,,Artsy && Danger && CocoaPods,orta.therox+gh@gmail.com,0.0,2346.0,6378.0,orta,Orta,
+430,Austin,Stripe,alexsexton@gmail.com,0.0,2345.0,3069.0,SlexAxton,Alex Sexton,TX
+431,Seattle,Google,ju.ralph@gmail.com,0.0,2344.0,26463.0,juliemr,Julie Ralph,WA
+432,San Francisco,Facebook,vjeuxx@gmail.com,0.0,2343.0,86521.0,vjeux,Christopher Chedeau,CA
+433,Kansas City,Cox Automotive / Pluralsight,housecor@gmail.com,0.0,2335.0,1123488.0,coryhouse,Cory House,MO
+434,London,@Google ,benweiss@google.com,0.0,2325.0,33830.0,keyboardsurfer,Ben Weiss,England
+435,,Tencent,tx.wechat@gmail.com,0.0,2323.0,12046506.0,tencent-wechat,WeChat,
+436,,Wahlin Consulting,danwahlin@imac-3.local,0.0,2323.0,1062140.0,DanWahlin,Dan Wahlin,AZ
+437,New York,@Rochester Institute of Technology,hussien89aa@yahoo.com,0.0,2322.0,10228584.0,hussien89aa,Hussein Alrubaye,NY
+438,,,bang590@gmail.com,0.0,2320.0,141916.0,bang590,bang,Guangdong
+439,Shanghai,CheLun,mikan.tenny@gmail.com,0.0,2318.0,46687.0,matyhtf,韩天峰-Rango,
+440,San Francisco,,alockwood@lyft.com,0.0,2317.0,372818.0,alexjlockwood,Alex Lockwood,CA
+441,Los Angeles,,root@chad.so,0.0,2316.0,152400.0,icodeforlove,Chad Scira,CA
+442,,YouTube.com/Sentdex,harrison@pythonprogramming.net,0.0,2316.0,3476875.0,Sentdex,Harrison,TX
+443,New York,@staeco ,yo@contra.io,0.0,2316.0,30172.0,Contra,contra,NY
+444,Zurich,Travis CI,github@rkh.im,0.0,2305.0,2723.0,rkh,Konstantin Haase,ZH
+445,Hangzhou,Alibaba-DAMO Academy,wlhmyit@126.com,0.0,2299.0,3155225.0,vczero,vczero,Zhejiang
+446,St Louis,@acquia ,geerlingguy@mac.com,0.0,2293.0,79987.0,geerlingguy,Jeff Geerling,MO
+447,,@Babel,hi@henryzoo.com,0.0,2291.0,5829131.0,hzoo,Henry Zhu,
+448,,,jrburke@gmail.com,0.0,2290.0,5009.0,jrburke,James Burke,
+449,London,,bbxdesign@gmail.com,0.0,2286.0,143478.0,jgthms,Jeremy Thomas,England
+450,Ubud,Kozmos,azer@roadbeats.com,0.0,2284.0,103598.0,azer,Azer Koçulu,Bali
+451,,ustc(University of Science and Technology of China),lanxuezaipiao@163.com,0.0,2281.0,2961254.0,lanxuezaipiao,敏敏Alexia,
+452,San Francisco,Stubbornella,nicole@stubbornella.org,0.0,2281.0,6049.0,stubbornella,Nicole Sullivan,CA
+453,Narooma,require.io,r@va.gg,0.0,2274.0,39559.0,rvagg,Rod Vagg,NSW
+454,Austin,@bustle,una.kravets@gmail.com,0.0,2270.0,2801609.0,una,Una Kravets,TX
+455,,,haoyi.sg@gmail.com,0.0,2256.0,149515.0,lihaoyi,Li Haoyi,
+456,Beijing,,i@draveness.me,0.0,2255.0,4602683.0,Draveness,Draven,Beijing
+457,,,alonzakai@gmail.com,0.0,2246.0,15160.0,kripken,Alon Zakai,
+458,Sheffield,,caolan.mcmahon@gmail.com,0.0,2242.0,8902.0,caolan,Caolan McMahon,England
+459,London,,github@aerotwist.com,0.0,2241.0,16518.0,paullewis,Paul Lewis,England
+460,San Francisco,Google,robdodson@google.com,0.0,2240.0,74661.0,robdodson,Rob Dodson,CA
+461,San Francisco,Figma,evan.exe@gmail.com,0.0,2240.0,2973.0,evanw,Evan Wallace,CA
+462,,V2EX,livid@v2ex.com,0.0,2228.0,65687.0,livid,Xin Liu,CA
+463,Austin,Paravel,rupato@gmail.com,0.0,2228.0,26957.0,davatron5000,Dave Rupert,TX
+464,,Facebook,hi@sophiebits.com,0.0,2219.0,37808455.0,sophiebits,Sophie Alpert,
+465,New York,GoDaddy,charlie.robbins@gmail.com,0.0,2197.0,10044.0,indexzero,Charlie Robbins,NY
+466,Shanghai,@lets-blade,biezhi.me@gmail.com,0.0,2192.0,4684986.0,biezhi,,
+467,,ByteDance Inc.,i@guoyu.me,0.0,2190.0,9314825.0,guo-yu,Guo Yu,
+468,,,GcsSloop@gmail.com,0.0,2188.0,8028326.0,GcsSloop,sloop,
+469,,,shaunjp@shaun-pelling.com,0.0,2187.0,6221887.0,iamshaunjp,Shaun,
+470,,@toptal ,willianjustenqui@gmail.com,0.0,2181.0,2358314.0,willianjusten,Willian Justen ,
+471,Cambridge,@harvard,malan@harvard.edu,0.0,2177.0,302879.0,dmalan,David J. Malan,MA
+472,San Francisco,@observablehq ,tom@macwright.org,0.0,2177.0,21370.0,tmcw,Tom MacWright,CA
+473,Oakland,@plangrid @hexedbits,jesse@jessesquires.com,0.0,2170.0,795014.0,jessesquires,Jesse Squires,CA
+474,Shanghai,,jiyinyiyong@gmail.com,0.0,2162.0,4541.0,jiyinyiyong,Jon,
+475,Berkeley,@auth0,jaredhanson@gmail.com,0.0,2162.0,6535.0,jaredhanson,Jared Hanson,CA
+476,Seattle,@Microsoft @MicrosoftEdge @webpack @webpack-contrib @angular,selarkin@microsoft.com,0.0,2159.0,1445676.0,TheLarkInn,Sean Larkin,WA
+477,Plymouth,@sublimehq,will@wbond.net,0.0,2159.0,4009.0,wbond,Will Bond,NH
+478,,Facebook,benjchristensen@gmail.com,0.0,2158.0,302689.0,benjchristensen,Ben Christensen,
+479,,3rd Cloud,me@nvie.com,0.0,2156.0,13384.0,nvie,Vincent Driessen,
+480,Kyiv,Mapbox,agafonkin@gmail.com,0.0,2156.0,27559.0,mourner,Vladimir Agafonkin,Kyiv City
+481,,@travelping ,kuleshovmail@gmail.com,0.0,2155.0,1294188.0,0xAX,0xAX,
+482,San Francisco,source{d},campoy@golang.org,0.0,2150.0,825215.0,campoy,Francesc Campoy,CA
+483,San Francisco,Docker,solomon@docker.com,0.0,2150.0,29616.0,shykes,Solomon Hykes,CA
+484,,"Yii, Codeception, PHP-FIG",sam@rmcreative.ru,0.0,2146.0,12191.0,samdark,Alexander Makarov,
+485,Beijing,lezhibo,fuhai999@gmail.com,0.0,2145.0,920641.0,yangfuhai,Michael Yang,Beijing
+486,,Venture company,401545553@qq.com,0.0,2145.0,2428907.0,JsAaron,艾伦 Aaron,
+487,,Alibaba Inc.,airenliao@gmail.com,0.0,2145.0,160007.0,airen,Airen,
+488,San Francisco,Sentry,dcramer@gmail.com,0.0,2108.0,8363.0,dcramer,David Cramer,CA
+489,London,,jason@jasondavies.com,0.0,2107.0,13172.0,jasondavies,Jason Davies,England
+490,Beijing,"Baidu, Inc.",sunjunyi01@baidu.com,0.0,2106.0,123507.0,fxsjy,Sun Junyi,Beijing
+491,,Mozilla,jannis@leidel.info,0.0,2106.0,6569.0,jezdez,Jannis Leidel,
+492,Hangzhou,Alipay,afc163@gmail.com,0.0,2106.0,97778.0,afc163,偏右,Zhejiang
+493,,,romefimov@gmail.com,0.0,2100.0,23880.0,romaonthego,Roman Efimov,
+494,,,oschina.net@gmail.com,0.0,2085.0,378056.0,oschina,开源中国,
+495,New York,,me@ircmaxell.com,0.0,2082.0,51000.0,ircmaxell,Anthony Ferrara,NY
+496,,"@status-im, @embark-framework, @thoughtram, @machinelabs ",pascal.precht@gmail.com,0.0,2082.0,49123.0,PascalPrecht,Pascal Precht,
+497,Richmond,,longster@gmail.com,0.0,2079.0,9014.0,jlongster,James Long,VA
+498,,百度,549265480@qq.com,0.0,2073.0,3175224.0,yexiaochai,叶小钗,
+499,San Jose,Netflix,rs@rhapsodyk.net,0.0,2072.0,17112.0,rs,Olivier Poitrey,CA
+500,,,ternsip,0.0,2071.0,6295826.0,ternsip,Ternsip,
+501,,,waylau521@gmail.com,0.0,2070.0,1451243.0,waylau,Way Lau,
+502,Vancouver,@rstudio,jenny@stat.ubc.ca,0.0,2066.0,1209367.0,jennybc,Jennifer (Jenny) Bryan,BC
+503,Colombo,@zeit ,arunoda.susiripala@gmail.com,0.0,2061.0,36301.0,arunoda,Arunoda Susiripala,Western
+504,,grabtaxi,zangqilong@gmail.com,0.0,2061.0,7711393.0,zangqilong198812,zangqilong,
+505,Palo Alto,,peter@norvig.com,0.0,2060.0,2926597.0,norvig,Peter Norvig,CA
+506,Hangzhou,Alibaba,shaojin.wensj@alibaba-inc.com,0.0,2060.0,40005.0,wenshao,温绍锦,Zhejiang
+507,Beijing,xiaolai,lixiaolai@gmail.com,0.0,2058.0,676398.0,xiaolai,xiaolai,Beijing
+508,Hangzhou,Layui,xu@sentsin.com,0.0,2057.0,1760074.0,sentsin,贤心,Zhejiang
+509,,N26,hugo.giraudel@gmail.com,0.0,2056.0,949634.0,HugoGiraudel,Hugo Giraudel,BE
+510,Hangzhou,CN,i@hust.cc,0.0,2054.0,4281209.0,hustcc,hustcc,Zhejiang
+511,Toronto,Jam3,dave.des@gmail.com,0.0,2050.0,42116.0,mattdesl,Matt DesLauriers,OH
+512,,,pjreddie@gmail.com,0.0,2043.0,88590.0,pjreddie,Joseph Redmon,
+513,San Jose,Amazon Web Services,arun.gupta@gmail.com,0.0,2042.0,1091021.0,arun-gupta,Arun Gupta,CA
+514,Shanghai,,bysocket@aliyun.com,0.0,2040.0,3669841.0,JeffLi1993,泥瓦匠BYSocket,
+515,Shanghai,,wyh405003836@126.com,0.0,2040.0,3530294.0,zzz40500,轻微,
+516,,@Bloggify @cdnjs @nodejs ,contact@ionicabizau.net,0.0,2037.0,1163370.0,IonicaBizau,Ionică Bizău (Johnny B.),
+517,,,steve@stevelosh.com,0.0,2027.0,412.0,sjl,Steve Losh,
+518,Hangzhou,Alipay,fool2fish@gmail.com,0.0,2026.0,20621.0,fool2fish,Zhouxuan Yang,Zhejiang
+519,,@hellyeahllc ,paul+gh@paulmillr.com,0.0,2026.0,36486.0,paulmillr,Paul Miller,
+520,San Francisco,loop/recur,brian@looprecur.com,0.0,2022.0,128798.0,DrBoolean,Brian Lonsdorf,CA
+521,,GameDev.tv,github@bentristem.com,0.0,2022.0,2017878.0,BenTristem,Ben Tristem,
+522,,,dhgamache@gmail.com,0.0,2021.0,1076426.0,dhg,Dave Gamache,
+523,Denver,Google,smith@wiresareobsolete.com,0.0,2021.0,98172.0,devunwired,Dave Smith,CO
+524,Wellington,,steve@sanityinc.com,0.0,2020.0,6116.0,purcell,Steve Purcell,Wellington
+525,,Cristalab,f@mejorando.la,0.0,2017.0,109509.0,freddier,John Freddy Vega,
+526,,IBM,info@bnoordhuis.nl,0.0,2011.0,963.0,bnoordhuis,Ben Noordhuis,
+527,Shanghai,Alipay,1132234509@qq.com,0.0,1999.0,5817266.0,Skykai521,达庆凯,
+528,San Francisco,,mikito.takada@gmail.com,0.0,1993.0,3662.0,mixu,Mikito Takada,CA
+529,South Bend,"Box Out Sports, 123 Studio",steve@orderedlist.com,0.0,1992.0,109144.0,orderedlist,Steve Smith,IN
+530,,,brunocvcunha@gmail.com,0.0,1992.0,1393198.0,brunocvcunha,Bruno Volpato,
+531,,GitHub,joshaber@gmail.com,0.0,1983.0,12417.0,joshaber,Josh Abernathy,IN
+532,,@mapbox ,anjana.vakil@mapbox.com,0.0,1983.0,2757846.0,vakila,Anjana Sofia Vakil,
+533,Melbourne,,moshfegh@live.com.au,0.0,1974.0,11626614.0,mosh-hamedani,Mosh Hamedani,VIC
+534,,Sony Mobile,sedeveloperworld@gmail.com,0.0,1972.0,930127.0,sonyxperiadev,Sony Xperia Developer World,
+535,,大搜车,xinyu198736@gmail.com,0.0,1971.0,769276.0,xinyu198736,芋头,
+536,Brisbane,Stark & Wayne LLC,drnicwilliams@gmail.com,0.0,1959.0,5995.0,drnic,Dr Nic Williams,QLD
+537,Gainesville,Skyrin,hello@jacklmoore.com,0.0,1959.0,9097.0,jackmoore,Jack Moore,FL
+538,,,agragregra@ya.ru,0.0,1957.0,7046781.0,agragregra,Алексей,
+539,Milwaukee,BitMEX,sam@bitmex.com,0.0,1954.0,83969.0,STRML,Samuel Reed,WI
+540,,BlackHills InfoSec,byt3bl33d3r@protonmail.com,0.0,1954.0,2415827.0,byt3bl33d3r,byt3bl33d3r,
+541,,@facebook,huxpro@gmail.com,0.0,1952.0,2705694.0,Huxpro,Xuan Huang ,
+542,Hangzhou,Alibaba,jawil1024@gmail.com,0.0,1946.0,11025411.0,jawil,微醺岁月,Zhejiang
+543,San Mateo,@airbnb,ljharb@gmail.com,0.0,1943.0,133444.0,ljharb,Jordan Harband,CA
+544,Hangzhou,,im.yanzhenjie@gmail.com,0.0,1937.0,13199397.0,yanzhenjie,Zhenjie Yan,Zhejiang
+545,Wangjing,美团网,dantesx2012@gmail.com,0.0,1937.0,6790269.0,dsxNiubility,董铂然,Beijing
+546,,,xoreaxeaxeax@gmail.com,0.0,1929.0,8472475.0,xoreaxeaxeax,domas,
+547,Questin,Microsoft,charrison@geektrainer.com,0.0,1928.0,3063913.0,GeekTrainer,Christopher Harrison,MV
+548,Ottawa,Shopify,rafaelmfranca@gmail.com,0.0,1928.0,8153.0,rafaelfranca,Rafael França,ON
+549,,@structy ,t@avelino.xxx,0.0,1921.0,68090.0,avelino,Avelino,
+550,Oslo,,inconvergent@gmail.com,0.0,1920.0,3368709.0,inconvergent,Anders Hoff,Oslo
+551,,@Dcard ,tommy351@gmail.com,0.0,1920.0,97597.0,tommy351,Tommy Chen,
+552,Seattle,@CodePen,cassidoo@gmail.com,0.0,1915.0,112931.0,cassidoo,Cassidy Williams,WA
+553,,@circleci,phil@hagelb.org,0.0,1915.0,7504.0,technomancy,Phil Hagelberg,WA
+554,,,kartikv2@gmail.com,0.0,1912.0,2608435.0,kartik-v,Kartik Visweswaran,
+555,Los Gatos,Sideway Inc.,eran@hammer.io,0.0,1911.0,51565.0,hueniverse,Eran Hammer,CA
+556,,@google ,eliben@gmail.com,0.0,1911.0,61844.0,eliben,Eli Bendersky,CA
+557,Stockholm,,joearms@gmail.com,0.0,1910.0,318596.0,joearms,joe armstrong,Stockholm County
+558,Berkeley,,jatwood@codinghorror.com,0.0,1907.0,279488.0,coding-horror,Jeff Atwood,CA
+559,San Francisco,purse.io,chjjeffrey@gmail.com,0.0,1907.0,17413.0,chjj,Christopher Jeffrey (JJ),CA
+560,,Google,sam@samx.it,0.0,1906.0,20157.0,samccone,Sam Saccone,
+561,New York,@linkedin,tom@tomdale.net,0.0,1905.0,3937.0,tomdale,Tom Dale,NY
+562,,,ike.wcj@gmail.com,0.0,1903.0,6559656.0,ikew0ng,ike_w0ng,
+563,,Hibernating Rhinos,ayende@ayende.com,0.0,1901.0,16528.0,ayende,Ayende Rahien,
+564,San Francisco,IOActive,daniel@danielmiessler.com,0.0,1899.0,186643.0,danielmiessler,Daniel Miessler,CA
+565,Shanghai,,mmin18@gmail.com,0.0,1898.0,345746.0,mmin18,Tu Yimin,
+566,,@nearform ,matteo.collina@gmail.com,0.0,1897.0,10.0,mcollina,Matteo Collina,
+567,,@NoVAHA ,jd.mubix@gmail.com,0.0,1895.0,55771.0,mubix,Rob Fuller,
+568,,@paypal,hemanth.hm@gmail.com,0.0,1894.0,23402.0,hemanth,hemanth.hm,
+569,,Communication University of China,leixiaohua1020@126.com,0.0,1890.0,3364756.0,leixiaohua1020,Lei Xiaohua,
+570,Cambridge,,atrigol@gmail.com,0.0,1888.0,284516.0,alvarotrigo,Álvaro,England
+571,New York,Facebook,rnystrom@instagram.com,0.0,1887.0,61352.0,rnystrom,Ryan Nystrom,NY
+572,,,adam.wathan@gmail.com,0.0,1877.0,1912302.0,adamwathan,Adam Wathan,ON
+573,,Taobao,yuanyan.cao@alibaba-inc.com,0.0,1873.0,18422.0,yuanyan,元彦,
+574,Cincinnati,Neo,jim.weirich@gmail.com,0.0,1872.0,27.0,jimweirich,Jim Weirich,OH
+575,,@fewerandfaster and @boxoutsports ,nunemaker@gmail.com,0.0,1872.0,41223.0,jnunemaker,John Nunemaker,IN
+576,Portland,GitHub,justin@labratrevenge.com,0.0,1872.0,22390.0,Caged,Justin Palmer,OR
+577,Portland,Contributed Systems,mperham@gmail.com,0.0,1870.0,1740.0,mperham,Mike Perham,OR
+578,Melbourne,@cultureamp,github@ryanbigg.com,0.0,1869.0,4896.0,radar,Ryan Bigg,VIC
+579,London,@Google,nickbutcher@google.com,0.0,1866.0,1081322.0,nickbutcher,Nick Butcher,England
+580,Redmond,Microsoft,post@madskristensen.net,0.0,1865.0,681519.0,madskristensen,Mads Kristensen,WA
+581,,,zeroday@nodemcu.com,0.0,1865.0,6128578.0,nodemcu,zeroday,
+582,,ShipRise,avdi@avdi.org,0.0,1863.0,36883.0,avdi,Avdi Grimm,PA
+583,,/university,1948638989@qq.com,0.0,1862.0,3313862.0,racaljk,yang,
+584,,,n@ncase.me,0.0,1860.0,3291321.0,ncase,Nicky Case,
+585,Edinburgh,,matt.gemmell@gmail.com,0.0,1859.0,14533.0,mattgemmell,Matt Gemmell,Scotland
+586,,Jenx Solutions Limited (Android Contractor),chris.mark.jenkins@gmail.com,0.0,1857.0,66856.0,chrisjenx,Christopher Jenkins,
+587,,,bv@worrydream.com,0.0,1855.0,79791.0,worrydream,bret,
+588,Shenzhen,tencent,guanghui8827@126.com,0.0,1854.0,5142608.0,zilongshanren,子龙山人,Guangdong
+589,,"Facebook, ReactJS",jordojw@gmail.com,0.0,1850.0,2162744.0,jordwalke,Jordan W,
+590,Zhengzhou,,mariotaku.lee@gmail.com,0.0,1850.0,15376.0,mariotaku,Mariotaku,Henan
+591,Boulder,,chiuki@gmail.com,0.0,1847.0,340433.0,chiuki,Chiu-Ki Chan,CO
+592,Shenzhen,http://blog.csdn.net/woaifen3344,huangyibiao520@163.com,0.0,1847.0,9474689.0,CoderJackyHuang,JackyHuang,Guangdong
+593,Mountain View,Google,xueqiaoxu@gmail.com,0.0,1845.0,30887.0,qiao,Xueqiao (Joe) Xu,CA
+594,,@InVisionApp,rob@bluespire.com,0.0,1843.0,61755.0,EisenbergEffect,Rob Eisenberg,
+595,Redmond,Microsoft,damian@damianedwards.com,0.0,1842.0,16491.0,DamianEdwards,Damian Edwards,WA
+596,San Francisco,,jerome.petazzoni@docker.com,0.0,1841.0,64648.0,jpetazzo,Jérôme Petazzoni,CA
+597,London,@facebook,phartig@rdrei.net,0.0,1840.0,651.0,passy,Pascal Hartig,England
+598,San Francisco,Databricks,rxin@databricks.com,0.0,1830.0,28831.0,rxin,Reynold Xin,CA
+599,Sunnyvale,@facebook,tay.yang.shun@gmail.com,0.0,1825.0,3256924.0,yangshun,Yangshun Tay,CA
+600,,成都时点软件开发有限公司,nsdictionary@icloud.com,0.0,1824.0,9032904.0,CharlinFeng,时点软件冯成林,
+601,,WebRTC,muazkh@gmail.com,0.0,1823.0,66114.0,muaz-khan,Muaz Khan,
+602,New York,Kinky Solutions,ben@bennadel.com,0.0,1820.0,67978.0,bennadel,Ben Nadel,NY
+603,London,,chris.heilmann@gmail.com,0.0,1819.0,86529.0,codepo8,Christian Heilmann,England
+604,Oakland,,coda.hale@gmail.com,0.0,1816.0,4907.0,codahale,Coda Hale,CA
+605,,阅文集团,xuyisheng89@163.com,0.0,1811.0,4467933.0,xuyisheng,xuyisheng,
+606,T'ainan,@BiiLabs,jserv.tw@gmail.com,0.0,1806.0,128906.0,jserv,Jim Huang,
+607,San Francisco,Google,yboyar@gmail.com,0.0,1805.0,94086.0,yigit,Yigit Boyar,CA
+608,,,yangbaohua@gmail.com,0.0,1801.0,14597.0,yeasy,Baohua Yang,
+609,,,bos@serpentine.com,0.0,1800.0,15462.0,bos,Bryan O'Sullivan,
+610,San Jose,@goforward @uclaacm ,adeshpande3@ucla.edu,0.0,1799.0,10380846.0,adeshpande3,Adit Deshpande,CA
+611,New York,,rpetrich@gmail.com,0.0,1797.0,14248.0,rpetrich,Ryan Petrich,NY
+612,Hangzhou,DeepKnowledge AI,unmerged@gmail.com,0.0,1794.0,248125.0,huichen,Hui Chen,Zhejiang
+613,La Plante,adam-bien.com,abien@adam-bien.com,0.0,1793.0,286590.0,AdamBien,Adam Bien,Walloon Region
+614,Jersey City,Facebook,modocache@gmail.com,0.0,1791.0,36974.0,modocache,Brian Gesiak,NJ
+615,,Corneltek,yoanlin93@gmail.com,0.0,1786.0,17760.0,c9s,Yo-An Lin,
+616,Austin,@heroku ,richard.schneeman+no-recruiters@gmail.com,0.0,1785.0,7987.0,schneems,Richard Schneeman,TX
+617,Beijing,Freelancer,aufree@yousails.com,0.0,1781.0,3358460.0,Aufree,Aufree,Beijing
+618,,,shadownessguy@gmail.com,0.0,1774.0,1601512.0,MengTo,Meng To,
+619,Madrid,@IBMResearch,cazaustre@gmail.com,0.0,1773.0,505812.0,carlosazaustre,Carlos Azaustre,Community of Madrid
+620,Xiamen,,iissnan@gmail.com,0.0,1769.0,108622.0,IIssNan,Vi,Fujian
+621,Toronto,@PagerDuty,reg@braythwayt.com,0.0,1768.0,62231.0,raganwald,Reg Braithwaite,ON
+622,,,kris@cixar.com,0.0,1767.0,6599.0,kriskowal,Kris Kowal,
+623,New York,@DataCamp,drob@datacamp.com,0.0,1766.0,230703.0,dgrtwo,David Robinson,NY
+624,San Francisco,DataCamp,ramnath.vaidya@gmail.com,0.0,1764.0,69709.0,ramnathv,Ramnath Vaidyanathan,CA
+625,London,Apiary,kyle@fuller.li,0.0,1764.0,25258.0,kylef,Kyle Fuller,England
+626,Bucharest,Baeldung,hanriseldon@gmail.com,0.0,1763.0,23728.0,eugenp,Eugen,Bucharest
+627,Matosinhos,4Best,gabriel_7340@hotmail.com,0.0,1758.0,2385535.0,gabrielpconceicao,Gabriel Conceição,Porto
+628,,,zhuhongxu@gmail.com,0.0,1758.0,249921.0,nixzhu,,
+629,San Francisco,Facebook,emcmanus.fbtest@gmail.com,0.0,1757.0,10851577.0,Stitchpunk,Winnie,CA
+630,San Francisco,,paul@paulbetts.org,0.0,1754.0,2504968.0,paulcbetts,Paul Betts,CA
+631,,Photon Storm Ltd,rdavey@gmail.com,0.0,1750.0,10633.0,photonstorm,Richard Davey,
+632,Seattle,BigMachine,rob@conery.io,0.0,1750.0,22400.0,robconery,Rob Conery,WA
+633,Austin,Sails (@sailshq),git+mikermcneil@sailsjs.com,0.0,1747.0,128503.0,mikermcneil,Mike McNeil,TX
+634,Beijing,美图,morndragon@126.com,0.0,1744.0,6475643.0,SpikeKing,C. L. Wang,Beijing
+635,,,racerrehabman@gmail.com,0.0,1741.0,675391.0,RehabMan,,
+636,Boston,MIT,pluskid@gmail.com,0.0,1740.0,21015.0,pluskid,Chiyuan Zhang,MA
+637,Brisbane,,tonymorris+github@gmail.com,0.0,1740.0,8984.0,tonymorris,Tony Morris,QLD
+638,Irvine,Kajabi,jeremy.saenz@gmail.com,0.0,1738.0,1930406.0,codegangsta,Jeremy Saenz,CA
+639,,Neighbourhoodie Software,jan@apache.org,0.0,1729.0,8925.0,janl,Jan Lehnardt,BE
+640,,HKUST ,hunkim@gmail.com,0.0,1729.0,4981982.0,hunkim,Sung Kim,
+641,Paris,@Incenteev,stof@notk.org,0.0,1721.0,859.0,stof,Christophe Coevoet,IdF
+642,Vancouver,@heroku,fnando.vieira@gmail.com,0.0,1715.0,877.0,fnando,Nando Vieira,BC
+643,Mountain View,Google,gitster@pobox.com,0.0,1707.0,84473.0,gitster,Junio C Hamano,CA
+644,Boston,,stephen.m.diehl@gmail.com,0.0,1706.0,2745.0,sdiehl,Stephen Diehl,MA
+645,,,walkor@workerman.net,0.0,1706.0,3055974.0,walkor,walkor,
+646,San Francisco,@TipeIO,github@gdi2290.com,0.0,1705.0,194198.0,gdi2290,PatrickJS,CA
+647,New York,@Microsoft ,suz.hinton@gmail.com,0.0,1705.0,2250180.0,noopkat,Suz Hinton,NY
+648,London,Pivotal,david_syer@hotmail.com,0.0,1703.0,25797.0,dsyer,Dave Syer,England
+649,Singapore,,ztftom@gmail.com,0.0,1699.0,3678417.0,Vamei,Vamei,Singapore
+650,Eindhoven,,laanwj@gmail.com,0.0,1698.0,5596.0,laanwj,Wladimir J. van der Laan,North Brabant
+651,Beijing,,jacky.android@foxmail.com,0.0,1698.0,12077873.0,JackyAndroid,Jacky Wang,Beijing
+652,,SoundCloud Ltd.,m.kaeppler@gmail.com,0.0,1696.0,1445626.0,mttkay,Matthias Käppler,BE
+653,,,ikeay@ayaka-no-macbook-pro.local,0.0,1691.0,89925.0,ikeay,Ayaka Ikezawa,
+654,,,megane@glasses-factory.net,0.0,1687.0,2411.0,glassesfactory,YAMAGUCHI EIKICHI,
+655,Copenhagen,,soi@mort.ninja,0.0,1686.0,3631.0,soimort,Mort Yao,Capital Region
+656,Hsinchu,Mediatek,appleboy.tw@gmail.com,0.0,1683.0,18992.0,appleboy,Bo-Yi Wu,
+657,Beijing,Microsoft / WDG,belleve@typeof.net,0.0,1683.0,3339.0,be5invis,Belleve Invis,Beijing
+658,,3Blue1Brown,grant@3blue1brown.com,0.0,1680.0,7485351.0,3b1b,Grant Sanderson,
+659,,@octobox  ,andrewnez@gmail.com,0.0,1676.0,465.0,andrew,Andrew Nesbitt,
+660,San Francisco,Hak5 LLC,darren@hak5.org,0.0,1676.0,82530.0,hak5darren,Darren Kitchen,CA
+661,Guangzhou,leizm.com,leizongmin@gmail.com,0.0,1674.0,3252.0,leizongmin,老雷,Guangdong
+662,Dublin,Making WebAR a reality,jerome.etienne@gmail.com,0.0,1672.0,48049.0,jeromeetienne,Jerome Etienne,Leinster
+663,Palo Alto,@zerocracy,yegor256@gmail.com,0.0,1672.0,326419.0,yegor256,Yegor Bugayenko,CA
+664,Montreal,Transit App,samvermette@gmail.com,0.0,1671.0,25603.0,samvermette,Sam Vermette,QC
+665,San Francisco,Capital One,hi@azat.co,0.0,1670.0,15117.0,azat-co,Azat Mardan,CA
+666,,,mikolalysenko@gmail.com,0.0,1666.0,18719.0,mikolalysenko,Mikola Lysenko,
+667,,Quantopian,thomas.wiecki@gmail.com,0.0,1666.0,24397.0,twiecki,Thomas Wiecki,
+668,London,@makersacademy ,mary@maryrosecook.com,0.0,1665.0,90133.0,maryrosecook,Mary Rose Cook,England
+669,New York,Math & Pencil ,joseph.misiti@gmail.com,0.0,1664.0,775.0,josephmisiti,Joseph Misiti,NY
+670,San Francisco,,hello@echen.me,0.0,1662.0,8579.0,echen,Edwin Chen,CA
+671,San Francisco,Google,matias@yearofmoo.com,0.0,1656.0,168873.0,matsko,Matias Niemelä,CA
+672,,Qihoo 360,19511344@qq.com,0.0,1656.0,37336.0,akira-cn,月影,
+673,San Francisco,@Khan Academy,andy@andymatuschak.org,0.0,1651.0,59981.0,andymatuschak,Andy Matuschak,CA
+674,Los Angeles,@dollarshaveclub,me@jongleberry.com,0.0,1651.0,75324.0,jonathanong,jongleberry,CA
+675,,,yoshuawuyts@gmail.com,0.0,1649.0,877180.0,yoshuawuyts,Yoshua Wuyts,BE
+676,Worcester,@19ft,rob@akrabat.com,0.0,1648.0,6398.0,akrabat,Rob Allen,England
+677,Amherst,Clearwing Software,gavinandresen@gmail.com,0.0,1647.0,5556.0,gavinandresen,Gavin Andresen,MA
+678,Vancouver,,graydon@pobox.com,0.0,1645.0,1981.0,graydon,Graydon Hoare,BC
+679,,@Butleroy ,phil.jahoda@gmail.com,0.0,1644.0,3534543.0,PhilJay,Philipp Jahoda,
+680,San Francisco,,natasha@natashatherobot.com,0.0,1642.0,66913.0,NatashaTheRobot,Natasha Murashev,CA
+681,Hangzhou,Alibaba,blankj@qq.com,0.0,1640.0,12197720.0,Blankj,布兰柯基,Zhejiang
+682,Chicago,"Dabeaz, LLC",dave@dabeaz.com,0.0,1637.0,155547.0,dabeaz,David Beazley,IL
+683,,CompanyNotFoundException,inferjay@gmail.com,0.0,1637.0,1259917.0,inferjay,脉脉不得语,
+684,Breda,Indie developer,matt@machinethink.net,0.0,1626.0,37871.0,hollance,Matthijs Hollemans,North Brabant
+685,San Francisco,Uber,raynos2@gmail.com,0.0,1620.0,8209.0,Raynos,Jake Verbaten,CA
+686,,,gael.varoquaux@normalesup.org,0.0,1619.0,27838.0,GaelVaroquaux,Gael Varoquaux,
