@@ -51,7 +51,7 @@ Rails.application.routes.draw do
       post :star
       post :mark_read
       get  :data
-      get  :get_open_rewards
+      get  :get_open_rewardsg
       post :reward
 
     end

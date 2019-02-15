@@ -71,7 +71,7 @@ class Notification < ApplicationRecord
 
   def self.reward(notification, amount, current_user)
     Rails.logger.info("Got notification #{notification[0].repository_full_name} and issue id #{notification[0].url}")
-    current_user.github_client.add_comment(notification[0].repository_full_name, notification[0].issue_id(notification[0]), "Added Speed Bounty!")
+    # current_user.github_client.add_comment(notification[0].repository_full_name, notification[0].issue_id(notification[0]), "Added Speed Bounty!")
     value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
     return Reward.create(notification, value, current_user)
   end
