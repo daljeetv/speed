@@ -317,7 +317,7 @@ body {
 }
 
 body, button, input, select, textarea {
-    font-family: "Oxygen", sans-serif
+  font-family: Lyft Pro,HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 }
 
 a {
@@ -332,15 +332,16 @@ a:hover, a:active {
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     clear: both;
-    color: #202932;
-    font-family: "Arimo", sans-serif;
-    font-weight: 700
+    color: #1850A5;
+    font-family: Lyft Pro,HelveticaNeue,Helvetica Neue,Helvetica,Arial,Lucida Grande,sans-serif;
 }
 
 h1, .h1 {
-    font-size: 42px;
-    line-height: 52px;
-    letter-spacing: -0.1px
+    font-size: 4.5rem;
+    letter-spacing: -.175rem;
+    line-height: 5.125rem;
+    font-weight: 600;
+    font-family: sans-serif;
 }
 
 h2, .h2 {
@@ -1054,23 +1055,22 @@ button, input, select, textarea, label {
 
 .button-primary, .button-secondary {
     color: #fff !important;
-    transition: background .15s ease
+    transition: background .15s ease;
+    border-radius: 99999rem;
+    display: inline-block;
+
 }
 
 .button-primary {
-    background: #3525D3
+    background: #1850A5;
+    color: #FFFFFF;
 }
 
 .button-primary:hover {
-    background: #3d2dda
-}
-
-.button-primary.button-shadow::before {
-    box-shadow: 0 8px 16px rgba(53, 37, 211, 0.24)
-}
-
-.button-primary.button-shadow:hover::before {
-    box-shadow: 0 8px 16px rgba(53, 37, 211, 0.32)
+    background: #11111F;
+    border: none;
+    color: #FFFFFF;
+    box-shadow: 0 1px 2px #1850A5
 }
 
 .button-primary .button-sm.button-shadow::before {
@@ -1446,12 +1446,6 @@ button, input, select, textarea, label {
         display: flex
     }
 
-    .hero-copy {
-        padding-right: 48px;
-        min-width: 512px;
-        width: 512px
-    }
-
     .hero-illustration {
         min-height: 430px
     }
@@ -1459,9 +1453,7 @@ button, input, select, textarea, label {
 
 @media (min-width: 1025px) {
     .hero-copy {
-        padding-right: 80px;
-        min-width: 540px;
-        width: 540px
+      width: 700px;
     }
 }
 
