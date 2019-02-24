@@ -39,9 +39,10 @@ gem 'stripe'
 gem 'rails-assets-card', source: 'https://rails-assets.org'
 gem 'json'
 gem 'oauth2'
+gem 'github_api'
 
 # Supported databases
-gem 'mysql2', require: false
+# gem 'mysql2', require: false
 gem 'pg', '1.1.3', require: false
 
 group :development, :test do
