@@ -42,7 +42,7 @@ gem 'oauth2'
 gem 'github_api'
 
 # Supported databases
-gem 'mysql2', require: false
+# gem 'mysql2', require: false
 gem 'pg', '1.1.3', require: false
 
 group :development, :test do
