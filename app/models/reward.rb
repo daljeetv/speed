@@ -2,22 +2,44 @@ class Reward < ApplicationRecord
   belongs_to :user
   belongs_to :notification
 
-  def self.create(notification, amount, current_user)
-    if current_user.stripe_id.blank?
-      result = {
-          error: true,
-          message: 'Reward unsuccessful. Please update your payment method in settings.'
-      }
-      return result
-    else
-      @reward = current_user.rewards.create!(amount: amount, notification: notification[0], start_date: DateTime.now)
+    def self.create(notification, amount, current_user)
+    # if current_user.stripe_id.blank?
+    #   result = {
+    #       error: true,
+    #       message: 'Reward unsuccessful. Please update your payment method in settings.'
+    #   }
+    #   return result
+    # else
+      # @reward = current_user.rewards.create!(amount: amount, notification: notification[0], start_date: DateTime.now)
+      # self.charge(notification[0], @reward)
+      # result = {
+      #     error: false,
+      #     message: "Successfully created reward for \"#{notification[0].subject_title}\" for $#{amount}"
+      # }
+      # return result
+    # end
+
+    @reward = current_user.rewards.create!(amount: amount, notification: notification[0], start_date: DateTime.now)
       self.charge(notification[0], @reward)
+      
+      # dstr1 = current_user.github_login
+      # dstr2 = notification[0].repository_full_name
+      # dstr3 = notification[0].url.split('/').last
+      dstr1 = "saravanabalagi"
+      dstr2 = "super_mario_stitching"
+      dstr3 = 1
+      Rails.logger.info("Debug message: #{dstr1} #{dstr2} #{dstr3}")
+
+
+      github = Github.new
+      comments = github.issues.comments.all dstr1, dstr2, dstr3
+      Rails.logger.info("Debug message: #{comments[0].body}") unless comments.length==0 and comments[0].body.nil?
+
       result = {
           error: false,
           message: "Successfully created reward for \"#{notification[0].subject_title}\" for $#{amount}"
       }
       return result
-    end
   end
 
   def self.distribute(selected_rewards, rewardee)

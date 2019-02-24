@@ -8,6 +8,32 @@ class SessionsController < ApplicationController
     redirect_to '/auth/github'
   end
 
+  def new_for_comment
+    github = Github.new client_id: Rails.application.secrets.github_client_alt_id,
+                          client_secret: Rails.application.secrets.github_client_alt_secret
+    redirect_link = github.authorize_url redirect_uri: 'http://localhost:3000/auth/github/callback_alt', scope: 'repo'
+    redirect_to redirect_link
+  end
+
+  def create_for_comment
+    Rails.logger.info("Code: #{params['code']}")
+    github = Github.new client_id: Rails.application.secrets.github_client_alt_id,
+                          client_secret: Rails.application.secrets.github_client_alt_secret
+    token = github.get_token(params['code'])
+
+    # token_request = Typhoeus::Request.new(
+    #   "https://github.com/login/oauth/access_token",
+    #   method: :post,
+    #   params: { client_id: Rails.application.secrets.github_client_alt_id,
+    #             client_secret: Rails.application.secrets.github_client_alt_secret,
+    #             redirect_uri: 'http://localhost:3000/add_comment'
+    #             code: params['code'] },
+    #   headers: { Accept: "text/html" }
+    # )
+    # token_response = token_request.run
+    byebug
+  end
+
   def create
     user = User.find_by_auth_hash(auth_hash) || User.new
     user.assign_from_auth_hash(auth_hash, params[:provider])

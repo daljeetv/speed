@@ -26,10 +26,12 @@ Rails.application.routes.draw do
   end
 
   get :login,  to: 'sessions#new'
+  get :login_alt,  to: 'sessions#new_for_comment'
   get :logout, to: 'sessions#destroy'
 
   scope :auth do
     match '/:provider/callback', to: 'sessions#create',  via: [:get, :post]
+    match '/:provider/callback_alt', to: 'sessions#create_for_comment',  via: [:get, :post]
     match :failure,              to: 'sessions#failure', via: [:get, :post]
   end
 
