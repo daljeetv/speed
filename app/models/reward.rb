@@ -12,6 +12,21 @@ class Reward < ApplicationRecord
     else
       @reward = current_user.rewards.create!(amount: amount, notification: notification[0], start_date: DateTime.now)
       self.charge(notification[0], @reward)
+      subject_type = notification[0].subject_type
+
+      # create comment on github --------------
+      if subject_type == "Issue"
+        repo_owner = notification[0].repository_full_name.split('/').first
+        repo_name = notification[0].repository_full_name.split('/').last
+        issue_id = notification[0].web_url.split('/').last
+
+        github = Github.new oauth_token: current_user.access_token
+        github.issues.comments.create repo_owner, repo_name, issue_id, body: "[Speed OSS](speedoss.com) has added a $#{amount} reward to this issue. Click this [link](www.speedoss.com) to view reward"
+
+        Rails.logger.info("Adding Reward message on Github: #{subject_type} #{issue_id} @ #{repo_owner}/#{repo_name} ")
+      end
+      # create comment on github end -----------
+
       result = {
           error: false,
           message: "Successfully created reward for \"#{notification[0].subject_title}\" for $#{amount}"
