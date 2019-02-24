@@ -31,7 +31,6 @@ class SessionsController < ApplicationController
     #   headers: { Accept: "text/html" }
     # )
     # token_response = token_request.run
-    byebug
   end
 
   def create
