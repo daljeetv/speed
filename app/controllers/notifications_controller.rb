@@ -94,9 +94,21 @@ class NotificationsController < ApplicationController
     check_out_of_bounds(scope)
 
     @unread_count = user_unread_count
-    @open_rewards = Notification.joins(:rewards).where("rewards.distributed_to is null")
-    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
+    @open_rewards = Notification.joins(:rewards).where("rewards.distributed_to is null").uniq
+    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.distributed_to is null").uniq
     @rewards     = Notification.joins(:rewards).where("rewards.distributed_to = '#{current_user.github_login}' AND rewards.payout_date is null").uniq
+    @open_rewards_sum = 0
+    @your_rewards_sum = 0
+    @rewards_sum = 0
+    @open_rewards.each do |n|
+      @open_rewards_sum +=n.rewards.where("rewards.distributed_to is null").sum(:amount)
+    end
+    @your_rewards.each do |n|
+      @your_rewards_sum +=n.rewards.where("rewards.distributed_to is null").sum(:amount)
+    end
+    @rewards.each do |n|
+      @your_rewards_sum +=n.rewards.sum(:amount)
+    end
     @notifications = scope.page(page).per(per_page)
     @total = @notifications.total_count
 
@@ -125,8 +137,21 @@ class NotificationsController < ApplicationController
 
     @unread_count = user_unread_count
     @notifications = scope.page(page).per(per_page)
-    @open_rewards = Notification.joins(:rewards).where("rewards.payout_date is null").uniq
-    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
+    @open_rewards = Notification.joins(:rewards).where("rewards.distributed_to is null").uniq
+    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.distributed_to is null").uniq
+    @rewards     = Notification.joins(:rewards).where("rewards.distributed_to = '#{current_user.github_login}' AND rewards.payout_date is null").uniq
+    @open_rewards_sum = 0
+    @your_rewards_sum = 0
+    @rewards_sum = 0
+    @open_rewards.each do |n|
+      @open_rewards_sum +=n.rewards.where("rewards.distributed_to is null").sum(:amount)
+    end
+    @your_rewards.each do |n|
+      @your_rewards_sum +=n.rewards.where("rewards.distributed_to is null").sum(:amount)
+    end
+    @rewards.each do |n|
+      @your_rewards_sum +=n.rewards.sum(:amount)
+    end
     @rewards     = Notification.joins(:rewards).where("rewards.distributed_to = '#{current_user.github_login}' AND rewards.payout_date is null").uniq
     @total = @notifications.total_count
 
