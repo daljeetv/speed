@@ -1,12 +1,12 @@
-<tr id='notification-<%= reward.notification.id %>' class='notification' %>
+<tr id='notification-<%= notification.id %>' class='notification' %>
   <td class='notification-checkbox align-middle'>
     <div class="custom-control custom-checkbox">
       <%= check_box_tag(
-              "notification_#{reward.notification.id}",
-              reward.notification.id,
+              "notification_#{notification.id}",
+              notification.id,
               false,
-              title: (reward.notification.archived ? 'Unarchive' : 'Archive'),
-              class: 'custom-control-input ' + (reward.notification.archived ? 'unarchive' : 'archive')
+              title: (notification.archived ? 'Unarchive' : 'Archive'),
+              class: 'custom-control-input ' + (notification.archived ? 'unarchive' : 'archive')
           )
       %>
       <%= label_tag "notification_#{reward.notification.id}", '', class: "custom-control-label" %>

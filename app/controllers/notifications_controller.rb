@@ -94,8 +94,8 @@ class NotificationsController < ApplicationController
     check_out_of_bounds(scope)
 
     @unread_count = user_unread_count
-    @open_rewards = Reward.where(payout_date: nil)
-    @your_rewards = Reward.where(user_id: current_user.id, payout_date: nil)
+    @open_rewards = Reward.where(distributed_to: nil)
+    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
     @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @notifications = scope.page(page).per(per_page)
     @total = @notifications.total_count
@@ -126,7 +126,7 @@ class NotificationsController < ApplicationController
     @unread_count = user_unread_count
     @notifications = scope.page(page).per(per_page)
     @open_rewards = Reward.where(payout_date: nil)
-    @your_rewards = Reward.where(user_id: current_user.id, payout_date: nil)
+    @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
     @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
     @total = @notifications.total_count
 
@@ -338,6 +338,7 @@ class NotificationsController < ApplicationController
   #
   def get_open_rewards
     open_rewards = selected_notifications[0].rewards.where(distributed_date: nil)
+    Rails.logger.info("OPEN REWARDS #{open_rewards}")
     render json: { 'rewards' => open_rewards }
   end
 

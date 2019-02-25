@@ -352,6 +352,7 @@ var Octobox = (function() {
             console.log(notification_data);
             $("#rightbar_notification_id").text(notification_data["notification"]['subject_title']);
             $.get("/notifications/" + id + "/get_open_rewards.json", function (rewards) {
+                console.log('rewards', rewards);
                 if (rewards.rewards.length > 0) {
                     //add rewards already placed - ready for distribution
                     const $ul = $("#rewards-distribution-section");
