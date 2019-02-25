@@ -19,7 +19,7 @@ class RewardsController < ApplicationController
   #   HEAD 204
   #
   def distribute
-    message = Reward.distribute(selected_rewards, params[:rewardee])
+    message = Reward.distribute(selected_rewards, params[:rewardee].gsub(/\s+/, "")) #https://stackoverflow.com/questions/1634750/ruby-function-to-remove-all-white-spaces
     if request.xhr?
       head :ok
       flash[:success] = message

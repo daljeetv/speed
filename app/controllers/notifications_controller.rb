@@ -94,9 +94,9 @@ class NotificationsController < ApplicationController
     check_out_of_bounds(scope)
 
     @unread_count = user_unread_count
-    @open_rewards = Reward.where(distributed_to: nil)
+    @open_rewards = Notification.joins(:rewards).where("rewards.distributed_to is null")
     @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
-    @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
+    @rewards     = Notification.joins(:rewards).where("rewards.distributed_to = '#{current_user.github_login}' AND rewards.payout_date is null").uniq
     @notifications = scope.page(page).per(per_page)
     @total = @notifications.total_count
 
@@ -125,9 +125,9 @@ class NotificationsController < ApplicationController
 
     @unread_count = user_unread_count
     @notifications = scope.page(page).per(per_page)
-    @open_rewards = Reward.where(payout_date: nil)
+    @open_rewards = Notification.joins(:rewards).where("rewards.payout_date is null").uniq
     @your_rewards = Notification.joins(:rewards).where("rewards.user_id = #{current_user.id} AND rewards.payout_date is null").uniq
-    @rewards     = Reward.where(distributed_to: current_user.github_login, payout_date: nil)
+    @rewards     = Notification.joins(:rewards).where("rewards.distributed_to = '#{current_user.github_login}' AND rewards.payout_date is null").uniq
     @total = @notifications.total_count
 
     @cur_selected = [per_page, @total].min
