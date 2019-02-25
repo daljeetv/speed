@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2018_12_23_024330) do
+ActiveRecord::Schema.define(version: 2019_02_25_074627) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_stat_statements"
@@ -106,6 +106,18 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
     t.index ["full_name"], name: "index_repositories_on_full_name", unique: true
   end
 
+  create_table "requests", force: :cascade do |t|
+    t.bigint "user_id"
+    t.bigint "notification_id"
+    t.datetime "start_date"
+    t.datetime "end_date"
+    t.decimal "amount"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["notification_id"], name: "index_requests_on_notification_id"
+    t.index ["user_id"], name: "index_requests_on_user_id"
+  end
+
   create_table "rewards", force: :cascade do |t|
     t.bigint "user_id"
     t.bigint "notification_id"
@@ -196,6 +208,8 @@ ActiveRecord::Schema.define(version: 2018_12_23_024330) do
   end
 
   add_foreign_key "labels", "subjects", on_update: :cascade, on_delete: :cascade
+  add_foreign_key "requests", "notifications"
+  add_foreign_key "requests", "users"
   add_foreign_key "rewards", "notifications"
   add_foreign_key "rewards", "users"
 end

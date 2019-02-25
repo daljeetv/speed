@@ -10,6 +10,7 @@ class User < ApplicationRecord
   has_many :app_installations, through: :app_installation_permissions
   has_many :pinned_searches, dependent: :delete_all
   has_many :rewards
+  has_many :requests
 
   ERRORS = {
     refresh_interval_size: [:refresh_interval, 'must be less than 1 day']

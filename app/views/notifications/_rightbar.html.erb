@@ -17,6 +17,13 @@
     <div class="bounty-section" id="last-bounty-section" >
       <%= create_reward_button %>
     </div>
+    <div class="bounty-section">
+      Request Reward:
+      $ <input id="request-amount" type="number" min="0.01" step="0.01" max="100000" value="100.00"/>
+    </div>
+    <div class="bounty-section" id="last-bounty-section" >
+      <%= request_reward_button %>
+    </div>
   </div>
   <div id="rightbar_distribute_id">
     <div class="Subhead mt-0 mb-0">

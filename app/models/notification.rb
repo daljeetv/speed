@@ -31,6 +31,7 @@ class Notification < ApplicationRecord
   belongs_to :repository, foreign_key: :repository_full_name, primary_key: :full_name, optional: true
   has_many :labels, through: :subject
   has_many :rewards
+  has_many :requests
 
   validates :subject_url, presence: true
   validates :archived, inclusion: [true, false]
@@ -74,6 +75,12 @@ class Notification < ApplicationRecord
     # current_user.github_client.add_comment(notification[0].repository_full_name, notification[0].issue_id(notification[0]), "Added Speed Bounty!")
     value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
     return Reward.create(notification, value, current_user)
+  end
+
+  def self.request_reward(notification, amount, current_user)
+    Rails.logger.info("REQUESTING: Got notification #{notification[0].repository_full_name} and issue id #{notification[0].url}")
+    value = amount ? ActiveRecord::Type::Decimal.new.cast(amount) : 0.00
+    return Request.create(notification, value, current_user)
   end
 
   def self.mark_read(notifications)

@@ -204,6 +204,34 @@ class NotificationsController < ApplicationController
     end
   end
 
+  # Request selected issues
+  #
+  # :category: Notifications Actions
+  #
+  # ==== Parameters
+  #
+  # * +:id - The Id of issue you'd like to reward.
+  # * +:amount - The value of the reward
+  #
+  # ==== Example
+  #
+  # <code>POST notifications/reward_selected?id=123?value=100.00</code>
+  #   HEAD 204
+  #
+  def request_reward
+    result = Notification.request_reward(selected_notifications, params[:amount], current_user)
+    message = result[:message]
+    if request.xhr?
+      if result[:error]
+        flash[:error] = message
+      else
+        flash[:success] = message
+      end
+    else
+      redirect_back fallback_location: root_path
+    end
+  end
+
   # Archive selected notifications
   #
   # :category: Notifications Actions
@@ -292,7 +320,11 @@ class NotificationsController < ApplicationController
   #   HEAD 204
   #
   def data
-    render json: { 'notification' => selected_notifications[0], 'notification_web_url' => selected_notifications[0].web_url }
+    render json: {
+        'notification' => selected_notifications[0],
+        'notification_web_url' => selected_notifications[0].web_url,
+        'requests' => selected_notifications[0].requests.joins(:user).select('github_login, requests.*')
+    }
   end
 
   # Get notification reward data

@@ -180,18 +180,24 @@ var Octobox = (function() {
     var id = getIdsFromRows(getMarkedOrCurrentRows());
     var reward_amount = $('#bounty-amount').val();
     reward(id, reward_amount);
+  };
+
+  var requestReward = function() {
+    var id = getIdsFromRows(getMarkedOrCurrentRows());
+    var request_amount = $('#request-amount').val();
+    request(id, request_amount);
   }
 
   var distributeReward = function() {
     var rewardee = $('#rewardee').val();
     var id = this.value;
     distribute(id, rewardee);
-  }
+  };
 
   var acceptReward = function() {
     var id = getIdsFromRows(getMarkedOrCurrentRows());
     accept(id);
-  }
+  };
 
   var unarchiveSelected = function(){
     if (getDisplayedRows().length === 0) return;
@@ -226,6 +232,13 @@ var Octobox = (function() {
       resetCursorAfterRowsRemoved([id]);
       updateFavicon()
     });
+  }
+
+  var request = function(id, amount){
+      $.post( "/notifications/"+id+"/request_reward", {"amount": amount}).done(function(resp) {
+          resetCursorAfterRowsRemoved([id]);
+          updateFavicon()
+      });
   }
 
   var distribute = function(reward_id , rewardee){
@@ -364,7 +377,7 @@ var Octobox = (function() {
       if (onlyMarkedOneRow()) {
           populate_create_reward_rightbar();
       }
-      $("button.archive_selected, button.create_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
+      $("button.archive_selected, button.create_reward, button.request_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.delete_selected").show().css("display", "inline-block");
       if ( !hasMarkedRows(true) ) {
         $(".js-select_all").prop("checked", true).prop("indeterminate", false);
         $("button.select_all").show().css("display", "inline-block");
@@ -376,7 +389,7 @@ var Octobox = (function() {
     } else {
       $("#rightbar").css("display", "none");
       $(".js-select_all").prop("checked", false).prop("indeterminate", false);
-      $("button.archive_selected, button.create_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
+      $("button.archive_selected, button.create_reward, button.request_reward, button.accept_reward, button.distribute_reward, button.bounty_selected, button.unarchive_selected, button.mute_selected, button.select_all, button.delete_selected").hide();
     }
     var marked_unread_length = getMarkedRows().filter(".active").length;
     if ( marked_unread_length > 0 ) {
@@ -634,6 +647,7 @@ var Octobox = (function() {
     markReadSelected: markReadSelected,
     archiveSelected: archiveSelected,
     createReward: createReward,
+    requestReward: requestReward,
     acceptReward: acceptReward,
     distributeReward: distributeReward,
     unarchiveSelected: unarchiveSelected,

@@ -148,6 +148,10 @@ module NotificationsHelper
     function_button("Add Reward", 'credit-card', "create_reward", 'Create Reward')
   end
 
+  def request_reward_button
+    function_button("Request Reward", 'credit-card', "request_reward", 'Request Reward')
+  end
+
   def accept_reward_button
     function_button("Accept Reward", 'credit-card', "accept_reward", 'Accept Reward')
   end

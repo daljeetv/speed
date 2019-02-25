@@ -120,6 +120,31 @@ bundle exec rake db:create db:migrate
 
 Complete Command:
 
+Create a .env file like so:
+```
+# This is a comma seperated list
+# of GitHub IDs for folks who need
+# "admin" access to your instance
+ADMIN_GITHUB_IDS=""
+
+GITHUB_CLIENT_ID=""
+GITHUB_CLIENT_SECRET=""
+
+STRIPE_CLIENT_ID=""
+STRIPE_REDIRECT_URI=https://localhost:3000/stripe-success
+STRIPE_PUBLISHABLE_KEY=""
+STRIPE_SECRET_KEY=""
+
+SOURCE_REPO=https://github.com/daljeetv/speed
+FETCH_SUBJECT=true
+MINIMUM_REFRESH_INTERVAL=1
+WEB_CONCURRENCY=2
+
+OCTOBOX_ATTRIBUTE_ENCRYPTION_KEY=2f956aaa6ad54ccbfac626d39e4fde1f
+LETS_ENCRYPT_CODE=JEmf_yTOhggtzQMbQEn4Fc7MD391mtE1JqXAu1Xx5kQ.IlSgy7LNlkuyNOSfYF4Qsyrl-t0MuxRJal5t_9VFqVM
+GA_ANALYTICS_ID=UA-132339784-3
+```
+
 ```bash
  bundle install && bundle exec rake db:drop db:create db:migrate && rails s
 ```
@@ -144,6 +169,10 @@ Once you've created your application you can then then add the following to your
 ```
 GITHUB_CLIENT_ID=yourclientidhere
 GITHUB_CLIENT_SECRET=yourclientsecrethere
+```
+
+
+```
 STRIPE_CLIENT_ID=yourstripeclientid
 STRIPE_REDIRECT_URI=yourstriperedirecturi
 ```
@@ -397,9 +426,9 @@ To enable Google analytics tracking set the following environment variable:
 
     GA_ANALYTICS_ID=UA-XXXXXX-XX
 
-## Running Octobox as a GitHub App
+## Running Speed as a GitHub App
 
-Octobox can be configured to run as a [GitHub App](https://developer.github.com/apps/), which allows it to access private repository issue and pull request data without requiring `repo` scope.
+Speed can be configured to run as a [GitHub App](https://developer.github.com/apps/), which allows it to access private repository issue and pull request data without requiring `repo` scope.
 
 Due to a restriction in the GitHub App API, you'll need to create both an [Oauth App](https://github.com/settings/applications/new) and a [GitHub App](https://github.com/settings/apps/new), first follow the setup instructions for [Local installation](#local-installation).
 
